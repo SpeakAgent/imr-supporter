@@ -1,0 +1,58 @@
+<ng-include src="'templates/includes/nav.html'"></ng-include>
+<!-- Page Content -->
+<div class="container" ng-controller="dashboardController">
+
+    <div class="border row">
+        <div class="border col-md-6">
+            <div class="tasksBox">
+                <h1><i class="fa fa-list-ol" aria-hidden="true"></i></h1>
+                <h1 class="boxTitle">Create and Edit Tasks</h1>
+            </div>
+            <div class="scheduleBox">
+                <h1><i class="fa fa-calendar-o" aria-hidden="true"></i></h1>
+                <h1 class="boxTitle">Create and Edit Schedules</h1>
+            </div>
+        </div>
+        <div class="border col-md-6">
+            <div class="activity">
+                <h2>Activity Feed</h2>
+                <h3>Today</h3>
+                <ul class="feed">
+                    <span style="color:#f03113;"><i class="fa fa-exclamation-circle" aria-hidden="true"></i></span><li><u>First Last</u> hasn't completed Can Crushing.</li>
+                    <span style="color:#408940;"><i class="fa fa-check-circle" aria-hidden="true"></i></span><li><u>First Last</u> checked out of work at such and such workplace.</li>
+                    <span style="color:#3fb0e0;"><i class="fa fa-info-circle" aria-hidden="true"></i></span><li><u>First Last</u> leaves on a field trip to some place at 0:00p.m.</li>
+                    <span style="color:#408940;"><i class="fa fa-check-circle" aria-hidden="true"></i></span><li><u>First Last</u> completed some other thing here.</li>
+                    <span style="color:#f03113;"><i class="fa fa-exclamation-circle" aria-hidden="true"></i></span><li><u>First Last</u> some alert text here to alert supporter.</li>
+                </ul>
+            </div>
+
+            <div class="moreFeed">
+                <p>See all Notifications&nbsp;&nbsp; <i class="fa fa-arrow-right" aria-hidden="true"></i></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="border row">
+            <div class="border col-md-6">
+                <div class="info">
+                    <h4>Information</h4>
+                    <h6>About IM Ready</h6>
+                    <h6>Maryland Learning Links</h6>
+                </div>
+            </div>
+            <div class="border col-md-3">
+                <div class="foot">
+                    <img src="static/img/logos/logoCTE.png" alt="CTE Logo" />
+                </div>
+            </div>
+            <div class="border col-md-3">
+                <div class="foot">
+                    <img src="static/img/logos/logoMSDE.png" alt="MSDE Logo" />
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+<!-- /.container -->
