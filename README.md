@@ -1,3 +1,3 @@
 #IMR Supporter Web App
 
-Link to follow: 
+IMR Supporter Shell: http://speakagent.github.io/imr-supporter/  
