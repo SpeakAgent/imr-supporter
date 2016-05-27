@@ -1,0 +1,21 @@
+# Ignore docs files
+.travis.yml
+.sass-cache
+.sass-cache/*
+.DS_Store
+.bower.json
+.gitignore
+
+# Ignore Mac DS_Store files
+**.DS_Store
+
+# Not working?
+# Try: http://stackoverflow.com/questions/11451535/gitignore-not-working
+# Try: http://stackoverflow.com/questions/1139762/gitignore-file-not-ignoring
+browser_BACKUP_13455.js
+browser_BASE_13455.js
+browser_LOCAL_13455.js
+browser_REMOTE_13455.js
+*.DS_Store
+student-code.html
+styles_BACKUP_58509.css
