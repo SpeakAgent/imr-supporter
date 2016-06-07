@@ -1,6 +1,60 @@
 <ng-include src="'templates/includes/nav.html'"></ng-include>
-<!-- Page Content -->
-<div class="container" ng-controller="taskController">
 
+<div class="container" ng-controller="taskController">
+    <div class="border row">
+        <div class="border col-md-12">
+            <div class="tasksBox">
+                <div class="currentProfile">
+                    <h1>Tasks Dashboard</h1>
+                    <button ui-sref="createTask" class="newTaskBtn">CREATE A NEW TASK</button>
+                    <h2>Choose an existing task...</h2>
+
+                    <div class="container-fluid">
+                        <table class="table">
+                            <tbody>
+                                <tr>
+                                    <td class="tdTitle">Can Crushing</td>
+                                    <td></td>
+                                    <td class="text-right"><a href="">PREVIEW</a> | <a href="">EDIT</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="tdTitle">Leaving for the Wokrspace</td>
+                                    <td></td>
+                                    <td class="text-right"><a href="">PREVIEW</a> | <a href="">EDIT</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="tdTitle">Recycling Collector</td>
+                                    <td></td>
+                                    <td class="text-right"><a href="">PREVIEW</a> | <a href="">EDIT</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="tdTitle">Student Tray Collector</td>
+                                    <td></td>
+                                    <td class="text-right"><a href="">PREVIEW</a> | <a href="">EDIT</a></td>
+                                </tr>
+                                <tr>
+                                    <td class="tdTitle">Dog Biscuit Baking</td>
+                                    <td></td>
+                                    <td class="text-right"><a href="">PREVIEW</a> | <a href="">EDIT</a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div class="row">
+                        <a ui-sref="createTask">
+                            <div class="col-xs-1" style="margin-left:30px">
+                                <span class="fa fa-caret-down fa-3x"></span>
+                            </div>
+                            <div class="col-xs-11 showMoreTasks" style="margin-left:-60px; margin-top:12px; margin-bottom: 80px;">
+                                <span>SHOW MORE TASKS</span>
+                            </div>
+                        </a>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- /.container -->

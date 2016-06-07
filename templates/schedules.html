@@ -1,6 +1,269 @@
 <ng-include src="'templates/includes/nav.html'"></ng-include>
-<!-- Page Content -->
-<div class="container" ng-controller="schedulesController">
 
+<div class="container" ng-controller="schedulesController">
+    <div class="border row">
+        <div class="border col-md-12">
+            <div class="tasksBox">
+                <div class="currentProfile">
+                    <h1>You are currently viewing {Student's} shedule</h1>
+
+                    <div class="row">
+                        <div class="col-md-1" style="margin-left:-5px"></div>
+
+                        <div class="col-md-2" style="margin-left:-40px">
+                            <img src="static/img/bg/60.png" alt="">
+                            <p style="margin:0!important; text-align:center; margin-left:-85px!important;color:#00355D;">Firstname</p>
+                            <p style="text-align:center; margin-left:-85px!important; margin-top:-7px; color:#00355D;">Lastlongername</p>
+                        </div>
+                        <div class="col-md-2" style="margin-left:-40px">
+                            <img src="static/img/bg/60.png" alt="">
+                            <p style="margin:0!important; text-align:center; margin-left:-85px!important; color:#00355D;">Firstname</p>
+                            <p style="text-align:center; margin-left:-85px!important; margin-top:-7px; color:#00355D;">Lastlongername</p>
+                        </div>
+                        <div class="col-md-2" style="margin-left:-40px">
+                            <img src="static/img/bg/60.png" alt="">
+                            <p style="margin:0!important; text-align:center; margin-left:-85px!important; color:#00355D;">Firstname</p>
+                            <p style="text-align:center; margin-left:-85px!important; margin-top:-7px; color:#00355D;">Lastlongername</p>
+                        </div>
+                        <div class="col-md-2" style="margin-left:-40px">
+                            <img src="static/img/bg/60.png" alt="">
+                            <p style="margin:0!important; text-align:center; margin-left:-85px!important; color:#00355D;">Firstname</p>
+                            <p style="text-align:center; margin-left:-85px!important; margin-top:-7px; color:#00355D;">Lastlongername</p>
+                        </div>
+                        <div class="col-md-3">
+
+                        </div>
+                    </div>
+
+                    <h5 class="changeStudentShedule">Click on a photo to choose a different student's shedule</h5>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="border row">
+        <div class="border col-md-12">
+            <div class="tasksBox" style="padding:0 0 30px 0!important;">
+                <div class="currentProfile">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h2 style="padding-top:0!important">{Student's} Task Shedule</h2>
+                            </div>
+                            <div class="col-md-4">
+                                <button ui-sref="viewWeekly" class="viewWeeklyScheduleBtn">VIEW {STUDENT'S} WEEKLY SHEDULE</button>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4 style="margin-left:30px">Can Crushing &nbsp;&nbsp;<span><a href=""><i class="fa fa-pencil fa-1x" style="color:#54AAEC;" aria-hidden="true"></i><span style="font-size:12px; color:#54AAEC;"> EDIT TASK</span></a></span></h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <input type="text" placeholder='For example, "take bus to Giant"' style="width:360px; padding:5px; margin-left:28px; margin-top:10px">
+                            </div>
+                            <div class="col-md-1" style="margin-top: -12px; margin-left:40px">
+                                <span style="margin-left:3px; margin-top:-50px">DATE</span><br>
+                                <i class="fa fa-calendar-o fa-3x" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-md-1" style="margin-top: -12px; margin-left:40px">
+                                <span style="margin-left:-10px; margin-top:-50px; font-size:13px">START TIME</span><br>
+                                <i class="fa fa-clock-o fa-3x" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-md-1" style="margin-top: -12px; margin-left:40px">
+                                <span style="margin-left:-10px; margin-top:-50px">END TIME</span><br>
+                                <i class="fa fa-clock-o fa-3x" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="" style="zoom:3; margin-top:-0.5px;margin-left: -4px; color:white!important;">
+                                        <span style="font-weight:bold; margin-left: 30px;position: absolute; margin-top:7px">Make recurring?</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <button class="viewWeeklyScheduleBtn">ADD A SUPPORTER FOR THIS TASK</button>
+                            </div>
+                            <div class="col-md-8">
+
+                            </div>
+                            <hr width=80% align="center" style="margin-left:46px">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4 style="margin-left:30px">Can Crushing &nbsp;&nbsp;<span><a href=""><i class="fa fa-pencil fa-1x" style="color:#54AAEC;" aria-hidden="true"></i><span style="font-size:12px; color:#54AAEC;"> EDIT TASK</span></a></span></h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <input type="text" placeholder='For example, "take bus to Giant"' style="width:360px; padding:5px; margin-left:28px; margin-top:10px">
+                            </div>
+                            <div class="col-md-1" style="margin-top: -12px; margin-left:40px">
+                                <span style="margin-left:3px; margin-top:-50px">DATE</span><br>
+                                <i class="fa fa-calendar-o fa-3x" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-md-1" style="margin-top: -12px; margin-left:40px">
+                                <span style="margin-left:-10px; margin-top:-50px; font-size:13px">START TIME</span><br>
+                                <i class="fa fa-clock-o fa-3x" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-md-1" style="margin-top: -12px; margin-left:40px">
+                                <span style="margin-left:-10px; margin-top:-50px">END TIME</span><br>
+                                <i class="fa fa-clock-o fa-3x" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="" style="zoom:3; margin-top:-0.5px;margin-left: -4px; color:white!important;">
+                                        <span style="font-weight:bold; margin-left: 30px;position: absolute; margin-top:7px">Make recurring?</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <button class="viewWeeklyScheduleBtn">ADD A SUPPORTER FOR THIS TASK</button>
+                            </div>
+                            <div class="col-md-8">
+
+                            </div>
+                            <hr width=80% align="center" style="margin-left:46px">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4 style="margin-left:30px">Can Crushing &nbsp;&nbsp;<span><a href=""><i class="fa fa-pencil fa-1x" style="color:#54AAEC;" aria-hidden="true"></i><span style="font-size:12px; color:#54AAEC;"> EDIT TASK</span></a></span></h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <input type="text" placeholder='For example, "take bus to Giant"' style="width:360px; padding:5px; margin-left:28px; margin-top:10px">
+                            </div>
+                            <div class="col-md-1" style="margin-top: -12px; margin-left:40px">
+                                <span style="margin-left:3px; margin-top:-50px">DATE</span><br>
+                                <i class="fa fa-calendar-o fa-3x" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-md-1" style="margin-top: -12px; margin-left:40px">
+                                <span style="margin-left:-10px; margin-top:-50px; font-size:13px">START TIME</span><br>
+                                <i class="fa fa-clock-o fa-3x" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-md-1" style="margin-top: -12px; margin-left:40px">
+                                <span style="margin-left:-10px; margin-top:-50px">END TIME</span><br>
+                                <i class="fa fa-clock-o fa-3x" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="" style="zoom:3; margin-top:-0.5px;margin-left: -4px; color:white!important;">
+                                        <span style="font-weight:bold; margin-left: 30px;position: absolute; margin-top:7px">Make recurring?</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <button class="viewWeeklyScheduleBtn">ADD A SUPPORTER FOR THIS TASK</button>
+                            </div>
+                            <div class="col-md-8">
+
+                            </div>
+                            <hr width=80% align="center" style="margin-left:46px">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4 style="margin-left:30px">Can Crushing &nbsp;&nbsp;<span><a href=""><i class="fa fa-pencil fa-1x" style="color:#54AAEC;" aria-hidden="true"></i><span style="font-size:12px; color:#54AAEC;"> EDIT TASK</span></a></span></h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <input type="text" placeholder='For example, "take bus to Giant"' style="width:360px; padding:5px; margin-left:28px; margin-top:10px">
+                            </div>
+                            <div class="col-md-1" style="margin-top: -12px; margin-left:40px">
+                                <span style="margin-left:3px; margin-top:-50px">DATE</span><br>
+                                <i class="fa fa-calendar-o fa-3x" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-md-1" style="margin-top: -12px; margin-left:40px">
+                                <span style="margin-left:-10px; margin-top:-50px; font-size:13px">START TIME</span><br>
+                                <i class="fa fa-clock-o fa-3x" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-md-1" style="margin-top: -12px; margin-left:40px">
+                                <span style="margin-left:-10px; margin-top:-50px">END TIME</span><br>
+                                <i class="fa fa-clock-o fa-3x" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="" style="zoom:3; margin-top:-0.5px;margin-left: -4px; color:white!important;">
+                                        <span style="font-weight:bold; margin-left: 30px;position: absolute; margin-top:7px">Make recurring?</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <button class="viewWeeklyScheduleBtn">ADD A SUPPORTER FOR THIS TASK</button>
+                            </div>
+                            <div class="col-md-8">
+
+                            </div>
+                            <hr width=80% align="center" style="margin-left:46px">
+                        </div>
+                        <div class="row">
+                            <div class="col-md-12">
+                                <h4 style="margin-left:30px">Can Crushing &nbsp;&nbsp;<span><a href=""><i class="fa fa-pencil fa-1x" style="color:#54AAEC;" aria-hidden="true"></i><span style="font-size:12px; color:#54AAEC;"> EDIT TASK</span></a></span></h4>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <input type="text" placeholder='For example, "take bus to Giant"' style="width:360px; padding:5px; margin-left:28px; margin-top:10px">
+                            </div>
+                            <div class="col-md-1" style="margin-top: -12px; margin-left:40px">
+                                <span style="margin-left:3px; margin-top:-50px">DATE</span><br>
+                                <i class="fa fa-calendar-o fa-3x" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-md-1" style="margin-top: -12px; margin-left:40px">
+                                <span style="margin-left:-10px; margin-top:-50px; font-size:13px">START TIME</span><br>
+                                <i class="fa fa-clock-o fa-3x" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-md-1" style="margin-top: -12px; margin-left:40px">
+                                <span style="margin-left:-10px; margin-top:-50px">END TIME</span><br>
+                                <i class="fa fa-clock-o fa-3x" aria-hidden="true"></i>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="" style="zoom:3; margin-top:-0.5px;margin-left: -4px; color:white!important;">
+                                        <span style="font-weight:bold; margin-left: 30px;position: absolute; margin-top:7px">Make recurring?</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <button class="viewWeeklyScheduleBtn">ADD A SUPPORTER FOR THIS TASK</button>
+                            </div>
+                            <div class="col-md-8">
+
+                            </div>
+                            <hr width=80% align="center" style="margin-left:46px">
+                        </div>
+                    </div>
+                    <div class="row">
+                        <a ui-sref="createTask">
+                            <div class="col-xs-1" style="margin-left:48px">
+                                <span class="fa fa-caret-down fa-3x"></span>
+                            </div>
+                            <div class="col-xs-11 showMoreTasks" style="margin-left:-60px; margin-top:12px; margin-bottom: 80px;">
+                                <span>SHOW MORE TASKS</span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 <!-- /.container -->

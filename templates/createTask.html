@@ -1,0 +1,150 @@
+<ng-include src="'templates/includes/nav.html'"></ng-include>
+
+<div class="container" ng-controller="createTaskController">
+    <div class="border row">
+        <div class="border col-md-12">
+            <div class="tasksBox">
+                <div class="currentProfile">
+                    <h1>Create Task</h1>
+                    <br>
+                    <div class="basicInfo">
+                        <h2>Basic Information</h2>
+                        <div class="container" style="margin-left:30px">
+                            <div class="row">
+                                <div class="col-md-1">
+                                    <img src="static/img/icons/placeholder.png" alt="">
+                                </div>
+                                <div class="col-md-3" style="margin-left:60px">
+                                    <p style="font-weight:bold; margin-bottom:5px!important">Task Title</p>
+                                    <input type="text" placeholder='For example, "take bus to Giant"' style="width:260px; padding:5px">
+                                    <button type="button" class="btn btn-default" style="border-color:transparent!important; background:#FFFEFE!important; color:grey; margin-top:20px; width:200px">CHOOSE IMAGE <i class="fa fa-angle-down fa-1x text-right" aria-hidden="true"></i></button>
+                                    <!--input id="input-1" type="file" class="file btn btn-default" style="border-color:transparent!important; background:#FFFEFE!important; color:grey;" data-show-preview="false"-->
+                                </div>
+                                <div class="col-md-5">
+                                    <br>
+                                    <br>
+                                    <br>
+                                    <button type="button" class="btn btn-default" style="border-color:transparent!important; background:#FFFEFE!important; color:grey; margin-top:19px; margin-left:-30px; width:200px">CHOOSE CATEGORY <i class="fa fa-angle-down fa-1x text-right" aria-hidden="true"></i></button>
+                                </div>
+                                <div class="col-md-3">
+
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-md-1">
+
+                                </div>
+                                <div class="col-md-3" style="margin-left:60px">
+                                    <p style="font-weight:bold; margin-bottom:5px!important; margin-top:30px">Add a link to a Youtube video (optional)</p>
+                                    <input type="text" placeholder='Paste url here' style="width:260px; padding:5px">
+
+                                    <button type="submit" class="saveBasicInfoBtn">SAVE</button>
+                                </div>
+                                <div class="col-md-8">
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h1>Add Special Instruction</h1>
+                        <div class="textArea">
+                            <textarea class="form-control" rows="5" placeholder="Insert any special instruction for this task. For example, ..."></textarea>
+                        </div>
+                        <h1>Add Steps</h1>
+                        <div class="row">
+                            <div class="col-md-2">
+
+                            </div>
+                            <div class="col-md-3" style="margin-left:10px">
+                                <p style="font-weight:bold; margin-bottom:5px!important">Step 1</p>
+                                <input type="text" placeholder='For example, "take bus to Giant"' style="width:260px; padding:5px">
+                                <button type="button" class="btn btn-default" style="background:#FFFEFE!important; color:grey; border:solid 1px grey; margin-top:20px; width:200px">CHOOSE IMAGE <i class="fa fa-angle-down fa-1x text-right" aria-hidden="true"></i></button>
+                                <br><br><br>
+                                <a href="" style="font-weight:bold">+ Add another step...</a>
+                            </div>
+                            <div class="col-md-7">
+
+                            </div>
+                        </div>
+                    </div>
+                    <h1>Shedule Task</h1>
+                    <div class="row">
+                        <div class="col-md-1">
+
+                        </div>
+                        <div class="col-md-2">
+                            <span style="margin-left:12px">DATE</span><br>
+                            <i class="fa fa-calendar-o fa-4x" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-md-2">
+                            <span style="margin-left:-9px">START TIME</span><br>
+                            <i class="fa fa-clock-o fa-4x" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-md-2">
+                            <span style="margin-left:-3px">END TIME</span><br>
+                            <i class="fa fa-clock-o fa-4x" aria-hidden="true"></i>
+                        </div>
+                        <div class="col-md-2">
+                            <div class="checkbox">
+                                <label>
+                                    <input type="checkbox" value="" style="zoom:3; color:white!important; margin-top:7px;"><p style="margin-top:30px; font-weight:bold; margin-left:-15px">Make recurring?</p>
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+
+                        </div><br>
+                        <h1 style="margin-left:44px; margin-top:50px">Select Students</h1>
+                        <div class="row">
+                            <div class="col-md-1">
+
+                            </div>
+                            <div class="col-md-2">
+                                <img src="static/img/bg/60.png" alt="">
+                                <p style="margin:0!important; text-align:center; margin-left:-85px!important">Firstname</p>
+                                <p style="margin:0!important; text-align:center; margin-left:-85px!important">Lastlongername</p>
+                                <label>
+                                    <input type="checkbox" value="" style="zoom:2.5; color:white!important; margin-left:8px">
+                                </label>
+                            </div>
+                            <div class="col-md-2">
+                                <img src="static/img/bg/60.png" alt="">
+                                <p style="margin:0!important; text-align:center; margin-left:-85px!important">Firstname</p>
+                                <p style="margin:0!important; text-align:center; margin-left:-85px!important">Lastlongername</p>
+                                <label>
+                                    <input type="checkbox" value="" style="zoom:2.5; color:white!important; margin-left:8px">
+                                </label>
+                            </div>
+                            <div class="col-md-2">
+                                <img src="static/img/bg/60.png" alt="">
+                                <p style="margin:0!important; text-align:center; margin-left:-85px!important">Firstname</p>
+                                <p style="margin:0!important; text-align:center; margin-left:-85px!important">Lastlongername</p>
+                                <label>
+                                    <input type="checkbox" value="" style="zoom:2.5; color:white!important; margin-left:8px">
+                                </label>
+                            </div>
+                            <div class="col-md-2">
+                                <img src="static/img/bg/60.png" alt="">
+                                <p style="margin:0!important; text-align:center; margin-left:-85px!important">Firstname</p>
+                                <p style="margin:0!important; text-align:center; margin-left:-85px!important">Lastlongername</p>
+                                <label>
+                                    <input type="checkbox" value="" style="zoom:2.5; color:white!important; margin-left:8px">
+                                </label>
+                            </div>
+                            <div class="col-md-2">
+                                <img src="static/img/bg/60.png" alt="">
+                                <p style="margin:0!important; text-align:center; margin-left:-85px!important">Firstname</p>
+                                <p style="margin:0!important; text-align:center; margin-left:-85px!important">Lastlongername</p>
+                                <label>
+                                    <input type="checkbox" value="" style="zoom:2.5; color:white!important; margin-left:8px">
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /.container -->

@@ -1,0 +1,93 @@
+.currentProfile {
+    background:#fff;
+    margin:0 auto;
+    width: 95%;
+}
+
+.tasksBox {
+    background-image: url('../../img/bg/bg-gray-tile.png');
+    position: relative;
+    padding: 30px 0;
+}
+
+.tasksBox h1 {
+    color: #00355D;
+    font-weight: bold;
+    letter-spacing: 4px;
+    font-size: 40px;
+    margin-left: 30px;
+    padding-top: 40px;
+}
+
+.tasksBox h2 {
+    color: #00355D;
+    font-weight: bold;
+    letter-spacing: 4px;
+    font-size: 32px;
+    margin-left: 30px;
+    padding-top: 10px;
+}
+
+.tasksBox a {
+    text-decoration: none!important;
+    color: black;
+}
+
+.tasksBox a:hover {
+    color: #54AAEC;
+}
+
+.nav-pills>li.active>a {
+	background-color: #20A7E1 !important;
+	color: #fff !important;
+	padding: 11px 15px !important;
+}
+
+.listSchedule {
+	width: 49%;
+	border-radius: 5px;
+	border: solid 1px #20A7E1!important;
+	height: 36px !important;
+}
+
+.nav-pills>li.active>a {
+    background-color: #20A7E1 !important;
+    color: #fff !important;
+    padding: 11px 15px !important;
+}
+
+.nav-pills>li+li {
+    margin-left: 0!important;
+}
+
+.scheduleTitle {
+    margin-top: 40px;
+    padding: 0 !important;
+    color: #38ACF5;
+}
+
+.fa-angle-left:before {
+    content: "\f104";
+    margin-left: -42px;
+    margin-top: -26px;
+    position: absolute;
+}
+
+.fa-angle-right:before {
+    content: "\f105";
+    margin-left: 20px;
+    margin-top: -26px;
+    position: absolute;
+}
+
+.time {
+    margin-top: 30px!important;
+    color: #0A4463!important;
+    margin-left: 6px;
+}
+
+.task {
+  margin: 0!important;
+  padding-left: 5px!important;
+  color: #0E0C42;
+}

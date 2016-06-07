@@ -16,6 +16,7 @@
     letter-spacing: 4px;
     font-size: 40px;
     margin-left: 30px;
+    padding-top: 40px;
 }
 
 .tasksBox h2 {
@@ -27,12 +28,20 @@
     padding-top: 10px;
 }
 
-.changeStudentShedule {
-    color: #00355D;
-    margin-left: 36px;
+.tasksBox a {
+    text-decoration: none!important;
+    color: black;
 }
 
-.viewWeeklyScheduleBtn{
+.tasksBox a:hover {
+    color: #54AAEC;
+}
+
+.basicInfo{
+	background: #C7E4F3!important;
+}
+
+.saveBasicInfoBtn{
     background: #54AAEC;
     color: white;
     display: inline-block;
@@ -53,17 +62,15 @@
     background-image: none;
     border: 1px solid transparent;
     border-radius: 2px;
-    margin: 27px 30px;
-    width: 66%;
+    font-family: Roboto;
+    margin: 20px 0;
 
 }
 
-hr {
-    display: block;
-    margin-top: 0.5em;
-    margin-bottom: 0.5em;
-    margin-left: auto;
-    margin-right: auto;
-    border-style: inset;
-    border-width: 1px;
+.textArea {
+	width: 60%;
+	margin-left: auto;
+	margin-right: auto;
+	background:#F7F7F7;
+	border-radius: 10px;
 }

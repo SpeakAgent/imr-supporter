@@ -1,14 +1,81 @@
+.currentProfile {
+    background:#fff;
+    margin:0 auto;
+    width: 95%;
+}
+
 .tasksBox {
-    height: 260px;
-    background-image: url('../../img/bg/bg-blue-tile.png');
+    background-image: url('../../img/bg/bg-gray-tile.png');
+    position: relative;
+    padding: 30px 0;
 }
 
 .tasksBox h1 {
-    margin: 0 11%;
-    font-weight: bold;
     color: #00355D;
-    line-height: 40px;
+    font-weight: bold;
+    letter-spacing: 4px;
     font-size: 40px;
+    margin-left: 30px;
+    padding-top: 40px;
+}
+
+.tasksBox h2 {
+    color: #00355D;
+    font-weight: bold;
+    letter-spacing: 4px;
+    font-size: 32px;
+    margin-left: 30px;
+    padding-top: 10px;
+}
+
+.tasksBox a {
+    text-decoration: none!important;
+    color: black;
+}
+
+.tasksBox a:hover {
+    color: #54AAEC;
+}
+
+.table{
+    margin-left: 10px;
+}
+
+.showMoreTasks{
+    color: #54AAEC!important;
+}
+
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+    border-bottom: 1px solid #ddd!important;
+}
+
+.table .tdTitle{
+    font-size: 20px;
+}
+
+.newTaskBtn{
+    background: #54AAEC;
+    color: white;
+    display: inline-block;
+    padding: 9px 22px;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    margin: 0 30px;
 }
 
 .scheduleBox {

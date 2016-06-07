@@ -1,23 +1,35 @@
-.profilesBox {
-    background-image: url('../../img/bg/bg-gray-tile.png');
-    text-align: center;
-    position: relative;
-    padding: 30px 0;
-}
-
-.profilesBox h1 {
-    color: #00355D;
-    font-weight: bold;
-    letter-spacing: 4px;
-    font-size: 40px;
-}
-
 .currentProfile {
     background:#fff;
     margin:0 auto;
     width: 95%;
 }
 
-.studentList {
-    list-style-type: none;
+.tasksBox {
+    background-image: url('../../img/bg/bg-gray-tile.png');
+    position: relative;
+    padding: 30px 0;
+}
+
+.tasksBox h1 {
+    color: #00355D;
+    font-weight: bold;
+    letter-spacing: 4px;
+    font-size: 40px;
+    margin-left: 30px;
+}
+
+.tasksBox h2 {
+    color: #00355D;
+    font-weight: bold;
+    letter-spacing: 4px;
+    font-size: 32px;
+    margin-left: 30px;
+    padding-top: 10px;
+}
+
+.profilesBox {
+    background-image: url('../../img/bg/bg-gray-tile.png');
+    text-align: center;
+    position: relative;
+    padding: 30px 0;
 }
