@@ -67,3 +67,33 @@ hr {
     border-style: inset;
     border-width: 1px;
 }
+
+.modal-title {
+    color: #00355D;
+}
+
+.supporter-dropdown button {
+    background: #00355D;
+    color: #fff;
+    width: 65%;
+    font-size: 20px;
+    text-align: left;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
+
+.supporter-dropdown span {
+    font-size: 25px;
+}
+
+.caret {
+    border-top: 10px dashed !important;
+    border-right: 10px solid transparent !important;
+    border-left: 10px solid transparent !important;
+}
+
+.supporter-dropdown ul {
+    width: 65%;
+    padding: 10px;
+    color: #00355D;
+}

@@ -33,3 +33,71 @@
     position: relative;
     padding: 30px 0;
 }
+
+.profile-accordion div {
+    background-color: #fff !important;
+}
+
+.profile-accordion a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.profile-acc img {
+    width: 6%;
+    margin-right: 25px;
+}
+
+.profile-acc i {
+    font-weight: normal;
+    color: #9e9e9e;
+    font-size: 25px;
+    float: right;
+    margin: 25px 0 0 0;
+    cursor: pointer;
+}
+
+.emergency-acc img {
+    width: 6%;
+    margin-right: 25px;
+}
+
+.emergency-acc i {
+    font-weight: normal;
+    color: #9e9e9e;
+    font-size: 25px;
+    float: right;
+    margin: 25px 0 0 0;
+    cursor: pointer;
+}
+
+.profile-form {
+    margin-left: 3%;
+    width: 90%;
+}
+
+.profile-form label {
+    color: #555;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.profile-form button {
+    float: right;
+}
+
+.profile-form h4 {
+    color: #00355D;
+}
+
+.form-heading {
+    padding: 10px 0 0;
+    border-bottom: 1px solid #00355D;
+    margin: 0 0 15px;
+}
+
+
+.changeStudentShedule {
+    color: #00355D;
+    margin-left: 36px;
+}
