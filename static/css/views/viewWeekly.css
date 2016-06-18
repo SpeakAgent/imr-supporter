@@ -1,40 +1,5 @@
-.currentProfile {
-    background:#fff;
-    margin:0 auto;
-    width: 95%;
-}
-
-.tasksBox {
-    background-image: url('../../img/bg/bg-gray-tile.png');
-    position: relative;
-    padding: 30px 0;
-}
-
-.tasksBox h1 {
-    color: #00355D;
-    font-weight: bold;
-    letter-spacing: 4px;
-    font-size: 40px;
-    margin-left: 30px;
-    padding-top: 40px;
-}
-
-.tasksBox h2 {
-    color: #00355D;
-    font-weight: bold;
-    letter-spacing: 4px;
-    font-size: 32px;
-    margin-left: 30px;
-    padding-top: 10px;
-}
-
-.tasksBox a {
-    text-decoration: none!important;
-    color: black;
-}
-
-.tasksBox a:hover {
-    color: #54AAEC;
+body {
+    background-image: url(../../img/bg/bg-gray-tile.png);
 }
 
 .nav-pills>li.active>a {
@@ -78,4 +43,10 @@
     margin-left: 20px;
     margin-top: -26px;
     position: absolute;
+}
+
+footer{
+    background-color: #fff;
+    height: auto;
+    padding: 3rem;
 }

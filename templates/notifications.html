@@ -3,22 +3,22 @@
 <div class="container" ng-controller="notificationsController">
 	<div class="border row">
 		<div class="border col-md-12">
-			<div class="tasksBox">
-				<div class="currentProfile">
+			<div class="wrapperBox">
+				<div class="currentBox">
 					<h1>Notifications</h1>
-					<button ui-sref="createTask" class="newTaskBtn" style="margin-bottom:20px">ALL STUDENTS</button>
-					<button ui-sref="createTask" class="innewTaskBtn" style="margin-bottom:20px">BEN GRIMLEY</button>
-					<button ui-sref="createTask" class="innewTaskBtn" style="margin-bottom:20px">CHRIS RAYMOND</button>
-					<button ui-sref="createTask" class="innewTaskBtn" style="margin-bottom:20px">MAL JONES</button>
-					<button ui-sref="createTask" class="innewTaskBtn" style="margin-bottom:20px">PETE GUTIERREZ</button>
+					<button class="newTaskBtn active" style="margin-bottom:20px">ALL STUDENTS</button>
+					<button class="newTaskBtn" style="margin-bottom:20px">BEN GRIMLEY</button>
+					<button class="newTaskBtn" style="margin-bottom:20px">CHRIS RAYMOND</button>
+					<button class="newTaskBtn" style="margin-bottom:20px">MAL JONES</button>
+					<button class="newTaskBtn" style="margin-bottom:20px">PETE GUTIERREZ</button>
 				</div>
 			</div>
 		</div>
 	</div>
 	<div class="border row">
 		<div class="border col-md-12">
-			<div class="tasksBox" style="padding:0 0 30px 0!important;">
-				<div class="currentProfile">
+			<div class="wrapperBox" style="padding:0 0 30px 0!important;">
+				<div class="currentBox">
 					<div class="container">
 						<h2 style="color:red;">Alerts</h2>
 						<h4 style="margin-left:30px">TODAY</h4>
@@ -155,5 +155,7 @@
 			</div>
 		</div>
 	</div>
+    <!-- Footer -->
+    <ng-include src="'templates/includes/footer.html'"></ng-include>
 </div>
 <!-- /.container -->

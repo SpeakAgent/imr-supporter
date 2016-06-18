@@ -1,39 +1,47 @@
-.currentProfile {
-    background:#fff;
-    margin:0 auto;
-    width: 95%;
+body {
+    background-image: url(../../img/bg/bg-gray-tile.png);
 }
 
-.tasksBox {
-    background-image: url('../../img/bg/bg-gray-tile.png');
-    position: relative;
-    padding: 30px 0;
+p {
+    font-family: "San Francisco";
+    color: #163850;
+    font-size: 11px;
 }
 
-.tasksBox h1 {
-    color: #00355D;
-    font-weight: bold;
-    letter-spacing: 4px;
-    font-size: 40px;
-    margin-left: 30px;
+span.date {
+    margin-left:1px;
+    margin-top:-50px;
 }
 
-.tasksBox h2 {
-    color: #00355D;
-    font-weight: bold;
-    letter-spacing: 4px;
-    font-size: 32px;
-    margin-left: 30px;
-    padding-top: 10px;
+span.startTime {
+    margin-left:-25px;
+    margin-top:-50px;
+}
+
+span.endTime {
+    margin-left: -15px;
+    margin-top: -50px;
+}
+
+.checkBox span {
+    margin-top:20px;
+    font-size: 14px;
+    float: right;
+    color: #163850;
+}
+
+.checkBox input {
+    transform: scale(2.0);
+    margin: 20% 0 0 -20%;
 }
 
 .changeStudentShedule {
-    color: #00355D;
+    color: #00486E;
     margin-left: 36px;
 }
 
 .viewWeeklyScheduleBtn{
-    background: #54AAEC;
+    background: #20a7e1;
     color: white;
     display: inline-block;
     padding: 9px 22px;
@@ -55,7 +63,10 @@
     border-radius: 2px;
     margin: 27px 30px;
     width: 66%;
+}
 
+.viewWeeklyScheduleBtn:hover {
+    background: #00486e;
 }
 
 hr {
@@ -69,11 +80,11 @@ hr {
 }
 
 .modal-title {
-    color: #00355D;
+    color: #00486E;
 }
 
 .supporter-dropdown button {
-    background: #00355D;
+    background: #00486E;
     color: #fff;
     width: 65%;
     font-size: 20px;
@@ -95,5 +106,11 @@ hr {
 .supporter-dropdown ul {
     width: 65%;
     padding: 10px;
-    color: #00355D;
+    color: #00486E;
+}
+
+footer{
+    background-color: #fff;
+    height: auto;
+    padding: 3rem;
 }

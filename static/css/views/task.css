@@ -1,40 +1,5 @@
-.currentProfile {
-    background:#fff;
-    margin:0 auto;
-    width: 95%;
-}
-
-.tasksBox {
-    background-image: url('../../img/bg/bg-gray-tile.png');
-    position: relative;
-    padding: 30px 0;
-}
-
-.tasksBox h1 {
-    color: #00355D;
-    font-weight: bold;
-    letter-spacing: 4px;
-    font-size: 40px;
-    margin-left: 30px;
-    padding-top: 40px;
-}
-
-.tasksBox h2 {
-    color: #00355D;
-    font-weight: bold;
-    letter-spacing: 4px;
-    font-size: 32px;
-    margin-left: 30px;
-    padding-top: 10px;
-}
-
-.tasksBox a {
-    text-decoration: none!important;
-    color: black;
-}
-
-.tasksBox a:hover {
-    color: #54AAEC;
+body {
+    background-image: url(../../img/bg/bg-gray-tile.png);
 }
 
 .table{
@@ -42,7 +7,7 @@
 }
 
 .showMoreTasks{
-    color: #54AAEC!important;
+    color: #20a7e1 !important;
 }
 
 
@@ -54,30 +19,6 @@
     font-size: 20px;
 }
 
-.newTaskBtn{
-    background: #54AAEC;
-    color: white;
-    display: inline-block;
-    padding: 9px 22px;
-    font-size: 11px;
-    font-weight: 400;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-image: none;
-    border: 1px solid transparent;
-    border-radius: 2px;
-    margin: 0 30px;
-}
-
 .scheduleBox {
     height: 260px;
     background-image: url('../../img/bg/bg-yellow-tile.png');
@@ -86,7 +27,7 @@
 .scheduleBox h1 {
     margin: 0 11%;
     font-weight: bold;
-    color: #00355D;
+    color: #00486E;
     line-height: 40px;
     font-size: 40px;
 }
@@ -94,7 +35,7 @@
 h1 i.fa {
     font-size: 50px;
     color: white;
-    background: #03355D;
+    background: #00486E;
     border-radius: 55px;
     height: 100px;
     width: 100px;
@@ -114,7 +55,7 @@ h1.boxTitle {
 }
 
 .activity h2 {
-    color: #03355D;
+    color: #00486E;
     font-weight: bold;
 }
 
@@ -169,7 +110,13 @@ footer{
 }
 
 .info h6 {
-    color: #03355D;
+    color: #00486E;
     font-weight: bold;
     letter-spacing: 1px;
+}
+
+footer{
+    background-color: #fff;
+    height: auto;
+    padding: 3rem;
 }

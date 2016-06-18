@@ -1,37 +1,11 @@
-.currentProfile {
-    background:#fff;
-    margin:0 auto;
-    width: 95%;
+body {
+    background-image: url(../../img/bg/bg-gray-tile.png);
 }
 
-.tasksBox {
-    background-image: url('../../img/bg/bg-gray-tile.png');
-    position: relative;
-    padding: 30px 0;
-}
-
-.tasksBox h1 {
-    color: #00355D;
-    font-weight: bold;
-    letter-spacing: 4px;
-    font-size: 40px;
-    margin-left: 30px;
-}
-
-.tasksBox h2 {
-    color: #00355D;
-    font-weight: bold;
-    letter-spacing: 4px;
-    font-size: 32px;
-    margin-left: 30px;
-    padding-top: 10px;
-}
-
-.profilesBox {
-    background-image: url('../../img/bg/bg-gray-tile.png');
-    text-align: center;
-    position: relative;
-    padding: 30px 0;
+p {
+    font-family: "San Francisco";
+    color: #163850;
+    font-size: 11px;
 }
 
 .profile-accordion div {
@@ -87,17 +61,23 @@
 }
 
 .profile-form h4 {
-    color: #00355D;
+    color: #00486E;
 }
 
 .form-heading {
     padding: 10px 0 0;
-    border-bottom: 1px solid #00355D;
+    border-bottom: 1px solid #00486E;
     margin: 0 0 15px;
 }
 
 
 .changeStudentShedule {
-    color: #00355D;
+    color: #00486E;
     margin-left: 36px;
+}
+
+footer{
+    background-color: #fff;
+    height: auto;
+    padding: 3rem;
 }

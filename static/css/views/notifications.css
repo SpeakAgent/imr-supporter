@@ -1,76 +1,20 @@
-.currentProfile {
-    background:#fff;
-    margin:0 auto;
-    width: 95%;
+body {
+    background-image: url(../../img/bg/bg-gray-tile.png);
 }
 
-.tasksBox {
-    background-image: url('../../img/bg/bg-gray-tile.png');
-    position: relative;
-    padding: 30px 0;
-}
-
-.tasksBox h1 {
-    color: #00355D;
-    font-weight: bold;
-    letter-spacing: 4px;
-    font-size: 40px;
-    margin-left: 30px;
-}
-
-.tasksBox h2 {
-    color: #00355D;
-    font-weight: bold;
-    letter-spacing: 4px;
-    font-size: 32px;
-    margin-left: 30px;
-    padding-top: 10px;
+p {
+    font-family: "San Francisco";
+    color: #163850;
+    font-size: 11px;
+    line-height: 12px;
 }
 
 .newTaskBtn{
-    background: #54AAEC;
-    color: white;
-    display: inline-block;
-    padding: 9px 22px;
-    font-size: 11px;
-    font-weight: 400;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-image: none;
-    border: 1px solid transparent;
-    border-radius: 2px;
-    margin: 0 30px;
+    background: #919191;
 }
 
-.innewTaskBtn{
-    background: #919191;
-    color: white;
-    display: inline-block;
-    padding: 9px 22px;
-    font-size: 11px;
-    font-weight: 400;
-    line-height: 1.42857143;
-    text-align: center;
-    white-space: nowrap;
-    vertical-align: middle;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-image: none;
-    border: 1px solid transparent;
-    border-radius: 2px;
-    margin: 0 30px;
+footer{
+    background-color: #fff;
+    height: auto;
+    padding: 3rem;
 }

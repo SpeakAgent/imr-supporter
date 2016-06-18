@@ -1,42 +1,38 @@
 .tasksBox {
     height: 260px;
     background-image: url('../../img/bg/bg-blue-tile.png');
+    cursor: pointer;
 }
 
 .tasksBox h1 {
     margin: 0 11%;
     font-weight: bold;
-    color: #00355D;
+    color: #00486E;
     line-height: 40px;
-    font-size: 40px;
+    font-size: 38px;
 }
 
 .scheduleBox {
     height: 260px;
     background-image: url('../../img/bg/bg-yellow-tile.png');
+    cursor: pointer;
 }
 
 .scheduleBox h1 {
     margin: 0 11%;
     font-weight: bold;
-    color: #00355D;
+    color: #00486E;
     line-height: 40px;
-    font-size: 40px;
+    font-size: 38px;
 }
 
-h1 i.fa {
-    font-size: 50px;
-    color: white;
-    background: #03355D;
+h1 img {
     border-radius: 55px;
-    height: 100px;
     width: 100px;
-    padding: 25px 0 0 0;
     float: left;
     position: relative;
     top: 80px;
     left: 25px;
-    text-align: center;
 }
 
 h1.boxTitle {
@@ -47,7 +43,7 @@ h1.boxTitle {
 }
 
 .activity h2 {
-    color: #03355D;
+    color: #00486E;
     font-weight: bold;
 }
 
@@ -59,8 +55,9 @@ h1.boxTitle {
 ul.feed {
     list-style: none;
     padding: 0 15px;
-    font-size: 20px;
-    font-weight: bold;
+    font-size: 18px;
+    line-height: 20px;
+    color: #555555;
 }
 
 .feed li {
@@ -80,29 +77,7 @@ ul.feed {
     font-weight: bold;
     font-size: 16px;
     float: right;
-    margin: 0 5% 0 0;
-}
-
-footer{
-    background-color: #ebebed;
-    height: auto;
-    padding: 3rem;
-}
-
-.foot img {
-    width: 200px;
-    float: right;
-}
-
-.info h4 {
-    color: #20A7E1;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 3px;
-}
-
-.info h6 {
-    color: #03355D;
-    font-weight: bold;
-    letter-spacing: 1px;
+    margin: 10% 5% 0 0;
+    color: #555555;
+    cursor: pointer;
 }

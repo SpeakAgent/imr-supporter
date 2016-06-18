@@ -12,9 +12,9 @@ mainApp.config(function($stateProvider, $urlRouterProvider) {
       css: 'static/css/views/dashboard.css'
     }
   })
-  .state('task', {
-    url: "/task",
-    templateUrl: 'templates/task.html',
+  .state('tasks', {
+    url: "/tasks",
+    templateUrl: 'templates/tasks.html',
     data: {
       css: 'static/css/views/task.css'
     }

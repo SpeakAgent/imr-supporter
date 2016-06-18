@@ -1,0 +1,94 @@
+@font-face {
+  font-family: "San Francisco";
+  font-weight: 700;
+  src: url("https://applesocial.s3.amazonaws.com/assets/styles/fonts/sanfrancisco/sanfranciscodisplay-bold-webfont.woff");
+}
+
+.currentBox {
+    background:#fff;
+    margin:0 auto;
+}
+
+.wrapperBox {
+    position: relative;
+    padding: 30px 0;
+}
+
+.wrapperBox h1 {
+    color: #00486E;
+    font-weight: bold;
+    font-size: 36px;
+    line-height: 48px;
+    margin-left: 30px;
+    padding-top: 40px;
+}
+
+.wrapperBox h2 {
+    color: #00486E;
+    font-weight: bold;
+    font-size: 28px;
+    line-height: 32px;
+    margin-left: 30px;
+    padding-top: 10px;
+}
+
+.wrapperBox a {
+    text-decoration: none !important;
+    color: black;
+}
+
+.wrapperBox a:hover {
+    color: #54AAEC;
+}
+
+.newTaskBtn{
+    background: #20a7e1;
+    color: white;
+    display: inline-block;
+    padding: 9px 22px;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    margin: 0 30px;
+}
+
+.newTaskBtn:hover {
+  background: #00486e;
+}
+
+footer{
+    background-color: #ebebed;
+    height: auto;
+    padding: 3rem;
+}
+
+.foot img {
+    width: 200px;
+    float: right;
+}
+
+.info h4 {
+    color: #20A7E1;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 3px;
+}
+
+.info h6 {
+    color: #00486E;
+    font-weight: bold;
+    letter-spacing: 1px;
+}

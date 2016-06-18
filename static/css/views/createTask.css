@@ -1,48 +1,59 @@
-.currentProfile {
-    background:#fff;
-    margin:0 auto;
-    width: 95%;
+body {
+    background-image: url(../../img/bg/bg-gray-tile.png);
 }
 
-.tasksBox {
-    background-image: url('../../img/bg/bg-gray-tile.png');
-    position: relative;
-    padding: 30px 0;
+p {
+    font-family: "San Francisco";
+    color: #163850;
+    font-size: 11px;
+    line-height: 12px;
 }
 
-.tasksBox h1 {
-    color: #00355D;
-    font-weight: bold;
-    letter-spacing: 4px;
-    font-size: 40px;
-    margin-left: 30px;
-    padding-top: 40px;
+label {
+    font-family: "San Francisco";
+    color: #163850;
+    font-size: 11px;
+    line-height: 12px;
 }
 
-.tasksBox h2 {
-    color: #00355D;
-    font-weight: bold;
-    letter-spacing: 4px;
-    font-size: 32px;
-    margin-left: 30px;
-    padding-top: 10px;
+span.date {
+    margin-left:1px;
+    margin-top:-50px;
 }
 
-.tasksBox a {
-    text-decoration: none!important;
-    color: black;
+span.startTime {
+    margin-left:-25px;
+    margin-top:-50px;
 }
 
-.tasksBox a:hover {
-    color: #54AAEC;
+span.endTime {
+    margin-left: -15px;
+    margin-top: -50px;
 }
 
-.basicInfo{
-	background: #C7E4F3!important;
+#inputEmail {
+    margin-left: 60px;
+    width: 30%;
+}
+
+#inputURL {
+    margin-left: 60px;
+    width: 30%;
+}
+
+.control-label {
+    text-align: left !important;
+    margin-left: 60px;
+}
+
+.cat-dropdown ul {
+    width: 65%;
+    padding: 10px;
+    margin-left: -30px;
 }
 
 .saveBasicInfoBtn{
-    background: #54AAEC;
+    background: #20a7e1;
     color: white;
     display: inline-block;
     padding: 9px 22px;
@@ -62,15 +73,44 @@
     background-image: none;
     border: 1px solid transparent;
     border-radius: 2px;
-    font-family: Roboto;
     margin: 20px 0;
 
 }
 
+.checkBox p {
+    margin-top:24px;
+    font-size: 14px;
+    float: right;
+}
+
+.checkBox input {
+    transform: scale(2.0);
+    margin: 20% 0 0 -20%;
+}
+
+.checkBoxes input {
+    transform: scale(2.0);
+    position: relative;
+    left: 275%;
+    margin-top: 10px;
+}
+
 .textArea {
 	width: 60%;
-	margin-left: auto;
+	margin-left: 202px;
 	margin-right: auto;
 	background:#F7F7F7;
 	border-radius: 10px;
+}
+
+.form-active-blue {
+    background: #C7E4F3;
+    height: auto;
+    padding-bottom: 50px
+}
+
+footer{
+    background-color: #fff;
+    height: auto;
+    padding: 3rem;
 }
