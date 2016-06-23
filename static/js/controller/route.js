@@ -2,9 +2,16 @@ var mainApp = angular.module('mainApp', ['ui.router', 'uiRouterStyles', 'ui.boot
 
 mainApp.config(function($stateProvider, $urlRouterProvider) {
   // For any unmatched url, redirect to /
-  $urlRouterProvider.otherwise("/dashboard");
+  $urlRouterProvider.otherwise("/login");
 
   $stateProvider
+  .state('login', {
+    url: "/login",
+    templateUrl: 'templates/login.html',
+    data: {
+      css: 'static/css/views/login.css'
+    }
+  })
   .state('dashboard', {
     url: "/dashboard",
     templateUrl: 'templates/dashboard.html',
