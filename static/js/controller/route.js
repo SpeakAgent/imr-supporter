@@ -1,4 +1,4 @@
-var mainApp = angular.module('mainApp', ['ui.router', 'uiRouterStyles', 'ui.bootstrap']);
+var mainApp = angular.module('mainApp', ['ui.router', 'uiRouterStyles', 'ui.bootstrap', 'flow']);
 
 mainApp.config(function($stateProvider, $urlRouterProvider) {
   // For any unmatched url, redirect to /

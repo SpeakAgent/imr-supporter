@@ -109,6 +109,31 @@ span.endTime {
     padding-bottom: 50px
 }
 
+.modal-body p {
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.modal-footer {
+    text-align: center !important;
+    border-top: none !important;
+}
+
+.modal-footer a {
+    margin: 0 30px;
+}
+
+a.cancel{
+    color: #919191;
+}
+
+.drop {
+    padding: 15px;
+    border: 2px #f1f1f1 dashed;
+    border-radius: 5px;
+    line-height: 34px;
+}
+
 footer{
     background-color: #fff;
     height: auto;

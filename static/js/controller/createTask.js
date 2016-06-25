@@ -23,4 +23,6 @@ mainApp.controller('createTaskController', function($scope, $location) {
     $('.form-active-adding').on('focus blur', function() {
         $('#adding').toggleClass("form-active-blue");
     });
+
+    $('.fa-calendar-o').datepicker('show');
 });
