@@ -1,4 +1,9 @@
-var mainApp = angular.module('mainApp', ['ui.router', 'uiRouterStyles', 'ui.bootstrap', 'flow']);
+var mainApp = angular.module('mainApp', ['ui.router', 'uiRouterStyles', 'ui.bootstrap', 'ngAnimate', 'flow']);
+
+mainApp.config(function (datepickerConfig, datepickerPopupConfig) {
+      datepickerConfig.showWeeks = false;
+      datepickerPopupConfig.toggleWeeksText = false;
+    });
 
 mainApp.config(function($stateProvider, $urlRouterProvider) {
   // For any unmatched url, redirect to /

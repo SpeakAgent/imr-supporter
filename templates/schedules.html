@@ -66,21 +66,33 @@
                             </div>
                             <div class="col-md-1" style="margin-top: -12px; margin-left:40px">
                                 <span class="date">DATE</span><br>
-                                <i class="fa fa-calendar-o fa-3x" aria-hidden="true"></i>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <p class="input-group fake-input">
+                                            <input type="text" class="form-control" current-text="Today" clear-text="Clear" close-on-date-selection="false" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min-date="minDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" style="width:0; padding:0" />
+                                            <span class="input-group-btn">
+                                                <button type="button" class="btn btn-default fake-button" ng-click="open($event)"><i class="fa fa-calendar-o fa-3x" aria-hidden="true"></i></button>
+                                            </span>
+                                        </p>
+                                    </div>
+                                </div>
                             </div>
                             <div class="col-md-1" style="margin-top: -12px; margin-left:40px">
                                 <span class="startTime">START TIME</span><br>
-                                <i class="fa fa-clock-o fa-3x" aria-hidden="true"></i>
+                                <button popover-template="dynamicPopover.templateUrl" popover-title="{{dynamicPopover.title}}" popover-placement="bottom" type="button" class="btn btn-default fake-button"><i class="fa fa-clock-o fa-3x" aria-hidden="true"></i></button>
                             </div>
                             <div class="col-md-1" style="margin-top: -12px; margin-left:40px">
                                 <span class="endTime">END TIME</span><br>
-                                <i class="fa fa-clock-o fa-3x" aria-hidden="true"></i>
+                                <button popover-template="dynamicPopover.templateUrl" popover-title="{{dynamicPopover.title}}" popover-placement="bottom" type="button" class="btn btn-default fake-button"><i class="fa fa-clock-o fa-3x" aria-hidden="true"></i></button>
                             </div>
                             <div class="col-md-3">
                                 <div class="checkBox">
                                     <label>
-                                        <input type="checkbox" value="">
-                                        <span>Make recurring?</span>
+                                        <input type="checkbox" id='check'> Make recurring?
+                                        <div class="webui-popover-content recurrentBox">
+                                            <input type="checkbox"> Every Week <br />
+                                            <input type="checkbox"> Every Day
+                                        </div>
                                     </label>
                                 </div>
                             </div>
@@ -183,7 +195,6 @@
                             </div>
                             <div class="col-md-1" style="margin-top: -12px; margin-left:40px">
                                 <span class="date">DATE</span><br>
-                                <i class="fa fa-calendar-o fa-3x" aria-hidden="true"></i>
                             </div>
                             <div class="col-md-1" style="margin-top: -12px; margin-left:40px">
                                 <span class="startTime">START TIME</span><br>
@@ -272,24 +283,24 @@
 
 <!-- Select Supporter Modal -->
 <div class="modal fade supporter-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
-  <div class="modal-dialog modal-lg">
-    <div class="modal-content">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-            <h1 class="modal-title" id="myModalLabel">Choose a Supporter for this student's task.</h1>
-        </div>
-        <div class="modal-body">
-            <div class="dropdown supporter-dropdown">
-                <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Select Supporter
-                    <span class="caret"></span>
-                </button>
-                <ul class="dropdown-menu" aria-labelledby="dLabel">
-                    <li>Cate Watson</li>
-                </ul>
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h1 class="modal-title" id="myModalLabel">Choose a Supporter for this student's task.</h1>
+            </div>
+            <div class="modal-body">
+                <div class="dropdown supporter-dropdown">
+                    <button id="dLabel" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        Select Supporter
+                        <span class="caret"></span>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dLabel">
+                        <li>Cate Watson</li>
+                    </ul>
+                </div>
             </div>
         </div>
     </div>
-  </div>
 </div>
 <!-- End Select Supporter Modal -->
