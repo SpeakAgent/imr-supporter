@@ -120,3 +120,69 @@ footer{
     height: auto;
     padding: 3rem;
 }
+
+/** Preview Task **/
+
+@media (min-width: 768px) {
+    .modal-sm {
+        width: 320px !important;
+        height: 568px !important;
+        overflow: auto;
+    }
+}
+
+.modal-header {
+    border-bottom: none !important;
+}
+
+.modal-body {
+    padding: 0 20px !important;
+}
+
+h4#myModalLabel {
+    text-align: center;
+    font-size: 14px;
+    color: #919191;
+}
+
+i.fa.fa-eye {
+    color: #20A7E1;
+}
+
+.task-title {
+    height: 100px;
+}
+
+.task-title img {
+    width: 80px;
+    height: 80px;
+    float: left;
+    margin-right: 10px;
+}
+
+.task-title h3 {
+    color: #00486E;
+    font-size: 20px;
+    padding-top: 10px;
+}
+
+.task-item {
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.task-item img {
+    width: 80px;
+    height: 80px;
+    float: left;
+    margin-right: 10px;
+}
+
+.task-item p {
+    color: #00486E;
+    margin: 0;
+}
+
+p.task-text {
+    color: #919191;
+}
