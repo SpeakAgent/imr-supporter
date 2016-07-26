@@ -35,6 +35,7 @@
 .wrapperBox a {
     text-decoration: none !important;
     color: black;
+    cursor: pointer;
 }
 
 .wrapperBox a:hover {
