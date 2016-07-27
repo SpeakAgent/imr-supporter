@@ -32,7 +32,7 @@ mainApp.config(function($stateProvider, $urlRouterProvider) {
     }
   })
   .state('createTask', {
-    url: "/createTask",
+    url: "/tasks/create",
     templateUrl: 'templates/createTask.html',
     data: {
       css: 'static/css/views/createTask.css'
