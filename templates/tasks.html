@@ -15,7 +15,7 @@
                                 <tr ng-repeat="task in tasks">
                                     <td class="tdTitle">{{ task.title }}</td>
                                     <td></td>
-                                    <td class="text-right"><a href="">PREVIEW</a> | <a href="">EDIT</a></td>
+                                    <td class="text-right"><a data-toggle="modal" data-target=".preview-modal">PREVIEW</a> | <a href="">EDIT</a></td>
                                 </tr>
                             </tbody>
                         </table>
@@ -103,7 +103,7 @@
             <div class="modal-body">
                 <div class="task-title">
                     <img src="static/img/icons/mt.png">
-                    <h3>Can Crushing</h3>
+                    <h3>{{ task.title }}</h3>
                 </div>
 
                 <div class="task-item">
