@@ -1,5 +1,13 @@
-mainApp.controller('schedulesController', function($scope) {
-    console.log("schedules Controller");
+mainApp.controller('createTaskController', function($scope, $location) {
+    console.log("create task Controller");
+
+    $scope.isActive = function (routes) {
+        angular.forEach(routes, function(route){
+            if(route === $location.path()) {
+                return true;
+            }
+        });
+    }
 
     $scope.today = function() {
         $scope.dt = new Date();
@@ -76,4 +84,18 @@ mainApp.controller('schedulesController', function($scope) {
             }
         });
     })
+
+    $('.form-active-basic').on('focus blur', function() {
+        $('#basic').toggleClass("form-active-blue");
+    });
+
+    $('.form-active-special').on('focus blur', function() {
+        $('#special').toggleClass("form-active-blue");
+    });
+
+    $('.form-active-adding').on('focus blur', function() {
+        $('#adding').toggleClass("form-active-blue");
+    });
+
+    $('.fa-calendar-o').datepicker('show');
 });

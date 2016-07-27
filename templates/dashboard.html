@@ -4,12 +4,12 @@
 
     <div class="border row">
         <div class="border col-md-6">
-            <div class="tasksBox">
-                <h1><i class="fa fa-list-ol" aria-hidden="true"></i></h1>
+            <div ui-sref="tasks" class="tasksBox">
+                <h1><img src="static/img/icons/tasks.png" /></h1>
                 <h1 class="boxTitle">Create and Edit Tasks</h1>
             </div>
-            <div class="scheduleBox">
-                <h1><i class="fa fa-calendar-o" aria-hidden="true"></i></h1>
+            <div ui-sref="schedules" class="scheduleBox">
+                <h1><img src="static/img/icons/schedule.png" /></h1>
                 <h1 class="boxTitle">Create and Edit Schedules</h1>
             </div>
         </div>
@@ -33,26 +33,6 @@
     </div>
 
     <!-- Footer -->
-    <footer>
-        <div class="border row">
-            <div class="border col-md-6">
-                <div class="info">
-                    <h4>Information</h4>
-                    <h6>About IM Ready</h6>
-                    <h6>Maryland Learning Links</h6>
-                </div>
-            </div>
-            <div class="border col-md-3">
-                <div class="foot">
-                    <img src="static/img/logos/logoCTE.png" alt="CTE Logo" />
-                </div>
-            </div>
-            <div class="border col-md-3">
-                <div class="foot">
-                    <img src="static/img/logos/logoMSDE.png" alt="MSDE Logo" />
-                </div>
-            </div>
-        </div>
-    </footer>
+    <ng-include src="'templates/includes/footer.html'"></ng-include>
 </div>
 <!-- /.container -->

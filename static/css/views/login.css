@@ -1,0 +1,115 @@
+* {
+  -ms-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+html,
+body {
+  width: 100%;
+  height: 100%;
+  font-family: "San Francisco";
+  font-weight: 200;
+  background: url("../../img/bg/bg.jpeg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+.login {
+  position: relative;
+  top: 210px;
+  right: 10%;
+  width: 380px;
+  display: table;
+  margin: 0 auto 0 auto;
+  background: #26a6df;
+}
+
+.input {
+  position: relative;
+  width: 90%;
+  margin: 15px auto;
+}
+
+.input span {
+  position: absolute;
+  display: block;
+  color: #d4d4d4;
+  left: 10px;
+  top: 8px;
+  font-size: 20px;
+}
+
+.input input {
+  width: 100%;
+  padding: 10px 5px 10px 40px;
+  display: block;
+  border: 1px solid #EDEDED;
+  border-radius: 25px;
+  transition: 0.2s ease-out;
+  color: #a1a1a1;
+}
+
+.input input:focus {
+  padding: 10px 5px 10px 10px;
+  outline: 0;
+  border-color: #ecca1b;
+}
+
+.f-psw p{
+  color: #ecca1b !important;
+  font-family: "San Francisco";
+  letter-spacing: 1px;
+  margin-left: 15px;
+}
+
+.submit {
+  width: 120px;
+  height: 45px;
+  display: block;
+  margin: 0 auto -15px 30px;
+  background: #26a6df;
+  border-radius: 0 0 20px 20px;
+  color: #fff;
+  font-size: 18px;
+  cursor: pointer;
+  transition: 0.2s ease-out;
+}
+
+.submit:hover,
+.submit:focus {
+}
+
+.feedback {
+  position: absolute;
+  bottom: -70px;
+  width: 100%;
+  text-align: center;
+  color: #fff;
+  background: #2ecc71;
+  padding: 10px 0;
+  font-size: 12px;
+  display: none;
+  opacity: 0;
+}
+
+.feedback:before {
+  bottom: 100%;
+  left: 50%;
+  border: solid transparent;
+  content: "";
+  height: 0;
+  width: 0;
+  position: absolute;
+  pointer-events: none;
+  border-color: rgba(46, 204, 113, 0);
+  border-bottom-color: #2ecc71;
+  border-width: 10px;
+  margin-left: -10px;
+}

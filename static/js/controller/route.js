@@ -1,38 +1,82 @@
-var mainApp = angular.module('mainApp', ['ui.router']);
+var mainApp = angular.module('mainApp', ['ui.router', 'uiRouterStyles', 'ui.bootstrap', 'ngAnimate', 'flow']);
+
+mainApp.config(function (datepickerConfig, datepickerPopupConfig) {
+      datepickerConfig.showWeeks = false;
+      datepickerPopupConfig.toggleWeeksText = false;
+    });
 
 mainApp.config(function($stateProvider, $urlRouterProvider) {
   // For any unmatched url, redirect to /
-  $urlRouterProvider.otherwise("/dashboard");
+  $urlRouterProvider.otherwise("/login");
 
   $stateProvider
+  .state('login', {
+    url: "/login",
+    templateUrl: 'templates/login.html',
+    data: {
+      css: 'static/css/views/login.css'
+    }
+  })
   .state('dashboard', {
     url: "/dashboard",
     templateUrl: 'templates/dashboard.html',
-    css: 'css/views/dashboard.css'
+    data: {
+      css: 'static/css/views/dashboard.css'
+    }
   })
-  .state('task', {
-    url: "/task",
-    templateUrl: 'templates/task.html',
-    css: 'css/views/task.css'
+  .state('tasks', {
+    url: "/tasks",
+    templateUrl: 'templates/tasks.html',
+    data: {
+      css: 'static/css/views/task.css'
+    }
+  })
+  .state('createTask', {
+    url: "/createTask",
+    templateUrl: 'templates/createTask.html',
+    data: {
+      css: 'static/css/views/createTask.css'
+    }
   })
   .state('schedules', {
     url: "/schedules",
     templateUrl: 'templates/schedules.html',
-    css: 'css/views/schedules.css'
+    data: {
+      css: 'static/css/views/schedules.css'
+    }
+  }).state('viewDay', {
+    url: "/viewDay",
+    templateUrl: 'templates/viewDay.html',
+    data: {
+      css: 'static/css/views/viewDay.css'
+    }
+  })
+  .state('viewWeekly', {
+    url: "/viewWeekly",
+    templateUrl: 'templates/viewWeekly.html',
+    data: {
+      css: 'static/css/views/viewWeekly.css'
+    }
   })
   .state('profiles', {
     url: "/profiles",
     templateUrl: 'templates/profiles.html',
-    css: 'css/views/profiles.css'
+    data: {
+      css: 'static/css/views/profiles.css'
+    }
   })
   .state('notifications', {
     url: "/notifications",
     templateUrl: 'templates/notifications.html',
-    css: 'css/views/notifications.css'
+    data: {
+      css: 'static/css/views/notifications.css'
+    }
   })
   .state('help', {
     url: "/help",
     templateUrl: 'templates/help.html',
-    css: 'css/views/help.css'
+    data: {
+      css: 'static/css/views/help.css'
+    }
   })
 });

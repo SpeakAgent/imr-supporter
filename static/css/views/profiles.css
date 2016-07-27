@@ -1,142 +1,83 @@
-/*!
- * Start Bootstrap - Heroic Features HTML Template (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
-
 body {
-    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    background-image: url(../../img/bg/bg-gray-tile.png);
 }
 
-.navbar {
-    box-shadow: 0px 0px 24px 0px rgba(0,0,0,0.13) !important;
+p {
+    font-family: "San Francisco";
+    color: #163850;
+    font-size: 11px;
 }
 
-.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus {
-    color: white !important;
-    background-color: #20A7E1 !important;
+.profile-accordion div {
+    background-color: #fff !important;
 }
 
-.navbar-brand img{
-    height: 54px;
+.profile-accordion a {
+    text-decoration: none;
+    cursor: pointer;
 }
 
-.navbar-brand {
-    padding: 0 !important;
+.profile-acc img {
+    width: 6%;
+    margin-right: 25px;
 }
 
-.navbar-inverse .navbar-nav>li>a {
-    color #919191;
-    font-size: 14px;
-    line-height: 24px;
-    text-transform: uppercase;
-}
-
-.tasksBox {
-    height: 260px;
-    background-image: url('../../img/bg/bg-blue-tile.png');
-}
-
-.tasksBox h1 {
-    margin: 0 11%;
-    font-weight: bold;
-    color: #00355D;
-    line-height: 40px;
-    font-size: 40px;
-}
-
-.scheduleBox {
-    height: 260px;
-    background-image: url('../../img/bg/bg-yellow-tile.png');
-}
-
-.scheduleBox h1 {
-    margin: 0 11%;
-    font-weight: bold;
-    color: #00355D;
-    line-height: 40px;
-    font-size: 40px;
-}
-
-h1 i.fa {
-    font-size: 50px;
-    color: white;
-    background: #03355D;
-    border-radius: 55px;
-    height: 100px;
-    width: 100px;
-    padding: 25px 0 0 0;
-    float: left;
-    position: relative;
-    top: 80px;
-    left: 25px;
-    text-align: center;
-}
-
-h1.boxTitle {
-    position: relative;
-    top: 32%;
-    left: -10%;
-    margin: 0 0 0 50%;
-}
-
-.activity h2 {
-    color: #03355D;
-    font-weight: bold;
-}
-
-.activity h3 {
-    font-weight: 500;
-    text-transform: uppercase;
-}
-
-ul.feed {
-    list-style: none;
-    padding: 0 15px;
-    font-size: 20px;
-    font-weight: bold;
-}
-
-.feed li {
-    margin: 0 0 25px 0;
-    padding: 0 0 10px 0;
-    border-bottom: 1px solid #ebebed;
-    width: 100%;
-}
-
-.feed span {
-    margin: 0 10px 0 0;
-    float: left;
+.profile-acc i {
+    font-weight: normal;
+    color: #9e9e9e;
     font-size: 25px;
+    float: right;
+    margin: 25px 0 0 0;
+    cursor: pointer;
 }
 
-.moreFeed {
-    font-weight: bold;
-    font-size: 16px;
+.emergency-acc img {
+    width: 6%;
+    margin-right: 25px;
+}
+
+.emergency-acc i {
+    font-weight: normal;
+    color: #9e9e9e;
+    font-size: 25px;
     float: right;
-    margin: 0 5% 0 0;
+    margin: 25px 0 0 0;
+    cursor: pointer;
+}
+
+.profile-form {
+    margin-left: 3%;
+    width: 90%;
+}
+
+.profile-form label {
+    color: #555;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+
+.profile-form button {
+    float: right;
+}
+
+.profile-form h4 {
+    color: #00486E;
+}
+
+.form-heading {
+    padding: 10px 0 0;
+    border-bottom: 1px solid #00486E;
+    margin: 0 0 15px;
+}
+
+
+.changeStudentShedule {
+    color: #00486E;
+    margin-left: 36px;
 }
 
 footer{
-    background-color: #ebebed;
+    background-color: #fff;
     height: auto;
     padding: 3rem;
-}
-
-.foot img {
-    width: 200px;
-    float: right;
-}
-
-.info h4 {
-    color: #20A7E1;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 3px;
-}
-
-.info h6 {
-    color: #03355D;
-    font-weight: bold;
-    letter-spacing: 1px;
 }

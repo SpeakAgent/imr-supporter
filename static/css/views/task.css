@@ -1,48 +1,22 @@
-/*!
- * Start Bootstrap - Heroic Features HTML Template (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
-
 body {
-    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    background-image: url(../../img/bg/bg-gray-tile.png);
 }
 
-.navbar {
-    box-shadow: 0px 0px 24px 0px rgba(0,0,0,0.13) !important;
+.table{
+    margin-left: 10px;
 }
 
-.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus {
-    color: white !important;
-    background-color: #20A7E1 !important;
+.showMoreTasks{
+    color: #20a7e1 !important;
 }
 
-.navbar-brand img{
-    height: 54px;
+
+.table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th{
+    border-bottom: 1px solid #ddd!important;
 }
 
-.navbar-brand {
-    padding: 0 !important;
-}
-
-.navbar-inverse .navbar-nav>li>a {
-    color #919191;
-    font-size: 14px;
-    line-height: 24px;
-    text-transform: uppercase;
-}
-
-.tasksBox {
-    height: 260px;
-    background-image: url('../../img/bg/bg-blue-tile.png');
-}
-
-.tasksBox h1 {
-    margin: 0 11%;
-    font-weight: bold;
-    color: #00355D;
-    line-height: 40px;
-    font-size: 40px;
+.table .tdTitle{
+    font-size: 20px;
 }
 
 .scheduleBox {
@@ -53,7 +27,7 @@ body {
 .scheduleBox h1 {
     margin: 0 11%;
     font-weight: bold;
-    color: #00355D;
+    color: #00486E;
     line-height: 40px;
     font-size: 40px;
 }
@@ -61,7 +35,7 @@ body {
 h1 i.fa {
     font-size: 50px;
     color: white;
-    background: #03355D;
+    background: #00486E;
     border-radius: 55px;
     height: 100px;
     width: 100px;
@@ -81,7 +55,7 @@ h1.boxTitle {
 }
 
 .activity h2 {
-    color: #03355D;
+    color: #00486E;
     font-weight: bold;
 }
 
@@ -136,7 +110,78 @@ footer{
 }
 
 .info h6 {
-    color: #03355D;
+    color: #00486E;
     font-weight: bold;
     letter-spacing: 1px;
+}
+
+footer{
+    background-color: #fff;
+    height: auto;
+    padding: 3rem;
+}
+
+/** Preview Task **/
+
+@media (min-width: 768px) {
+    .modal-sm {
+        width: 320px !important;
+        height: 568px !important;
+        overflow: auto;
+    }
+}
+
+.modal-header {
+    border-bottom: none !important;
+}
+
+.modal-body {
+    padding: 0 20px !important;
+}
+
+h4#myModalLabel {
+    text-align: center;
+    font-size: 14px;
+    color: #919191;
+}
+
+i.fa.fa-eye {
+    color: #20A7E1;
+}
+
+.task-title {
+    height: 100px;
+}
+
+.task-title img {
+    width: 80px;
+    height: 80px;
+    float: left;
+    margin-right: 10px;
+}
+
+.task-title h3 {
+    color: #00486E;
+    font-size: 20px;
+}
+
+.task-item {
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+.task-item img {
+    width: 80px;
+    height: 80px;
+    float: left;
+    margin-right: 10px;
+}
+
+.task-item p {
+    color: #00486E;
+    margin: 0;
+}
+
+p.task-text {
+    color: #919191;
 }

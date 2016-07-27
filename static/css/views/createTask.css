@@ -1,0 +1,162 @@
+body {
+    background-image: url(../../img/bg/bg-gray-tile.png);
+}
+
+p {
+    font-family: "San Francisco";
+    color: #163850;
+    font-size: 11px;
+    line-height: 12px;
+}
+
+label {
+    font-family: "San Francisco";
+    color: #163850;
+    font-size: 11px;
+    line-height: 12px;
+}
+
+span.date {
+    margin-left:10px;
+    margin-top:-50px;
+}
+
+span.startTime {
+    margin-left:-15px;
+    margin-top:-50px;
+}
+
+span.endTime {
+    margin-left: -5px;
+    margin-top: -50px;
+}
+
+#inputEmail {
+    margin-left: 60px;
+    width: 30%;
+}
+
+#inputURL {
+    margin-left: 60px;
+    width: 30%;
+}
+
+.control-label {
+    text-align: left !important;
+    margin-left: 60px;
+}
+
+.cat-dropdown ul {
+    width: 65%;
+    padding: 10px;
+    margin-left: -30px;
+}
+
+.saveBasicInfoBtn{
+    background: #20a7e1;
+    color: white;
+    display: inline-block;
+    padding: 9px 22px;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    margin: 20px 0;
+
+}
+
+.checkBoxes input {
+    transform: scale(2.0);
+    position: relative;
+    left: 275%;
+    margin-top: 10px;
+}
+
+.checkBox label {
+    margin-left:20px;
+    font-size: 14px;
+    color: #163850;
+}
+
+.checkBox input {
+    transform: scale(2.0);
+    margin: 25% 10% 0 -40%;
+}
+
+div#webuiPopover0 {
+    left: 708.938px !important;
+    top: 1245.42px !important;
+}
+
+.textArea {
+	width: 60%;
+	margin-left: 202px;
+	margin-right: auto;
+	background:#F7F7F7;
+	border-radius: 10px;
+}
+
+.form-active-blue {
+    background: #C7E4F3;
+    height: auto;
+    padding-bottom: 50px
+}
+
+.modal-body p {
+    font-size: 13px;
+    line-height: 18px;
+}
+
+.modal-footer {
+    text-align: center !important;
+    border-top: none !important;
+}
+
+.modal-footer a {
+    margin: 0 30px;
+}
+
+a.cancel{
+    color: #919191;
+}
+
+.drop {
+    padding: 15px;
+    border: 2px #f1f1f1 dashed;
+    border-radius: 5px;
+    line-height: 34px;
+}
+
+.fake-input {
+    width:1px;
+    background-color: #fff;
+    border-color: #fff;
+}
+
+.fake-button {
+    background-color: transparent;
+    border-color: transparent;
+    color: #919191;
+}
+
+ul[datepicker-popup-wrap] > li > .btn-group > button.btn-default {
+    display: none;
+}
+
+footer{
+    background-color: #fff;
+    height: auto;
+    padding: 3rem;
+}

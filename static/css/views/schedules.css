@@ -1,142 +1,132 @@
-/*!
- * Start Bootstrap - Heroic Features HTML Template (http://startbootstrap.com)
- * Code licensed under the Apache License v2.0.
- * For details, see http://www.apache.org/licenses/LICENSE-2.0.
- */
-
 body {
-    padding-top: 70px; /* Required padding for .navbar-fixed-top. Remove if using .navbar-static-top. Change if height of navigation changes. */
+    background-image: url(../../img/bg/bg-gray-tile.png);
 }
 
-.navbar {
-    box-shadow: 0px 0px 24px 0px rgba(0,0,0,0.13) !important;
+p {
+    font-family: "San Francisco";
+    color: #163850;
+    font-size: 11px;
 }
 
-.navbar-inverse .navbar-nav>li>a:hover, .navbar-inverse .navbar-nav>li>a:focus {
-    color: white !important;
-    background-color: #20A7E1 !important;
+span.date {
+    margin-left:10px;
+    margin-top:-50px;
 }
 
-.navbar-brand img{
-    height: 54px;
+span.startTime {
+    margin-left:-18px;
+    margin-top:-50px;
 }
 
-.navbar-brand {
-    padding: 0 !important;
+span.endTime {
+    margin-left: -5px;
+    margin-top: -50px;
 }
 
-.navbar-inverse .navbar-nav>li>a {
-    color #919191;
+.checkBox label {
+    margin-left:20px;
     font-size: 14px;
-    line-height: 24px;
-    text-transform: uppercase;
+    color: #163850;
 }
 
-.tasksBox {
-    height: 260px;
-    background-image: url('../../img/bg/bg-blue-tile.png');
+.checkBox input {
+    transform: scale(2.0);
+    margin: 18% 10% 0 -20%;
 }
 
-.tasksBox h1 {
-    margin: 0 11%;
-    font-weight: bold;
-    color: #00355D;
-    line-height: 40px;
-    font-size: 40px;
+div#webuiPopover0 {
+    left: 867.547px !important;
+    top: 558.453px !important;
 }
 
-.scheduleBox {
-    height: 260px;
-    background-image: url('../../img/bg/bg-yellow-tile.png');
+.changeStudentShedule {
+    color: #00486E;
+    margin-left: 36px;
 }
 
-.scheduleBox h1 {
-    margin: 0 11%;
-    font-weight: bold;
-    color: #00355D;
-    line-height: 40px;
-    font-size: 40px;
-}
-
-h1 i.fa {
-    font-size: 50px;
+.viewWeeklyScheduleBtn{
+    background: #20a7e1;
     color: white;
-    background: #03355D;
-    border-radius: 55px;
-    height: 100px;
-    width: 100px;
-    padding: 25px 0 0 0;
-    float: left;
-    position: relative;
-    top: 80px;
-    left: 25px;
+    display: inline-block;
+    padding: 9px 22px;
+    font-size: 11px;
+    font-weight: 400;
+    line-height: 1.42857143;
     text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 2px;
+    margin: 27px 30px;
+    width: 66%;
 }
 
-h1.boxTitle {
-    position: relative;
-    top: 32%;
-    left: -10%;
-    margin: 0 0 0 50%;
+.viewWeeklyScheduleBtn:hover {
+    background: #00486e;
 }
 
-.activity h2 {
-    color: #03355D;
-    font-weight: bold;
+hr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
 }
 
-.activity h3 {
-    font-weight: 500;
-    text-transform: uppercase;
+.modal-title {
+    color: #00486E;
 }
 
-ul.feed {
-    list-style: none;
-    padding: 0 15px;
+.supporter-dropdown button {
+    background: #00486E;
+    color: #fff;
+    width: 65%;
     font-size: 20px;
+    text-align: left;
+    letter-spacing: 2px;
     font-weight: bold;
 }
 
-.feed li {
-    margin: 0 0 25px 0;
-    padding: 0 0 10px 0;
-    border-bottom: 1px solid #ebebed;
-    width: 100%;
-}
-
-.feed span {
-    margin: 0 10px 0 0;
-    float: left;
+.supporter-dropdown span {
     font-size: 25px;
 }
 
-.moreFeed {
-    font-weight: bold;
-    font-size: 16px;
-    float: right;
-    margin: 0 5% 0 0;
+.caret {
+    border-top: 10px dashed !important;
+    border-right: 10px solid transparent !important;
+    border-left: 10px solid transparent !important;
+}
+
+.supporter-dropdown ul {
+    width: 65%;
+    padding: 10px;
+    color: #00486E;
+}
+
+.fake-input {
+    width:1px;
+    background-color: #fff;
+    border-color: #fff;
+}
+
+.fake-button {
+    background-color: transparent;
+    border-color: transparent;
+    color: #919191;
 }
 
 footer{
-    background-color: #ebebed;
+    background-color: #fff;
     height: auto;
     padding: 3rem;
-}
-
-.foot img {
-    width: 200px;
-    float: right;
-}
-
-.info h4 {
-    color: #20A7E1;
-    text-transform: uppercase;
-    font-weight: bold;
-    letter-spacing: 3px;
-}
-
-.info h6 {
-    color: #03355D;
-    font-weight: bold;
-    letter-spacing: 1px;
 }

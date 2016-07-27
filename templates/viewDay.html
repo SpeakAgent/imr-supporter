@@ -1,0 +1,133 @@
+<ng-include src="'templates/includes/nav.html'"></ng-include>
+<!-- Page Content -->
+<div class="container" ng-controller="taskController">
+    <div class="border row">
+        <div class="border col-md-12">
+            <div class="wrapperBox">
+                <div class="currentBox">
+                    <div class="row">
+                        <div class="col-md-4">
+
+                        </div>
+                        <div class="col-md-4">
+                            <ul class="nav nav-pills" style="margin-top: 40px; line-height: 12px;">
+                                <li class="text-center listSchedule active"><a href="" >Day</a></li>
+                                <li class="text-center listSchedule"><a ui-sref="viewWeekly">Week</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-md-4">
+
+                        </div>
+                    </div>
+                    <div class="scheduleTitle">
+                        <h1 class="text-center" style="margin-top:-60px">Daily Schedule for {Student Name}</h1>
+                        <h3 class="text-center" style="color:#38ACF5"><a href=""><i class="fa fa-angle-left fa-2x" aria-hidden="true" style="margin-top: 15px;position: absolute;margin-left: -20px;"></i></a>Today<a href=""><i class="fa fa-angle-right fa-2x" aria-hidden="true" style="    margin-top: 15px;position: absolute;margin-left: 20px;"></i></a></h3>
+                        <h4 class="text-center weekInfo" style="color:#00355D;">OCTOBER 25, 2015 </h4>
+                    </div>
+                    <div class="row" style="margin-left:20px;margin-top:50px;">
+                        <div class="col-md-2">
+                            <p style="font-size:15px;color:#00355D;font-weight:bold;margin-top:-10px;">MORNING</p>
+                        </div>
+                        <div class="col-md-2">
+                            <img src="static/img/icons/placeholder.png" alt="">
+                        </div>
+                        <div class="col-md-8" style="background:#F9F8F8; width:45%; padding:0; border: solid 1px grey;">
+                            <div>
+                                <a ui-sref="" class="button icon-right ion-chevron-right arrow2">
+                                    <div class="col-xs-1" style="background: #F9B71A; height: 112px;"></div>
+                                    <div class="col-xs-2" style="padding:19px;">
+                                        <img src="static/img/icons/edu.png" class="icon2" alt="" width="65px">
+                                    </div>
+                                    <div class="col-xs-9">
+                                        <h6 class="time">11am-11:45am</h6>
+                                        <h5 class="task">Math Tutoring</h5>
+                                        <p class="text-right" style="color:red;margin-top:10px">Every Monday</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-left:20px;margin-top:50px;">
+                        <div class="col-md-2">
+
+                        </div>
+                        <div class="col-md-2">
+                            <img src="static/img/icons/placeholder.png" alt="">
+                        </div>
+                        <div class="col-md-8" style="background:#F9F8F8; width:45%; padding:0; border: solid 1px grey;">
+                            <div>
+                                <a ui-sref="" class="button icon-right ion-chevron-right arrow2">
+                                    <div class="col-xs-1" style="background: #f70; height: 112px;"></div>
+                                    <div class="col-xs-2" style="padding:19px;">
+                                        <img src="static/img/icons/go.png" class="icon2" alt="" width="65px">
+                                    </div>
+                                    <div class="col-xs-9">
+                                        <h6 class="time">12pm-12:30pm</h6>
+                                        <h5 class="task">Travel To Giant</h5>
+                                        <p class="text-right" style="color:red;margin-top:10px">Every Monday</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-left:20px;margin-top:50px;">
+                        <div class="col-md-2">
+
+                        </div>
+                        <div class="col-md-2">
+                            <img src="static/img/icons/placeholder.png" alt="">
+                        </div>
+                        <div class="col-md-8" style="background:#F9F8F8; width:45%; padding:0; border: solid 1px grey;">
+                            <div>
+                                <a ui-sref="" class="button icon-right ion-chevron-right arrow2">
+                                    <div class="col-xs-1" style="background: #408940; height: 112px;"></div>
+                                    <div class="col-xs-2" style="padding:19px;">
+                                        <img src="static/img/icons/work.png" class="icon2" alt="" width="65px">
+                                    </div>
+                                    <div class="col-xs-9">
+                                        <h6 class="time">12:45pm-2pm</h6>
+                                        <h5 class="task">Can Crushing</h5>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-left:20px;margin-top:50px;">
+                        <div class="col-md-2">
+
+                        </div>
+                        <div class="col-md-2">
+                            <img src="static/img/icons/placeholder.png" alt="">
+                        </div>
+                        <div class="col-md-8" style="background:#F9F8F8; width:45%; padding:0; border: solid 1px grey;">
+                            <div>
+                                <a ui-sref="" class="button icon-right ion-chevron-right arrow2">
+                                    <div class="col-xs-1" style="background: #462C83; height: 112px;"></div>
+                                    <div class="col-xs-2" style="padding:19px;">
+                                        <img src="static/img/icons/life.png" class="icon2" alt="" width="65px">
+                                    </div>
+                                    <div class="col-xs-9">
+                                        <h6 class="time">8pm-9pm</h6>
+                                        <h5 class="task">Dinner at Sam's house</h5>
+                                        <p class="text-right" style="color:red;margin-top:10px">First Monday of the Month</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                    <br>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer -->
+    <ng-include src="'templates/includes/footer.html'"></ng-include>
+</div>
+<!-- /.container -->
