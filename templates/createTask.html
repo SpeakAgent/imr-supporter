@@ -29,7 +29,7 @@
                                   -->
                                   <div class="dropdown cat-dropdown">
                                       <button type="button" class="btn btn-default form-active-basic" style="border-color:transparent!important; background:#FFFEFE!important; color:grey; margin-top:11px; margin-left:-30px; width:auto;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CHOOSE CATEGORY <i class="fa fa-angle-down fa-1x text-right" aria-hidden="true"></i></button>
-                                      <select 
+                                      <select
                                       ng-model="formData.cagetory">
                                           <option value="Education">Education</option>
                                           <option value="Life">Life</option>
@@ -76,7 +76,7 @@
                           ng-model="formData.steps[$index]">
                           <!-- <button type="button" class="btn btn-default form-active-basic" data-toggle="modal" data-target="#upload" style="border-color:transparent!important; background:#20a7e1 !important; color:#fff; margin-top:20px; width:auto;"><i class="fa fa-picture-o" aria-hidden="true"></i> CHOOSE IMAGE...</button> -->
                           <br><br>
-                          
+
                       </div>
                       <div class="col-md-7"></div>
                   </div>
@@ -92,11 +92,10 @@
                       <div class="row">
                           <div class="col-md-6">
                               <p class="input-group fake-input">
-                                  <input type="text" class="form-control" current-text="Today" clear-text="Clear" close-on-date-selection="false" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min-date="minDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" style="width:0; padding:0" 
-                                  ng-model="formData.date" />
+                                  <input type="text" class="form-control" datepicker-popup is-open="opened" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" style="width:0px;padding:0px;"
+                                  ng-model="formData.date"/>
                                   <span class="input-group-btn">
-                                      <button type="button" class="btn btn-default fake-button" ng-click="open($event)"><i class="fa fa-calendar-o fa-3x" aria-hidden="true"
-                                      ng-model="formData.date"></i></button>
+                                      <button type="button" class="btn btn-default fake-button" ng-click="open($event)"><i class="fa fa-calendar-o fa-3x" aria-hidden="true"></i></button>
                                   </span>
                               </p>
                           </div>
@@ -104,13 +103,11 @@
                   </div>
                   <div class="col-md-2">
                       <span class="startTime">START TIME</span><br>
-                      <button popover-template="dynamicPopover.templateUrl" popover-title="{{dynamicPopover.title}}" popover-placement="bottom" type="button" class="btn btn-default fake-button"><i class="fa fa-clock-o fa-3x" aria-hidden="true"
-                      ng-model="formData.start_time"></i></button>
+                      <button popover-template="startPopover.templateUrl" popover-placement="bottom" type="button" class="btn btn-default fake-button"><i class="fa fa-clock-o fa-3x" aria-hidden="true"></i></button>
                   </div>
                   <div class="col-md-2">
                       <span class="endTime">END TIME</span><br>
-                      <button popover-template="dynamicPopover.templateUrl" popover-title="{{dynamicPopover.title}}" popover-placement="bottom" type="button" class="btn btn-default fake-button"><i class="fa fa-clock-o fa-3x" aria-hidden="true"
-                      ng-model="formData.end_time"></i></button>
+                      <button popover-template="endPopover.templateUrl" popover-placement="bottom" type="button" class="btn btn-default fake-button"><i class="fa fa-clock-o fa-3x" aria-hidden="true"></i></button>
                   </div>
                   <div class="col-md-2">
                       <div class="checkBox">
@@ -118,9 +115,9 @@
                               <input type="checkbox" id='check'
                                 ng-model="formData.recurring"> Make recurring?
                               <div class="webui-popover-content recurrentBox">
-                                  <input type="checkbox" 
+                                  <input type="checkbox"
                                   ng-model="formData.recurring_weekly"> Every Week <br />
-                                  <input type="checkbox" 
+                                  <input type="checkbox"
                                   ng-model="formData.recurring_daily"> Every Day
                               </div>
                           </label>
