@@ -4,13 +4,10 @@
 	<div class="border row">
 		<div class="border col-md-12">
 			<div class="wrapperBox">
-				<div class="currentBox">
+				<div class="currentBox" ng-repeat="user in users">
 					<h1>Notifications</h1>
 					<button class="newTaskBtn active" style="margin-bottom:20px">ALL STUDENTS</button>
-					<button class="newTaskBtn" style="margin-bottom:20px">BEN GRIMLEY</button>
-					<button class="newTaskBtn" style="margin-bottom:20px">CHRIS RAYMOND</button>
-					<button class="newTaskBtn" style="margin-bottom:20px">MAL JONES</button>
-					<button class="newTaskBtn" style="margin-bottom:20px">PETE GUTIERREZ</button>
+					<button class="newTaskBtn" style="margin-bottom:20px">{{ user.first_name }} {{ user.last_name }}</button>
 				</div>
 			</div>
 		</div>

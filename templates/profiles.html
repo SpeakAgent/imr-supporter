@@ -5,38 +5,13 @@
         <div class="border col-md-12">
             <div class="wrapperBox">
                 <div class="currentBox">
-                    <h1>You are currently viewing {Student's} shedule</h1>
+                    <h1>You are currently viewing {Student's} Schedule</h1>
 
-                    <div class="row">
-                        <div class="col-md-1" style="margin-left:-5px">
-
-                        </div>
-                        <div class="col-md-2" style="margin-left:-40px">
-                            <img src="static/img/bg/60.png" alt="">
-                            <p style="margin:0!important; text-align:center; margin-left:-85px!important;color:#00355D;">Firstname</p>
-                            <p style="text-align:center; margin-left:-85px!important; margin-top:-7px; color:#00355D;">Lastlongername</p>
-                        </div>
-                        <div class="col-md-2" style="margin-left:-40px">
-                            <img src="static/img/bg/60.png" alt="">
-                            <p style="margin:0!important; text-align:center; margin-left:-85px!important; color:#00355D;">Firstname</p>
-                            <p style="text-align:center; margin-left:-85px!important; margin-top:-7px; color:#00355D;">Lastlongername</p>
-                        </div>
-                        <div class="col-md-2" style="margin-left:-40px">
-                            <img src="static/img/bg/60.png" alt="">
-                            <p style="margin:0!important; text-align:center; margin-left:-85px!important; color:#00355D;">Firstname</p>
-                            <p style="text-align:center; margin-left:-85px!important; margin-top:-7px; color:#00355D;">Lastlongername</p>
-                        </div>
-                        <div class="col-md-2" style="margin-left:-40px">
-                            <img src="static/img/bg/60.png" alt="">
-                            <p style="margin:0!important; text-align:center; margin-left:-85px!important; color:#00355D;">Firstname</p>
-                            <p style="text-align:center; margin-left:-85px!important; margin-top:-7px; color:#00355D;">Lastlongername</p>
-                        </div>
-                        <div class="col-md-3">
-
-                        </div>
+                    <div class="row"  ng-repeat="user in users">
+                        <button class="newTaskBtn" style="margin-bottom:20px">{{ user.first_name }} {{ user.last_name }}</button>
                     </div>
 
-                    <h5 class="changeStudentShedule">Click on a photo to choose a different student's information</h5>
+                    <h5 class="changeStudentSchedule">Click on a photo to choose a different student's information</h5>
                     <br>
                 </div>
             </div>
