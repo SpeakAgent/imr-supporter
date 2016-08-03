@@ -66,6 +66,13 @@ mainApp.config(function($stateProvider, $urlRouterProvider) {
       css: 'static/css/views/viewWeekly.css'
     }
   })
+  .state('profile', {
+    url: "/profiles/:pk",
+    templateUrl: 'templates/profile_edit.html',
+    data: {
+      css: 'static/css/views/profiles.css'
+    }
+  })
   .state('profiles', {
     url: "/profiles",
     templateUrl: 'templates/profiles.html',

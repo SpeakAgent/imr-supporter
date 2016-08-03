@@ -20,7 +20,7 @@
                         </div>
                     </div>
                     <div class="scheduleTitle">
-                        <h1 class="text-center" style="margin-top:-60px">Daily Schedule for {{ user.first_name }} {{ user.last_name }}</h1>
+                        <h1 class="text-center" style="margin-top:-60px">Daily Schedule for {{ schedule.user.first_name }} {{ schedule.user.last_name }}</h1>
                         <h3 class="text-center" style="color:#38ACF5"><a href=""><i class="fa fa-angle-left fa-2x" aria-hidden="true" style="margin-top: 15px;position: absolute;margin-left: -20px;"
                         ng-click="prevDay()"></i></a>{{ target | date:'MM/dd/yyyy'}}<a href=""><i class="fa fa-angle-right fa-2x" aria-hidden="true" style="    margin-top: 15px;position: absolute;margin-left: 20px;" ng-click="nextDay()"></i></a></h3>
                     </div>

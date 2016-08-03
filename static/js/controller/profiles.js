@@ -1,15 +1,31 @@
-mainApp.controller('profilesController', function($scope) {
+mainApp.controller('profilesController', function($scope, $http) {
     console.log("profiles Controller");
 
-    $scope.profile = [
-        {
-            open: false
+    var req = {
+        url: "http://iamready.herokuapp.com/users/user/all/",
+        method: "POST",
+        data: {
+            mode: "simple"
         }
-    ];
+    }
 
-    $scope.emergency = [
-        {
-            open: false
+    $http(req).success(function(data) {
+        $scope.students = data
+    })
+});
+
+mainApp.controller('profileController', function($scope, $http, $stateParams) {
+    console.log("profiles Controller");
+
+    var req = {
+        url: "http://iamready.herokuapp.com:80/users/user/one/",
+        method: "POST",
+        data: {
+            pk: $stateParams.pk
         }
-    ];
+    }
+
+    $http(req).success(function(data) {
+        $scope.student = data
+    })
 });

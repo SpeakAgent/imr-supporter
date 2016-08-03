@@ -5,172 +5,23 @@
         <div class="border col-md-12">
             <div class="wrapperBox">
                 <div class="currentBox">
-                    <h1>You are currently viewing {Student's} shedule</h1>
+                    <h1>Select a student:</h1>
 
                     <div class="row">
                         <div class="col-md-1" style="margin-left:-5px">
 
                         </div>
-                        <div class="col-md-2" style="margin-left:-40px">
-                            <img src="static/img/bg/60.png" alt="">
-                            <p style="margin:0!important; text-align:center; margin-left:-85px!important;color:#00355D;">Firstname</p>
-                            <p style="text-align:center; margin-left:-85px!important; margin-top:-7px; color:#00355D;">Lastlongername</p>
+                        <div class="col-md-2" style="margin-left:-40px"
+                        ng-repeat="student in students">
+                            <p style="margin:0!important; text-align:center; margin-left:-85px!important;color:#00355D;">{{ student.first_name }}</p>
+                            <p style="text-align:center; margin-left:-85px!important; margin-top:-7px; color:#00355D;">{{ student.last_name }}</p>
                         </div>
-                        <div class="col-md-2" style="margin-left:-40px">
-                            <img src="static/img/bg/60.png" alt="">
-                            <p style="margin:0!important; text-align:center; margin-left:-85px!important; color:#00355D;">Firstname</p>
-                            <p style="text-align:center; margin-left:-85px!important; margin-top:-7px; color:#00355D;">Lastlongername</p>
-                        </div>
-                        <div class="col-md-2" style="margin-left:-40px">
-                            <img src="static/img/bg/60.png" alt="">
-                            <p style="margin:0!important; text-align:center; margin-left:-85px!important; color:#00355D;">Firstname</p>
-                            <p style="text-align:center; margin-left:-85px!important; margin-top:-7px; color:#00355D;">Lastlongername</p>
-                        </div>
-                        <div class="col-md-2" style="margin-left:-40px">
-                            <img src="static/img/bg/60.png" alt="">
-                            <p style="margin:0!important; text-align:center; margin-left:-85px!important; color:#00355D;">Firstname</p>
-                            <p style="text-align:center; margin-left:-85px!important; margin-top:-7px; color:#00355D;">Lastlongername</p>
-                        </div>
+                        
                         <div class="col-md-3">
 
                         </div>
                     </div>
-
-                    <h5 class="changeStudentShedule">Click on a photo to choose a different student's information</h5>
                     <br>
-                </div>
-            </div>
-        </div>
-    </div>
-    <div class="border row">
-        <div class="border col-md-12">
-            <div class="wrapperBox" style="padding:0 0 30px 0!important;">
-                <div class="currentBox">
-                    <div class="profile-accordion">
-                        <accordion>
-                            <accordion-group is-open="profile.open">
-                                <accordion-heading>
-                                    <div class="profile-acc">
-                                        <h1><img src="static/img/icons/profile.png" alt="Profile Icon">Profile Information <i class="fa fa-chevron-down" aria-hidden="true"></i></h1>
-                                    </div>
-                                </accordion-heading>
-                                <form class="profile-form">
-                                    <div class="form-heading">
-                                        <h4>I live at:</h4>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="street">Street Address:</label><br>
-                                        <input type="text" class="form-control" placeholder="155 Gibbs Street">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="city">City:</label><br>
-                                        <input type="text" class="form-control" placeholder="Rockville">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="state">State:</label><br>
-                                        <input type="text" class="form-control" placeholder="MD">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="zip">Zip Code:</label><br>
-                                        <input type="text" class="form-control" placeholder="00000">
-                                    </div>
-                                    <div class="form-heading">
-                                        <h4>Stuff I like:</h4>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="likes">Stuff I like:</label><br>
-                                        <input type="text" class="form-control" placeholder="Star Wars, Swimming, Chipotle">
-                                    </div>
-                                    <div class="form-heading">
-                                        <h4>I go to School at:</h4>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="school">School:</label><br>
-                                        <input type="text" class="form-control" placeholder="Montgomery Blair High School">
-                                    </div>
-                                    <div class="form-heading">
-                                        <h4>I work at:</h4>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="work">Work:</label><br>
-                                        <input type="text" class="form-control" placeholder="GIANT">
-                                    </div>
-
-                                  <button type="submit" class="newTaskBtn"><i class="fa fa-pencil"></i> Update Profile Information</button>
-                                </form>
-                            </accordion-group>
-
-                            <accordion-group is-open="emergency.open">
-                                <accordion-heading>
-                                    <div class="emergency-acc">
-                                        <h1><img src="static/img/icons/emergency.png" alt="Emergency Icon">Emergency Information <i class="fa fa-chevron-down" aria-hidden="true"></i></h1>
-                                    </div>
-                                </accordion-heading>
-                                <form class="profile-form">
-                                    <div class="form-heading">
-                                        <h4>In an emergency, contact (1st contact out of 2):</h4>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="name">Name:</label><br>
-                                        <input type="text" class="form-control" placeholder="Jane Porter">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="relationsip">Relationsip:</label><br>
-                                        <input type="text" class="form-control" placeholder="Mother">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="phone">Phone Number:</label><br>
-                                        <input type="text" class="form-control" placeholder="301.838.5557">
-                                    </div>
-                                    <div class="form-heading">
-                                        <h4>In an emergency, contact (2nd contact out of 2):</h4>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="name">Name:</label><br>
-                                        <input type="text" class="form-control" placeholder="Andrew Schmieg">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="relationsip">Relationsip:</label><br>
-                                        <input type="text" class="form-control" placeholder="Family Doctor">
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="phone">Phone Number:</label><br>
-                                        <input type="text" class="form-control" placeholder="301.838.5557">
-                                    </div>
-                                    <div class="form-heading">
-                                        <h4>Medical:</h4>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="medical">Medical:</label><br>
-                                        <input type="text" class="form-control" placeholder="I am allergic to bees.">
-                                    </div>
-                                    <div class="form-heading">
-                                        <h4>You should know that:</h4>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="know">You should know that:</label><br>
-                                        <input type="text" class="form-control" placeholder="I don't like to be touched.">
-                                    </div>
-                                    <div class="form-heading">
-                                        <h4>At school:</h4>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="school">At school:</label><br>
-                                        <input type="text" class="form-control" placeholder="I don't like to be touched.">
-                                    </div>
-                                    <div class="form-heading">
-                                        <h4>At work:</h4>
-                                    </div>
-                                    <div class="form-group">
-                                        <label for="work">At work:</label><br>
-                                        <input type="text" class="form-control" placeholder="I don't like to be touched.">
-                                    </div>
-
-                                  <button type="submit" class="newTaskBtn"><i class="fa fa-pencil"></i> Update Emergency Information</button>
-                                </form>
-                            </accordion-group>
-                        </accordion>
-                    </div>
                 </div>
             </div>
         </div>
