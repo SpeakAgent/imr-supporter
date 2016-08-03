@@ -77,7 +77,7 @@ p {
 }
 
 .row .newTaskBtn {
-    margin: 5px 0 5px 50px !important;
+    margin: 5px 0 5px -22px !important;
 }
 
 footer{
