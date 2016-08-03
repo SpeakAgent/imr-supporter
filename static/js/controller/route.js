@@ -7,7 +7,7 @@ mainApp.config(function (datepickerConfig, datepickerPopupConfig) {
 
 mainApp.config(function($stateProvider, $urlRouterProvider) {
   // For any unmatched url, redirect to /
-  $urlRouterProvider.otherwise("/login");
+  // $urlRouterProvider.otherwise("/login");
 
   $stateProvider
   .state('login', {
