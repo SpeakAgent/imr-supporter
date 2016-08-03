@@ -103,28 +103,28 @@
                   </div>
                   <div class="form-group">
                     <label for="medical">Medical:</label><br>
-                    <input type="text" class="form-control" placeholder="I am allergic to bees.">
+                    <input type="text" class="form-control" placeholder="{{ student.medical }}">
                   </div>
                   <div class="form-heading">
                     <h4>You should know that:</h4>
                   </div>
                   <div class="form-group">
                     <label for="know">You should know that:</label><br>
-                    <input type="text" class="form-control" placeholder="I don't like to be touched.">
+                    <input type="text" class="form-control" placeholder="{{ student.should_know }}">
                   </div>
                   <div class="form-heading">
                     <h4>At school:</h4>
                   </div>
                   <div class="form-group">
                     <label for="school">At school:</label><br>
-                    <input type="text" class="form-control" placeholder="I don't like to be touched.">
+                    <input type="text" class="form-control" placeholder="{{ student.at_school }}">
                   </div>
                   <div class="form-heading">
                     <h4>At work:</h4>
                   </div>
                   <div class="form-group">
                     <label for="work">At work:</label><br>
-                    <input type="text" class="form-control" placeholder="I don't like to be touched.">
+                    <input type="text" class="form-control" placeholder="{{ student.at_work }}">
                   </div>
 
                   <button type="submit" class="newTaskBtn"><i class="fa fa-pencil"></i> Update Emergency Information</button>
