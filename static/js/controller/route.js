@@ -38,21 +38,29 @@ mainApp.config(function($stateProvider, $urlRouterProvider) {
       css: 'static/css/views/createTask.css'
     }
   })
+  .state('editTask', {
+    url: "/tasks/edit/:pk",
+    templateUrl: 'templates/editTask.html',
+    data: {
+      css: 'static/css/views/editTask.css'
+    }
+  })
   .state('schedules', {
     url: "/schedules",
     templateUrl: 'templates/schedules.html',
     data: {
       css: 'static/css/views/schedules.css'
     }
-  }).state('viewDay', {
-    url: "/viewDay",
+  })
+  .state('viewDay', {
+    url: "/schedules/day/:pk",
     templateUrl: 'templates/viewDay.html',
     data: {
       css: 'static/css/views/viewDay.css'
     }
   })
-  .state('viewWeekly', {
-    url: "/viewWeekly",
+  .state('viewWeek', {
+    url: "/schedules/week/:pk",
     templateUrl: 'templates/viewWeekly.html',
     data: {
       css: 'static/css/views/viewWeekly.css'

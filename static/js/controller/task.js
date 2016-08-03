@@ -1,6 +1,11 @@
 mainApp.controller('taskController', function($scope, $http) {
     console.log("task Controller");
 
+    $scope.showTask = function(task) {
+        console.log(task)
+        $scope.task = task;
+    }
+
     var req = {
         url: "http://iamready.herokuapp.com/events/mastertask/all/",
         data: {
