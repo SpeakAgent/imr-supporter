@@ -1,4 +1,4 @@
-mainApp.controller('schedulesController', function($scope) {
+mainApp.controller('schedulesController', function($scope, $http) {
     console.log("schedules Controller");
 
     $scope.today = function() {
@@ -76,4 +76,102 @@ mainApp.controller('schedulesController', function($scope) {
             }
         });
     })
+
+    var req = {
+        url: "http://iamready.herokuapp.com/users/user/all/",
+        data: {
+            pk: 1
+        },
+        method: "POST"
+    }
+    $http(req).success(function(data) {
+        $scope.users = data;
+    })
+
 });
+
+mainApp.controller('dailyScheduleController', function($scope, $http) {
+    $scope.target = new Date();
+    $scope.date = $scope.target.getFullYear() + "-" + $scope.target.getMonth() + "-" + $scope.target.getDate();
+
+    $scope.nextDay = function() {
+        $scope.schedule = {}
+        var d = new Date();
+        d.setDate($scope.target.getDate() + 1);
+        $scope.target = d;
+        $scope.date = $scope.target.getFullYear() + "-" + $scope.target.getMonth() + "-" + $scope.target.getDate();
+
+        var req = {
+            url: "http://iamready.herokuapp.com/events/all/day/",
+            data: {
+                user_pk: 1,
+                date: $scope.date
+            },
+            method: "POST"
+        }
+
+        $http(req).success(function(data) {
+            $scope.schedule = data
+        })
+    }
+
+    $scope.prevDay = function() {
+        $scope.schedule = {}
+        var d = new Date();
+        d.setDate($scope.target.getDate() - 1);
+        $scope.target = d;
+        $scope.date = $scope.target.getFullYear() + "-" + $scope.target.getMonth() + "-" + $scope.target.getDate();
+
+        var req = {
+            url: "http://iamready.herokuapp.com/events/all/day/",
+            data: {
+                user_pk: 1,
+                date: $scope.date
+            },
+            method: "POST"
+        }
+
+        $http(req).success(function(data) {
+            $scope.schedule = data
+        })
+    }
+
+    var req = {
+        url: "http://iamready.herokuapp.com/events/all/day/",
+        data: {
+            user_pk: 1,
+            date: $scope.date
+        },
+        method: "POST"
+    }
+
+    $http(req).success(function(data) {
+        $scope.schedule = data;
+    })
+    .error(function(data) {
+        console.log(data);
+    })
+})
+
+mainApp.controller('weeklyScheduleController', function($scope, $http) {
+    $scope.target = new Date();
+    $scope.date = $scope.target.getFullYear() + "-" + ($scope.target.getMonth() + 1) + "-" + $scope.target.getDate();
+    $scope.days_of_week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday',
+        'Friday', 'Saturday']
+    $scope.times_of_day = ['morning', 'afternoon', 'evening']
+
+    var req = {
+        url: "http://iamready.herokuapp.com/events/all/week/",
+        data: {
+            user_pk: 1,
+            date: $scope.date
+        },
+        method: "POST"
+    }
+
+    $http(req).success(function(data){
+        $scope.schedule=data;
+    })
+
+
+})

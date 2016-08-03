@@ -1,6 +1,6 @@
 <ng-include src="'templates/includes/nav.html'"></ng-include>
 
-<div class="container" ng-controller="taskController">
+<div class="container" ng-controller="weeklyScheduleController">
     <div class="border row">
         <div class="border col-md-12">
             <div class="wrapperBox">
@@ -11,8 +11,8 @@
                         </div>
                         <div class="col-md-4">
                             <ul class="nav nav-pills" style="margin-top: 40px; line-height: 12px;">
-                                <li class="text-center listSchedule"><a ui-sref="viewDay" >Day</a></li>
-                                <li class="text-center listSchedule active"><a href="">Week</a></li>
+                                <li class="text-center listSchedule"><a href="/#/schedules/day/1" >Day</a></li>
+                                <li class="text-center listSchedule active"><a href="/#/schedules/week/1">Week</a></li>
                             </ul>
                         </div>
                         <div class="col-md-4">
@@ -20,67 +20,26 @@
                         </div>
                     </div>
                     <div class="scheduleTitle">
-                        <h1 class="text-center" style="margin-top:-60px">Weekly Schedule for {Student Name}</h1>
-                        <h3 class="text-center" style="color:#38ACF5">Today</h3>
-                        <h4 class="text-center weekInfo" style="color:#00355D;"><a href=""><i class="fa fa-angle-left fa-2x" aria-hidden="true"></i></a>WEEK OF OCTOBER 24 - 30, 2015 <a href=""><i class="fa fa-angle-right fa-2x" aria-hidden="true"></i></a></h4>
+                        <h1 class="text-center" style="margin-top:-60px">Weekly Schedule for {{ schedule.user.first_name}} {{ schedule.user.last_name }}</h1>
+                        <h4 class="text-center weekInfo" style="color:#00355D;"><a href=""><i class="fa fa-angle-left fa-2x" aria-hidden="true"></i></a>{{schedule.first_day}} - {{schedule.last_day}}<a href=""><i class="fa fa-angle-right fa-2x" aria-hidden="true"></i></a></h4>
                     </div>
-
+                    <div ng-repeat="dow in days_of_week">
                     <div class="row" style="margin-left:20px;margin-top:50px;">
                         <div class="col-md-1">
-                            <p style="font-size:20px; font-weight:bold;color:#38ACF5;margin-top:10px">24</p>
-                            <p style="font-size:10px;color:#00355D;font-weight:bold;margin-top:-10px;">SUN</p>
+                            <p style="font-size:20px; font-weight:bold;color:#38ACF5;margin-top:10px">{{ schedule[dow].date }}</p>
+                            <p style="font-size:10px;color:#00355D;font-weight:bold;margin-top:-10px;">{{ dow }}</p>
                         </div>
-                        <div class="col-md-4">
+                        <div class="col-md-3" ng-repeat="tod in times_of_day">
                             <h4 style="color:#00355D;">MORNING</h4>
                             <h5 style="color:red">3 tasks</h5>
-                            <h4 style="color:#00355D;">Task title one like this</h4>
-                            <h4 style="color:#00355D;">Task title one like this</h4>
-                            <h4 style="color:#00355D;">Task title three so and so like this</h4>
-                        </div>
-                        <div class="col-md-4">
-                            <h4 style="color:#00355D;">AFTERNOON</h4>
-                            <h5 style="color:red">4 tasks</h5>
-                            <h4 style="color:#00355D;">Task title one like this</h4>
-                            <h4 style="color:#00355D;">Task title one like this</h4>
-                            <h4 style="color:#00355D;">Task title three so and so like this</h4>
-                            <h4 style="color:#00355D;">Task title three so and so like this</h4>
-                        </div>
-                        <div class="col-md-3">
-                            <h4 style="color:#00355D;">EVENING</h4>
-                            <h5 style="color:red">4 tasks</h5>
-                            <h4 style="color:#00355D;">Task title one like this</h4>
-                            <h4 style="color:#00355D;">Task title one like this</h4>
+                            <h4 style="color:#00355D;"
+                                ng-repeat="item in schedule[dow][tod]">{{ item.title }}</h4>
+                            <h4 style="color:#00355D;"
+                                ng-show="schedule[dow][tod].length == 0">No tasks</h4>
                         </div>
                     </div>
                     <hr width=93% align="center">
-                    <div class="row" style="margin-left:20px;margin-top:50px;">
-                        <div class="col-md-1">
-                            <p style="font-size:20px; font-weight:bold;color:#38ACF5;margin-top:10px">24</p>
-                            <p style="font-size:10px;color:#00355D;font-weight:bold;margin-top:-10px;">SUN</p>
-                        </div>
-                        <div class="col-md-4">
-                            <h4 style="color:#00355D;">MORNING</h4>
-                            <h5 style="color:red">3 tasks</h5>
-                            <h4 style="color:#00355D;">Task title one like this</h4>
-                            <h4 style="color:#00355D;">Task title one like this</h4>
-                            <h4 style="color:#00355D;">Task title three so and so like this</h4>
-                        </div>
-                        <div class="col-md-4">
-                            <h4 style="color:#00355D;">AFTERNOON</h4>
-                            <h5 style="color:red">2 tasks</h5>
-                            <h4 style="color:#00355D;">Task title one like this</h4>
-                            <h4 style="color:#00355D;">Task title one like this</h4>
-                            <h4 style="color:#00355D;">Task title three so and so like this</h4>
-                            <h4 style="color:#00355D;">Task title three so and so like this</h4>
-                        </div>
-                        <div class="col-md-3">
-                            <h4 style="color:#00355D;">EVENING</h4>
-                            <h5 style="color:red">2 tasks</h5>
-                            <h4 style="color:#00355D;">Task title one like this</h4>
-                            <h4 style="color:#00355D;">Task title one like this</h4>
-                        </div>
                     </div>
-                    <hr width=93% align="center">
                 </div>
             </div>
         </div>
