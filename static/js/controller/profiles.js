@@ -1,6 +1,7 @@
 mainApp.controller('profilesController', function($scope, $http) {
     console.log("profiles Controller");
 
+
     var req = {
         url: "http://iamready.herokuapp.com/users/user/all/",
         method: "POST",
