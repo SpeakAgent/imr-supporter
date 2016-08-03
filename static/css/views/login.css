@@ -21,14 +21,20 @@ body {
   background-size: cover;
 }
 
+.login-logo img {
+  width: 75%;
+  height: 140px;
+  margin: 10px 0 -10px 12%;
+}
+
 .login {
   position: relative;
-  top: 210px;
+  top: 130px;
   right: 10%;
-  width: 380px;
+  width: 500px;
   display: table;
   margin: 0 auto 0 auto;
-  background: #26a6df;
+  background: yellow;
 }
 
 .input {
@@ -63,7 +69,7 @@ body {
 }
 
 .f-psw p{
-  color: #ecca1b !important;
+  color: #26a6df !important;
   font-family: "San Francisco";
   letter-spacing: 1px;
   margin-left: 15px;
@@ -74,9 +80,9 @@ body {
   height: 45px;
   display: block;
   margin: 0 auto -15px 30px;
-  background: #26a6df;
+  background: yellow;
   border-radius: 0 0 20px 20px;
-  color: #fff;
+  color: #26a6df;
   font-size: 18px;
   cursor: pointer;
   transition: 0.2s ease-out;

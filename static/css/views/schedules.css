@@ -39,7 +39,7 @@ div#webuiPopover0 {
     top: 558.453px !important;
 }
 
-.changeStudentShedule {
+.changeStudentSchedule {
     color: #00486E;
     margin-left: 36px;
 }
@@ -123,6 +123,10 @@ hr {
     background-color: transparent;
     border-color: transparent;
     color: #919191;
+}
+
+.row .newTaskBtn {
+    margin: 5px 0 5px 50px !important;
 }
 
 footer{
