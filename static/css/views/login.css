@@ -21,11 +21,17 @@ body {
   background-size: cover;
 }
 
+.login-logo img {
+  width: 75%;
+  height: 140px;
+  margin: 10px 0 -10px 12%;
+}
+
 .login {
   position: relative;
-  top: 210px;
+  top: 130px;
   right: 10%;
-  width: 380px;
+  width: 500px;
   display: table;
   margin: 0 auto 0 auto;
   background: yellow;
