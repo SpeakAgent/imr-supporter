@@ -30,7 +30,7 @@
                             <p style="font-size:10px;color:#00355D;font-weight:bold;margin-top:-10px;">{{ dow }}</p>
                         </div>
                         <div class="col-md-3" ng-repeat="tod in times_of_day">
-                            <h4 style="color:#00355D;">MORNING</h4>
+                            <h4 style="color:#00355D;">{{ tod | uppercase}}</h4>
                             <h5 style="color:red" ng-show="schedule[dow][tod].length > 1">{{ schedule[dow][tod].length }} tasks</h5>
                             <h5 style="color:red" ng-show="schedule[dow][tod].length == 1">{{ schedule[dow][tod].length }} task</h5>
                             <h5 style="color:red" ng-show="schedule[dow][tod].length == 0">0 tasks</h5>
