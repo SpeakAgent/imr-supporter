@@ -18,8 +18,7 @@
                                   <div class="col-md-3" style="margin-left:60px">
                                       <p style="margin-bottom:5px!important">Task Title</p>
                                       <input type="text" class="form-active-basic" placeholder='{{ task.title }}' style="width:260px; padding:5px"
-                                      ng-model="formData.title"
-                                      ng-if>
+                                      ng-model="formData.title">
                                       <!-- <button type="button" class="btn btn-default form-active-basic" data-toggle="modal" data-target="#upload" style="border-color:transparent!important; background:#20a7e1 !important; color:#fff; margin-top:20px; width:auto;"><i class="fa fa-picture-o" aria-hidden="true"></i> CHOOSE IMAGE...</button> -->
                                   </div>
                                   <div class="col-md-5">
@@ -56,9 +55,6 @@
                               <div class="col-md-3" style="margin-left:60px">
                                   <p style="margin-bottom:5px!important; margin-top:30px">Add a link to a Youtube video (optional)</p>
                                   <input type="text" class="form-active-basic" placeholder='{{ task.video }}' style="width:260px; padding:5px" ng-model="formData.video">
-
-                                  <button type="submit" class="saveBasicInfoBtn"
-                                  ng-click="createTask()">SAVE</button>
                               </div>
                               <div class="col-md-8">
 
@@ -98,26 +94,87 @@
                       <span class="date">DATE</span><br>
                       <div class="row">
                           <div class="col-md-6">
-                              <p class="input-group fake-input">
+                              <!-- <p class="input-group fake-input">
                                   <input type="text" class="form-control" current-text="Today" clear-text="Clear" close-on-date-selection="false" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min-date="minDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" style="width:0; padding:0" 
                                   ng-model="formData.date" />
                                   <span class="input-group-btn">
                                       <button type="button" class="btn btn-default fake-button" ng-click="open($event)"><i class="fa fa-calendar-o fa-3x" aria-hidden="true"
                                       ng-model="formData.date"></i></button>
                                   </span>
-                              </p>
+                              </p> -->
+                              <select 
+                                ng-model="formData.month"
+                                >
+                                    <option 
+                                    ng-repeat="month in months"
+                                    value="{{ month }}"
+                                    ng-selected="currMonth==month"
+                                    >{{ month }}</option>
+                                </select>
+                                <select 
+                                ng-model="formData.day"
+                                >
+                                    <option 
+                                    ng-repeat="day in days"
+                                    value="{{ day }}"
+                                    ng-selected="currDay==day"
+                                    >{{ day }}</option>
+                                </select>
+                                <select 
+                                ng-model="formData.year"
+                                >
+                                    <option 
+                                    ng-repeat="year in years"
+                                    value="{{ year }}"
+                                    ng-selected="currYear==year"
+                                    >{{ year }}</option>
+                                </select>
+                                
                           </div>
                       </div>
                   </div>
                   <div class="col-md-2">
                       <span class="startTime">START TIME</span><br>
-                      <button popover-template="dynamicPopover.templateUrl" popover-title="{{dynamicPopover.title}}" popover-placement="bottom" type="button" class="btn btn-default fake-button"><i class="fa fa-clock-o fa-3x" aria-hidden="true"
-                      ng-model="formData.start_time"></i></button>
+                      <select 
+                          ng-model="formData.start_hour"
+                          >
+                              <option 
+                              ng-repeat="hour in hours"
+                              value="{{ hour }}"
+                              ng-selected="currStartHour==hour"
+                              >{{ hour }}</option>
+                          </select>:
+                        <select 
+                                ng-model="formData.start_minute"
+                                >
+                                    <option 
+                                    ng-repeat="minute in minutes"
+                                    value="{{ minute }}"
+                                    ng-selected="currStartMin==minute"
+                                    >{{ minute }}</option>
+                                </select>
                   </div>
                   <div class="col-md-2">
                       <span class="endTime">END TIME</span><br>
-                      <button popover-template="dynamicPopover.templateUrl" popover-title="{{dynamicPopover.title}}" popover-placement="bottom" type="button" class="btn btn-default fake-button"><i class="fa fa-clock-o fa-3x" aria-hidden="true"
-                      ng-model="formData.end_time"></i></button>
+                      <select 
+                          ng-model="formData.end_hour"
+                          >
+                              <option 
+                              ng-repeat="hour in hours"
+                              value="{{ hour }}"
+                              ng-selected="currEndHour==hour"
+                              >{{ hour }}</option>
+                          </select>:
+                        <select 
+                                ng-model="formData.end_minute"
+                                >
+                                    <option 
+                                    ng-repeat="minute in minutes"
+                                    value="{{ minute }}"
+                                    ng-selected="currEndMin==minute"
+                                    >{{ minute }}</option>
+                                </select>
+                      
                   </div>
                   <div class="col-md-2">
                       <div class="checkBox">
@@ -138,7 +195,6 @@
                   <div class="col-md-3">
 
                   </div><br>
-                  <h1 style="margin-left:44px; margin-top:50px">Select Students</h1>
                   <div class="row">
                       <div class="col-md-1">
 
@@ -154,8 +210,11 @@
                   </div>
               </div>
           </div>
+          <button type="submit" class="saveBasicInfoBtn"
+                                  ng-click="updateTask()">SAVE</button>
       </div>
   </div>
+
 </div>
 <!-- Footer -->
 <ng-include src="'templates/includes/footer.html'"></ng-include>
