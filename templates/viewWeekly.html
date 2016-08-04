@@ -11,7 +11,7 @@
                         </div>
                         <div class="col-md-4">
                             <ul class="nav nav-pills" style="margin-top: 40px; line-height: 12px;">
-                                <li class="text-center listSchedule"><a href="/#/schedules/day/1" >Day</a></li>
+                                <li class="text-center listSchedule"><a href="/imr-supporter/#/schedules/day/1" >Day</a></li>
                                 <li class="text-center listSchedule active"><a href="/imr-supporter/#/schedules/week/1">Week</a></li>
                             </ul>
                         </div>
@@ -31,7 +31,9 @@
                         </div>
                         <div class="col-md-3" ng-repeat="tod in times_of_day">
                             <h4 style="color:#00355D;">MORNING</h4>
-                            <h5 style="color:red">3 tasks</h5>
+                            <h5 style="color:red" ng-show="schedule[dow][tod].length > 1">{{ schedule[dow][tod].length }} tasks</h5>
+                            <h5 style="color:red" ng-show="schedule[dow][tod].length == 1">{{ schedule[dow][tod].length }} task</h5>
+                            <h5 style="color:red" ng-show="schedule[dow][tod].length == 0">0 tasks</h5>
                             <h4 style="color:#00355D;"
                                 ng-repeat="item in schedule[dow][tod]">{{ item.title }}</h4>
                             <h4 style="color:#00355D;"
