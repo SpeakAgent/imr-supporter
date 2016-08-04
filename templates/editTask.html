@@ -55,9 +55,6 @@
                               <div class="col-md-3" style="margin-left:60px">
                                   <p style="margin-bottom:5px!important; margin-top:30px">Add a link to a Youtube video (optional)</p>
                                   <input type="text" class="form-active-basic" placeholder='{{ task.video }}' style="width:260px; padding:5px" ng-model="formData.video">
-
-                                  <button type="submit" class="saveBasicInfoBtn"
-                                  ng-click="updateTask()">SAVE</button>
                               </div>
                               <div class="col-md-8">
 
@@ -180,8 +177,11 @@
                   </div>
               </div>
           </div>
+          <button type="submit" class="saveBasicInfoBtn"
+                                  ng-click="updateTask()">SAVE</button>
       </div>
   </div>
+
 </div>
 <!-- Footer -->
 <ng-include src="'templates/includes/footer.html'"></ng-include>
