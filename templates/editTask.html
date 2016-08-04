@@ -135,13 +135,46 @@
                   </div>
                   <div class="col-md-2">
                       <span class="startTime">START TIME</span><br>
-                      <button popover-template="dynamicPopover.templateUrl" popover-title="{{dynamicPopover.title}}" popover-placement="bottom" type="button" class="btn btn-default fake-button"><i class="fa fa-clock-o fa-3x" aria-hidden="true"
-                      ng-model="formData.start_time"></i></button>
+                      <select 
+                          ng-model="formData.start_hour"
+                          >
+                              <option 
+                              ng-repeat="hour in hours"
+                              value="{{ hour }}"
+                              ng-selected="currStartHour==hour"
+                              >{{ hour }}</option>
+                          </select>:
+                        <select 
+                                ng-model="formData.start_minute"
+                                >
+                                    <option 
+                                    ng-repeat="minute in minutes"
+                                    value="{{ minute }}"
+                                    ng-selected="currStartMin==minute"
+                                    >{{ minute }}</option>
+                                </select>
                   </div>
                   <div class="col-md-2">
                       <span class="endTime">END TIME</span><br>
-                      <button popover-template="dynamicPopover.templateUrl" popover-title="{{dynamicPopover.title}}" popover-placement="bottom" type="button" class="btn btn-default fake-button"><i class="fa fa-clock-o fa-3x" aria-hidden="true"
-                      ng-model="formData.end_time"></i></button>
+                      <select 
+                          ng-model="formData.end_hour"
+                          >
+                              <option 
+                              ng-repeat="hour in hours"
+                              value="{{ hour }}"
+                              ng-selected="currEndHour==hour"
+                              >{{ hour }}</option>
+                          </select>:
+                        <select 
+                                ng-model="formData.end_minute"
+                                >
+                                    <option 
+                                    ng-repeat="minute in minutes"
+                                    value="{{ minute }}"
+                                    ng-selected="currEndMin==minute"
+                                    >{{ minute }}</option>
+                                </select>
+                      
                   </div>
                   <div class="col-md-2">
                       <div class="checkBox">
