@@ -57,7 +57,7 @@
                                   <input type="text" class="form-active-basic" placeholder='{{ task.video }}' style="width:260px; padding:5px" ng-model="formData.video">
 
                                   <button type="submit" class="saveBasicInfoBtn"
-                                  ng-click="createTask()">SAVE</button>
+                                  ng-click="updateTask()">SAVE</button>
                               </div>
                               <div class="col-md-8">
 
@@ -97,14 +97,42 @@
                       <span class="date">DATE</span><br>
                       <div class="row">
                           <div class="col-md-6">
-                              <p class="input-group fake-input">
+                              <!-- <p class="input-group fake-input">
                                   <input type="text" class="form-control" current-text="Today" clear-text="Clear" close-on-date-selection="false" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min-date="minDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" style="width:0; padding:0" 
                                   ng-model="formData.date" />
                                   <span class="input-group-btn">
                                       <button type="button" class="btn btn-default fake-button" ng-click="open($event)"><i class="fa fa-calendar-o fa-3x" aria-hidden="true"
                                       ng-model="formData.date"></i></button>
                                   </span>
-                              </p>
+                              </p> -->
+                              <select 
+                                ng-model="formData.month"
+                                >
+                                    <option 
+                                    ng-repeat="month in months"
+                                    value="{{ month }}"
+                                    ng-selected="currMonth==month"
+                                    >{{ month }}</option>
+                                </select>
+                                <select 
+                                ng-model="formData.day"
+                                >
+                                    <option 
+                                    ng-repeat="day in days"
+                                    value="{{ day }}"
+                                    ng-selected="currDay==day"
+                                    >{{ day }}</option>
+                                </select>
+                                <select 
+                                ng-model="formData.year"
+                                >
+                                    <option 
+                                    ng-repeat="year in years"
+                                    value="{{ year }}"
+                                    ng-selected="currYear==year"
+                                    >{{ year }}</option>
+                                </select>
+                                
                           </div>
                       </div>
                   </div>
@@ -137,7 +165,6 @@
                   <div class="col-md-3">
 
                   </div><br>
-                  <h1 style="margin-left:44px; margin-top:50px">Select Students</h1>
                   <div class="row">
                       <div class="col-md-1">
 

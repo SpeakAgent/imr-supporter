@@ -2,8 +2,18 @@ mainApp.controller('editTaskController', function($scope, $location, $http, $sta
 
     $scope.formData = {
         users: [],
-        steps: [""]
+        steps: []
     }
+
+    $scope.months = ['January', 'February', 'March', 'April', 'May', 'June',
+        'July', 'August', 'September', 'October', 'November', 'December'];
+
+    $scope.days = [];
+    for(var i=1;i<32;i++){
+        $scope.days.push(i); 
+    }
+
+    $scope.years = ["2016" ,"2017" ,"2018" ,"2019"];
 
     var treq = {
         url: "http://iamready.herokuapp.com/events/mastertask/one/",
@@ -15,6 +25,10 @@ mainApp.controller('editTaskController', function($scope, $location, $http, $sta
 
     $http(treq).success(function(data){
         $scope.task = data;
+        var datevals = $scope.task.date.split("-");
+        $scope.currDay = parseInt(datevals[2]);
+        $scope.currMonth = $scope.months[parseInt(datevals[1])-1];
+        $scope.currYear = parseInt(datevals[0]);
     })
 
     $scope.isActive = function (routes) {
@@ -119,11 +133,11 @@ mainApp.controller('editTaskController', function($scope, $location, $http, $sta
 
         // Get all of the easy stuff in first
 
-        var data = {}
+        var data = {'pk': $scope.task.pk}
         data.owner_pk = 1;
 
         fields = ['title', 'video', 'category', 'help_text', 'recurring', 
-            'recurring_weekly', 'recurring_daily']
+            'recurring_weekly', 'recurring_daily', 'year', 'day']
 
         for (i in fields) {
             if (fields[i] in $scope.formData) {
@@ -143,17 +157,25 @@ mainApp.controller('editTaskController', function($scope, $location, $http, $sta
             data.steps = steps.join(":::")
         } 
 
+        // Get the month
+
+        if ('month' in $scope.formData) {
+            data.month = $scope.months.indexOf($scope.formData['month']) + 1
+        }
+
         var req = {
             url: "http://iamready.herokuapp.com/events/mastertask/update/",
             data: data,
             method: "POST"
         }
 
+        console.log(req)
+
         $http(req).success(function(data){
             console.log("Created!")
         })
         .error(function(data){
-            
+            console.log(data)
         })
     }
 
