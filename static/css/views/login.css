@@ -14,7 +14,7 @@ body {
   height: 100%;
   font-family: "San Francisco";
   font-weight: 200;
-  background: url("../../img/bg/bg.jpeg") no-repeat center center fixed;
+  background: url("../../img/bg/bg.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
   -moz-background-size: cover;
   -o-background-size: cover;
