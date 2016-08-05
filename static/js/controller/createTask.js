@@ -6,6 +6,30 @@ mainApp.controller('createTaskController', function($scope, $location, $http, $f
         steps: [""]
     }
 
+    $scope.months = ['January', 'February', 'March', 'April', 'May', 'June',
+        'July', 'August', 'September', 'October', 'November', 'December'];
+
+    $scope.days = [];
+    for(var i=1;i<32;i++){
+        $scope.days.push(i); 
+    }
+
+    $scope.years = ["2016" ,"2017" ,"2018" ,"2019"];
+
+    $scope.hours = [];
+    for (var i=1; i<25;i++) {
+        $scope.hours.push(i);
+    }
+
+    $scope.minutes = [];
+    for (var i=0; i<60; i++) {
+        var s = i.toString();
+        if (s.length == 1) {
+            s = "0" + s
+        }
+        $scope.minutes.push(s)
+    }
+
     var ureq = {
         url: "http://iamready.herokuapp.com/users/user/all/",
         data: {
