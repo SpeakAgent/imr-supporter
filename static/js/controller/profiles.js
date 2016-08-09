@@ -15,7 +15,7 @@ mainApp.controller('profilesController', function($scope, $http) {
     })
 });
 
-mainApp.controller('profileController', function($scope, $http, $stateParams) {
+mainApp.controller('profileController', function($scope, $http, $stateParams, $window) {
     console.log("profiles Controller");
 
     $scope.formData = {}
@@ -53,14 +53,8 @@ mainApp.controller('profileController', function($scope, $http, $stateParams) {
         }
 
         $http(preq).success(function(data){
-            // We need to remove the values from the fields if
-            // we're staying on the same page.
-            for (var i in profile_fields) {
-                if (profile_fields[i] in $scope.formData) {
-                    delete $scope.formData[profile_fields[i]]
-                }
-            }
             $scope.student = data
+            $window.location.href = "#/profiles";
         })
         .error(function(data){
 
@@ -122,7 +116,11 @@ mainApp.controller('profileController', function($scope, $http, $stateParams) {
         console.log(ereq);
 
         $http(ereq).success(function(data){
-            $scope.student = data
+            $scope.student = data;
+            $window.location.href = "#/profiles";
+        })
+        .error(function(data){
+            console.log(data)
         })
 
 

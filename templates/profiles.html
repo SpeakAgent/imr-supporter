@@ -13,7 +13,9 @@
                         </div>
                         <div class="col-md-2" style="margin-left:-40px"
                         ng-repeat="student in students">
+                            <a href = "/imr-supporter/#/profiles/{{ student.pk }}"
                             <button class="newTaskBtn" style="margin-bottom:20px">{{ student.first_name }} {{ student.last_name }}</button>
+                            </a>
                         </div>
 
                         <div class="col-md-3">
