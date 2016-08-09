@@ -77,7 +77,7 @@
                     ng-model="formData.em[0].name">
                   </div>
                   <div class="form-group">
-                    <label for="relationsip">Relationsip:</label><br>
+                    <label for="relationsip">Relationship:</label><br>
                     <input type="text" class="form-control" placeholder="{{ student.emergency_contacts[0].relationship}}"
                     ng-model="formData.em[0].relationship">
                   </div>
@@ -102,35 +102,35 @@
                   <div class="form-group">
                     <label for="phone">Phone Number:</label><br>
                     <input type="text" class="form-control" placeholder="{{ student.emergency_contacts[1].phone }}"
-                    ng-model="formData.em[0].phone">
+                    ng-model="formData.em[1].phone">
                   </div>
                   <div class="form-heading">
                     <h4>Medical:</h4>
                   </div>
                   <div class="form-group">
                     <label for="medical">Medical:</label><br>
-                    <input type="text" class="form-control" placeholder="{{ student.medical }}">
+                    <input type="text" class="form-control" placeholder="{{ student.medical }}" ng-model="formData.medical">
                   </div>
                   <div class="form-heading">
                     <h4>You should know that:</h4>
                   </div>
                   <div class="form-group">
                     <label for="know">You should know that:</label><br>
-                    <input type="text" class="form-control" placeholder="{{ student.should_know }}">
+                    <input type="text" class="form-control" placeholder="{{ student.should_know }}" ng-model="formData.should_know">
                   </div>
                   <div class="form-heading">
                     <h4>At school:</h4>
                   </div>
                   <div class="form-group">
                     <label for="school">At school:</label><br>
-                    <input type="text" class="form-control" placeholder="{{ student.at_school }}">
+                    <input type="text" class="form-control" placeholder="{{ student.at_school }}" ng-model="formData.at_school">
                   </div>
                   <div class="form-heading">
                     <h4>At work:</h4>
                   </div>
                   <div class="form-group">
                     <label for="work">At work:</label><br>
-                    <input type="text" class="form-control" placeholder="{{ student.at_work }}">
+                    <input type="text" class="form-control" placeholder="{{ student.at_work }}" ng-model="formData.at_work">
                   </div>
 
                   <button type="submit" class="newTaskBtn" ng-click="updateEmergency()"><i class="fa fa-pencil"></i> Update Emergency Information</button>

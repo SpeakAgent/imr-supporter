@@ -73,40 +73,45 @@ mainApp.controller('profileController', function($scope, $http, $stateParams) {
             'should_know'];
         var emer_data = {pk: $scope.student.pk};
 
+        console.log(emer_fields, $scope.formData)
+
         for (var i in emer_fields) {
             if (emer_fields[i] in $scope.formData) {
                 emer_data[emer_fields[i]] = $scope.formData[emer_fields[i]]
             }
         }
 
+        console.log(emer_data)
+
         var emer_con_fields = ['name', 'relationship', 'phone']
-        if ($scope.formData.em[0] != undefined) {
-            c1arr = [$scope.student.emergency_contacts[0].pk]
-            for (var i in emer_con_fields) {
-                if (emer_con_fields[i] in $scope.formData.em[0]) {
-                    c1arr.push($scope.formData.em[0][emer_con_fields[i]])
-                } else {
-                    c1arr.push("#")
+        if ('em' in $scope.formData) {
+            if ($scope.formData.em[0] != undefined) {
+                c1arr = [$scope.student.emergency_contacts[0].pk]
+                for (var i in emer_con_fields) {
+                    if (emer_con_fields[i] in $scope.formData.em[0]) {
+                        c1arr.push($scope.formData.em[0][emer_con_fields[i]])
+                    } else {
+                        c1arr.push("#")
+                    }
                 }
+    
+                emer_data.em1 = c1arr.join("::");
+    
             }
-
-            emer_data.em1 = c1arr.join("::");
-
-        }
-
-        if ($scope.formData.em[1] != undefined) {
-            c2arr = [$scope.student.emergency_contacts[1].pk]
-            for (var i in emer_con_fields) {
-                if (emer_con_fields[i] in $scope.formData.em[1]) {
-                    c2arr.push($scope.formData.em[1][emer_con_fields[i]])
-                } else {
-                    c2arr.push("#")
+    
+            if ($scope.formData.em[1] != undefined) {
+                c2arr = [$scope.student.emergency_contacts[1].pk]
+                for (var i in emer_con_fields) {
+                    if (emer_con_fields[i] in $scope.formData.em[1]) {
+                        c2arr.push($scope.formData.em[1][emer_con_fields[i]])
+                    } else {
+                        c2arr.push("#")
+                    }
                 }
-            }
-
-            emer_data.em2 = c2arr.join("::");
-
-        }
+    
+                emer_data.em2 = c2arr.join("::");
+    
+            }}
 
         var ereq = {
             url: "http://iamready.herokuapp.com/users/user/update/",
