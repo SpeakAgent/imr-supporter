@@ -21,43 +21,43 @@
                   </div>
                   <div class="form-group">
                     <label for="street">Street Address:</label><br>
-                    <input type="text" class="form-control" placeholder="{{ student.street }}">
+                    <input type="text" class="form-control" placeholder="{{ student.street }}" ng-model="formData.street">
                   </div>
                   <div class="form-group">
                     <label for="city">City:</label><br>
-                    <input type="text" class="form-control" placeholder="{{ student.city }}">
+                    <input type="text" class="form-control" placeholder="{{ student.city }}" ng-model="formData.city">
                   </div>
                   <div class="form-group">
                     <label for="state">State:</label><br>
-                    <input type="text" class="form-control" placeholder="{{ student.state }}">
+                    <input type="text" class="form-control" placeholder="{{ student.state }}" ng-model="formData.state">
                   </div>
                   <div class="form-group">
                     <label for="zip">Zip Code:</label><br>
-                    <input type="text" class="form-control" placeholder="{{ student.zipcode }}">
+                    <input type="text" class="form-control" placeholder="{{ student.zipcode }}" ng-model="formData.zipcode">
                   </div>
                   <div class="form-heading">
                     <h4>Stuff I like:</h4>
                   </div>
                   <div class="form-group">
                     <label for="likes">Stuff I like:</label><br>
-                    <input type="text" class="form-control" placeholder="{{ student.stuff_i_like }}">
+                    <input type="text" class="form-control" placeholder="{{ student.stuff_i_like }}" ng-model="formData.stuff_i_like">
                   </div>
                   <div class="form-heading">
                     <h4>I go to School at:</h4>
                   </div>
                   <div class="form-group">
                     <label for="school">School:</label><br>
-                    <input type="text" class="form-control" placeholder="{{ student.school}}">
+                    <input type="text" class="form-control" placeholder="{{ student.school}}" ng-model="formData.school">
                   </div>
                   <div class="form-heading">
                     <h4>I work at:</h4>
                   </div>
                   <div class="form-group">
                     <label for="work">Work:</label><br>
-                    <input type="text" class="form-control" placeholder="{{ student.work}}">
+                    <input type="text" class="form-control" placeholder="{{ student.work}}" ng-model="formData.work">
                   </div>
 
-                  <button type="submit" class="newTaskBtn"><i class="fa fa-pencil"></i> Update Profile Information</button>
+                  <button type="submit" class="newTaskBtn" ng-click="updateProfile()"><i class="fa fa-pencil"></i> Update Profile Information</button>
                 </form>
               </accordion-group>
 
@@ -73,30 +73,36 @@
                   </div>
                   <div class="form-group">
                     <label for="name">Name:</label><br>
-                    <input type="text" class="form-control" placeholder="{{ student.emergency_contacts[0].first_name }} {{ student.emergency_contacts[0].last_name }}">
+                    <input type="text" class="form-control" placeholder="{{ student.emergency_contacts[0].first_name }} {{ student.emergency_contacts[0].last_name }}"
+                    ng-model="formData.em[0].name">
                   </div>
                   <div class="form-group">
                     <label for="relationsip">Relationsip:</label><br>
-                    <input type="text" class="form-control" placeholder="{{ student.emergency_contacts[0].relationship}}">
+                    <input type="text" class="form-control" placeholder="{{ student.emergency_contacts[0].relationship}}"
+                    ng-model="formData.em[0].relationship">
                   </div>
                   <div class="form-group">
                     <label for="phone">Phone Number:</label><br>
-                    <input type="text" class="form-control" placeholder="{{ student.emergency_contacts[0].phone }}">
+                    <input type="text" class="form-control" placeholder="{{ student.emergency_contacts[0].phone }}"
+                    ng-model="formData.em[0].phone">
                   </div>
                   <div class="form-heading">
                     <h4>In an emergency, contact (2nd contact out of 2):</h4>
                   </div>
                   <div class="form-group">
                     <label for="name">Name:</label><br>
-                    <input type="text" class="form-control" placeholder="{{ student.emergency_contacts[1].first_name }} {{ student.emergency_contacts[1].last_name }}">
+                    <input type="text" class="form-control" placeholder="{{ student.emergency_contacts[1].first_name }} {{ student.emergency_contacts[1].last_name }}"
+                    ng-model="formData.em[1].name">
                   </div>
                   <div class="form-group">
                     <label for="relationsip">Relationsip:</label><br>
-                    <input type="text" class="form-control" placeholder="{{ student.emergency_contacts[1].relationship}}">
+                    <input type="text" class="form-control" placeholder="{{ student.emergency_contacts[1].relationship}}"
+                    ng-model="formData.em[1].relationship">
                   </div>
                   <div class="form-group">
                     <label for="phone">Phone Number:</label><br>
-                    <input type="text" class="form-control" placeholder="{{ student.emergency_contacts[1].phone }}">
+                    <input type="text" class="form-control" placeholder="{{ student.emergency_contacts[1].phone }}"
+                    ng-model="formData.em[0].phone">
                   </div>
                   <div class="form-heading">
                     <h4>Medical:</h4>
@@ -127,7 +133,7 @@
                     <input type="text" class="form-control" placeholder="{{ student.at_work }}">
                   </div>
 
-                  <button type="submit" class="newTaskBtn"><i class="fa fa-pencil"></i> Update Emergency Information</button>
+                  <button type="submit" class="newTaskBtn" ng-click="updateEmergency()"><i class="fa fa-pencil"></i> Update Emergency Information</button>
                 </form>
               </accordion-group>
             </accordion>
