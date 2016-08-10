@@ -48,6 +48,18 @@ mainApp.controller('editTaskController', function($scope, $location, $http, $sta
         $scope.currEndMin = $scope.task.end_time.split(":")[1];
     })
 
+    var ureq = {
+        url: "http://iamready.herokuapp.com/users/user/all/",
+        data: {
+            pk: 1
+        },
+        method: "POST"
+    }
+
+    $http(ureq).success(function(data){
+        $scope.users = data
+    })
+
     $scope.isActive = function (routes) {
         angular.forEach(routes, function(route){
             if(route === $location.path()) {
