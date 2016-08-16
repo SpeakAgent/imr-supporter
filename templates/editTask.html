@@ -56,13 +56,15 @@
                   <h1>Edit Steps</h1>
                   <div class="row" ng-repeat="step in task.steps track by $index">
                       <div class="col-md-3">
-                          <p style="margin-bottom:5px!important">
+                          <p style="margin-bottom:5px!important"
+                            ng-style="toDelete($index)">
                             <i class="fa fa-trash-o" 
                               style="color:red;margin-right:5px"
-                              ng-click="deleteStep(step.pk)"></i>
+                              ng-click="updateDelete($index)"></i>
                             Step {{ $index + 1 }}</p>
-                          <input class="form-active-adding" type="text" placeholder='{{ task.steps[$index].title }}' style="width:260px; padding:5px; margin-left:-3px;"
-                          ng-model="task.steps[$index].title">
+                          <input class="form-active-adding" type="text" style="width:260px; padding:5px; margin-left:-3px;"
+                          ng-model="task.steps[$index].title"
+                          ng-style="toDelete($index)">
                           <br><br>
                           
                       </div>

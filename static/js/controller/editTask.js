@@ -4,6 +4,23 @@ mainApp.controller('editTaskController', function($scope, $location, $http, $sta
         users: [],
         steps: []
     }
+
+    $scope.toDeleteIndexes = [0]
+
+    $scope.toDelete = function(index) {
+        if ($scope.toDeleteIndexes.indexOf(index) >= 0) {
+            return {"text-decoration": "line-through"}
+        }
+    }
+
+    $scope.updateDelete = function(index) {
+        var i = $scope.toDeleteIndexes.indexOf(index)
+        if (i >= 0) {
+            $scope.toDeleteIndexes.pop(i)
+        } else {
+            $scope.toDeleteIndexes.push(index)
+        }
+    }
     
     var treq = {
         url: "http://iamready.herokuapp.com/events/mastertask/one/",
