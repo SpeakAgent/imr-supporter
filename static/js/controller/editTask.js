@@ -4,30 +4,7 @@ mainApp.controller('editTaskController', function($scope, $location, $http, $sta
         users: [],
         steps: []
     }
-
-    $scope.months = ['January', 'February', 'March', 'April', 'May', 'June',
-        'July', 'August', 'September', 'October', 'November', 'December'];
-
-    $scope.days = [];
-    for(var i=1;i<32;i++){
-        $scope.days.push(i); 
-    }
-
-    $scope.years = ["2016" ,"2017" ,"2018" ,"2019"];
-
-    $scope.hours = [];
-    for (var i=1; i<25;i++) {
-        $scope.hours.push(i);
-    }
-
-    $scope.minutes = [];
-    for (var i=0; i<60; i++) {
-        var s = i.toString();
-        if (s.length == 1) {
-            s = "0" + s
-        }
-        $scope.minutes.push(s)
-    }
+    
     var treq = {
         url: "http://iamready.herokuapp.com/events/mastertask/one/",
         data: {
@@ -38,14 +15,9 @@ mainApp.controller('editTaskController', function($scope, $location, $http, $sta
 
     $http(treq).success(function(data){
         $scope.task = data;
-        var datevals = $scope.task.date.split("-");
-        $scope.currDay = parseInt(datevals[2]);
-        $scope.currMonth = $scope.months[parseInt(datevals[1])-1];
-        $scope.currYear = parseInt(datevals[0]);
-        $scope.currStartHour = $scope.task.start_time.split(":")[0];
-        $scope.currEndHour = $scope.task.end_time.split(":")[0];
-        $scope.currStartMin = $scope.task.start_time.split(":")[1];
-        $scope.currEndMin = $scope.task.end_time.split(":")[1];
+        for (var i in $scope.task.steps) {
+            $scope.task.steps[i].state = "unmodified"
+        }
     })
 
     var ureq = {
@@ -59,6 +31,10 @@ mainApp.controller('editTaskController', function($scope, $location, $http, $sta
     $http(ureq).success(function(data){
         $scope.users = data
     })
+
+    $scope.addStep = function() {
+        $scope.task.steps.push({state: 'unmodified'})
+    }
 
     $scope.isActive = function (routes) {
         angular.forEach(routes, function(route){
