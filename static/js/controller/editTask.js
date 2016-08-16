@@ -15,7 +15,6 @@ mainApp.controller('editTaskController', function($scope, $location, $http, $sta
     }
 
     $scope.updateDelete = function(index, pk) {
-        console.log("Called updateDelete", index, pk)
         var i = $scope.toDeleteIndexes.indexOf(index)
         if (i >= 0) {
             $scope.toDeleteIndexes.pop(i)
@@ -185,7 +184,6 @@ mainApp.controller('editTaskController', function($scope, $location, $http, $sta
         var toAddVals = [];
         var toUpdateVals = []
         for (var i in $scope.formData.steps) {
-            console.log(i, $scope.toDeleteIndexes, i in $scope.toDeleteIndexes)
             var s = $scope.formData.steps[i];
             if (s.pk == -1) {
                 // wait wait! We need to make sure it's really supposed 
@@ -213,6 +211,10 @@ mainApp.controller('editTaskController', function($scope, $location, $http, $sta
         }
 
         console.log(req);
+
+        $http(req).success(function(data){
+            console.log("Done!", data)
+        })
 
     }
 
