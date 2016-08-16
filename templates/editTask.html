@@ -15,7 +15,7 @@
                                   <div class="col-md-8">
                                       <p style="margin-bottom:5px!important">Task Category</p>
                                       <select 
-                                      ng-model="formData.cagetory"
+                                      ng-model="formData.task_type"
                                       >
                                           <option value="Education"
                                           ng-selected="task.task_type.title=='Education'"
@@ -54,16 +54,16 @@
               </div>
               <div id="adding" style="margin-left:30px ">
                   <h1>Edit Steps</h1>
-                  <div class="row" ng-repeat="step in task.steps track by $index">
+                  <div class="row" ng-repeat="step in formData.steps track by $index">
                       <div class="col-md-3">
                           <p style="margin-bottom:5px!important"
                             ng-style="toDelete($index)">
                             <i class="fa fa-trash-o" 
                               style="color:red;margin-right:5px"
-                              ng-click="updateDelete($index)"></i>
+                              ng-click="updateDelete($index, step.pk)"></i>
                             Step {{ $index + 1 }}</p>
                           <input class="form-active-adding" type="text" style="width:260px; padding:5px; margin-left:-3px;"
-                          ng-model="task.steps[$index].title"
+                          ng-model="formData.steps[$index].title"
                           ng-style="toDelete($index)">
                           <br><br>
                           

@@ -5,7 +5,8 @@ mainApp.controller('editTaskController', function($scope, $location, $http, $sta
         steps: []
     }
 
-    $scope.toDeleteIndexes = [0]
+    $scope.toDeleteIndexes = [];
+    $scope.toDeletePKs = []
 
     $scope.toDelete = function(index) {
         if ($scope.toDeleteIndexes.indexOf(index) >= 0) {
@@ -13,12 +14,20 @@ mainApp.controller('editTaskController', function($scope, $location, $http, $sta
         }
     }
 
-    $scope.updateDelete = function(index) {
+    $scope.updateDelete = function(index, pk) {
+        console.log("Called updateDelete", index, pk)
         var i = $scope.toDeleteIndexes.indexOf(index)
         if (i >= 0) {
             $scope.toDeleteIndexes.pop(i)
+            if (pk != -1) {
+                var p = $scope.toDeletePKs.indexOf(pk)
+                $scope.toDeletePKs.pop(p)
+            }
         } else {
             $scope.toDeleteIndexes.push(index)
+            if (pk != -1) {
+                $scope.toDeletePKs.push(pk)
+            }
         }
     }
     
@@ -33,8 +42,9 @@ mainApp.controller('editTaskController', function($scope, $location, $http, $sta
     $http(treq).success(function(data){
         $scope.task = data;
         for (var i in $scope.task.steps) {
-            $scope.task.steps[i].state = "unmodified"
+            $scope.task.steps[i].state = "unmodified";
         }
+        $scope.formData.steps = data.steps;
     })
 
     var ureq = {
@@ -50,7 +60,7 @@ mainApp.controller('editTaskController', function($scope, $location, $http, $sta
     })
 
     $scope.addStep = function() {
-        $scope.task.steps.push({state: 'unmodified'})
+        $scope.task.steps.push({state: 'unmodified', pk: -1})
     }
 
     $scope.isActive = function (routes) {
@@ -153,55 +163,47 @@ mainApp.controller('editTaskController', function($scope, $location, $http, $sta
 
     $scope.updateTask = function () {
 
-        // Get all of the easy stuff in first
+        var data = {pk: $scope.task.pk}
+        
+        // The basic stuff
+        var fields = ['title', 'video', 'help_text', 'task_type'];
 
-        var data = {'pk': $scope.task.pk}
-        data.owner_pk = 1;
-
-        fields = ['title', 'video', 'category', 'help_text', 'recurring', 
-            'recurring_weekly', 'recurring_daily', 'year', 'day']
-
-        for (i in fields) {
+        for (var i in fields) {
             if (fields[i] in $scope.formData) {
                 data[fields[i]] = $scope.formData[fields[i]]
             }
         }
 
-        // Now the harder stuff
+        // Steps
 
-        // Add the steps
-        if ($scope.formData.steps.length > 0) {
-            steps = []
-            for (i in $scope.formData.steps) {
-                s = i + "::" + $scope.formData.steps[i];
-                steps.push(s)
+        //// Delete these steps
+        if ($scope.toDeletePKs.length != 0) {
+            data.delete_steps = $scope.toDeletePKs.join(',');    
+        }
+
+        ////  Add  / update these steps
+        var toAddVals = [];
+        var toUpdateVals = []
+        for (var i in $scope.formData.steps) {
+            console.log(i, $scope.toDeleteIndexes, i in $scope.toDeleteIndexes)
+            var s = $scope.formData.steps[i];
+            if (s.pk == -1) {
+                // wait wait! We need to make sure it's really supposed 
+                // to be added!
+                if ($scope.toDeleteIndexes.indexOf(parseInt(i, 10)) == -1) {
+                    toAddVals.push(s.title)    
+                }
+                
+            } else {
+                toUpdateVals.push(s.pk + "::" + s.title)
             }
-            data.steps = steps.join(":::")
-        } 
-
-        // Get the month
-
-        if ('month' in $scope.formData) {
-            data.month = $scope.months.indexOf($scope.formData['month']) + 1
+        }
+        if (toAddVals.length != 0) {
+            data.add_steps = toAddVals.join('::')
         }
 
-        // Time stuff
-
-        if ('start_hour' in $scope.formData && 'start_minute' in $scope.formData) {
-            data.start_time = $scope.formData['start_hour'] + ":" + $scope.formData['start_minute']
-        } else if ('start_hour' in $scope.formData) {
-            data.start_time = $scope.formData['start_hour'] + ":" + $scope.task.start_time.split(":")[1]
-        } else if ('start_minute' in $scope.formData) {
-            data.start_time = $scope.task.start_time.split(":")[0] + ":" + $scope.formData['start_minute']
-        }
-
-        
-        if ('end_hour' in $scope.formData && 'end_minute' in $scope.formData) {
-            data.end_time = $scope.formData['end_hour'] + ":" + $scope.formData['end_minute']
-        } else if ('end_hour' in $scope.formData) {
-            data.end_time = $scope.formData['end_hour'] + ":" + $scope.task.end_time.split(":")[1]
-        } else if ('end_minute' in $scope.formData) {
-            data.end_time = $scope.task.end_time.split(":")[0] + ":" + $scope.formData['end_minute']
+        if (toUpdateVals.length != 0) {
+            data.update_steps = toUpdateVals.join(':::')
         }
 
         var req = {
@@ -210,14 +212,8 @@ mainApp.controller('editTaskController', function($scope, $location, $http, $sta
             method: "POST"
         }
 
-        console.log(req)
+        console.log(req);
 
-        $http(req).success(function(data){
-            console.log("Updated!")
-        })
-        .error(function(data){
-            console.log(data)
-        })
     }
 
     
