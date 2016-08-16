@@ -213,7 +213,7 @@ mainApp.controller('editTaskController', function($scope, $location, $http, $sta
         console.log(req);
 
         $http(req).success(function(data){
-            console.log("Done!", data)
+            $location.path('/tasks')
         })
 
     }
