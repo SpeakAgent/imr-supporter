@@ -1,45 +1,47 @@
+.row {
+    margin: 0 !important;
+}
+
 .tasksBox {
-    height: 260px;
+    height: 350px;
     background-image: url('../../img/bg/bg-blue-tile.png');
     cursor: pointer;
 }
 
-.tasksBox h1 {
-    margin: 0 11%;
-    font-weight: bold;
-    color: #00486E;
-    line-height: 40px;
-    font-size: 38px;
-}
-
-.scheduleBox {
-    height: 260px;
+.assignBox {
+    height: 350px;
     background-image: url('../../img/bg/bg-yellow-tile.png');
     cursor: pointer;
 }
 
-.scheduleBox h1 {
-    margin: 0 11%;
-    font-weight: bold;
-    color: #00486E;
-    line-height: 40px;
-    font-size: 38px;
+.scheduleBox {
+    height: 350px;
+    background-color: #40b640;
+    cursor: pointer;
 }
 
-h1 img {
+.box {
+    padding: 0;
+}
+
+.box img {
     border-radius: 55px;
     width: 100px;
-    float: left;
     position: relative;
-    top: 80px;
-    left: 25px;
+    top: 70px;
+    display: block;
+    margin: auto;
 }
 
 h1.boxTitle {
+    margin: auto;
+    display: block;
+    text-align: center;
+    font-size: 25px;
     position: relative;
-    top: 32%;
-    left: -10%;
-    margin: 0 0 0 50%;
+    top: 140px;
+    font-weight: bold;
+    color: #00486E;
 }
 
 .activity h2 {
