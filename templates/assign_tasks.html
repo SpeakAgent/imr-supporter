@@ -1,0 +1,33 @@
+<ng-include src="'templates/includes/nav.html'"></ng-include>
+
+<div class="container" ng-controller="assignTasksController">
+  <div class="border row">
+    <div class="border col-md-12">
+    	<div class="wrapperBox">
+    		<div class="currentBox">
+    			<h1>Assign tasks</h1>
+    			<div style="padding-bottom: 2em">
+    			<table style="width:80%;margin:2em">
+    				<tr>
+    					<th style="width:150px">Task</th>
+    					<th ng-repeat="user in users"
+    						style="width:150px">
+    						{{ user.first_name }} {{user.last_name }}
+    					</th>
+    				</tr>
+    				<tr ng-repeat="task in tasks">
+    					<td>{{ task.title }}</td>
+    					<td ng-repeat="user in users">
+    						<input type="checkbox" 
+    							ng-click="assignTask(user.pk, task.pk)" />
+    					</td>
+    				</tr>
+    			</table>
+    			</div>
+    		</div>
+    	</div>
+    </div>  
+		
+	</div>
+	<ng-include src="'templates/includes/footer.html'"></ng-include>
+</div>
