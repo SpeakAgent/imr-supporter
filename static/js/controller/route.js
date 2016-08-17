@@ -46,6 +46,13 @@ mainApp.config(function($stateProvider, $urlRouterProvider) {
       css: 'static/css/views/editTask.css'
     }
   })
+  .state('assign', {
+    url: "/assign",
+    templateUrl: 'templates/assign.html',
+    data: {
+      css: 'static/css/views/assign.css'
+    }
+  })
   .state('schedules', {
     url: "/schedules",
     templateUrl: 'templates/schedules.html',
