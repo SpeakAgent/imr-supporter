@@ -5,7 +5,7 @@
       <div class="border col-md-12">
           <div class="wrapperBox">
               <div class="currentBox">
-                  <h1>Create a Task</h1>
+                  <h1>Create Task</h1>
                   <br>
                   <div id="basic">
                       <h2>Basic Information</h2>
@@ -50,7 +50,7 @@
                                   <p style="margin-bottom:5px!important; margin-top:30px">Add a link to a Youtube video (optional)</p>
                                   <input type="text" class="form-active-basic" placeholder='Paste url here' style="width:260px; padding:5px" ng-model="formData.video">
 
-
+                                  
                               </div>
                               <div class="col-md-8">
 
@@ -81,7 +81,129 @@
                   </div>
                   <div class="col-md-3"><a href="" ng-click="formData.steps.push('')">+ Add another step...</a></div>
               </div>
+              <h1>Shedule Task</h1>
+              <div class="row">
+                  <div class="col-md-1">
+
+                  </div>
+                  <div class="col-md-2">
+                      <span class="date">DATE</span><br>
+                      <div class="row">
+                          <div class="col-md-6">
+                              <!-- <p class="input-group fake-input">
+                                  <input type="text" class="form-control" current-text="Today" clear-text="Clear" close-on-date-selection="false" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min-date="minDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" style="width:0; padding:0" 
+                                  ng-model="formData.date" />
+                                  <span class="input-group-btn">
+                                      <button type="button" class="btn btn-default fake-button" ng-click="open($event)"><i class="fa fa-calendar-o fa-3x" aria-hidden="true"
+                                      ng-model="formData.date"></i></button>
+                                  </span>
+                              </p> -->
+                              <select 
+                                ng-model="formData.month"
+                                >
+                                    <option 
+                                    ng-repeat="month in months"
+                                    value="{{ month }}"
+                                    ng-selected="currMonth==month"
+                                    >{{ month }}</option>
+                                </select>
+                                <select 
+                                ng-model="formData.day"
+                                >
+                                    <option 
+                                    ng-repeat="day in days"
+                                    value="{{ day }}"
+                                    ng-selected="currDay==day"
+                                    >{{ day }}</option>
+                                </select>
+                                <select 
+                                ng-model="formData.year"
+                                >
+                                    <option 
+                                    ng-repeat="year in years"
+                                    value="{{ year }}"
+                                    ng-selected="currYear==year"
+                                    >{{ year }}</option>
+                                </select>
+                                
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-2">
+                      <span class="startTime">START TIME</span><br>
+                      <select 
+                          ng-model="formData.start_hour"
+                          >
+                              <option 
+                              ng-repeat="hour in hours"
+                              value="{{ hour }}"
+                              ng-selected="currStartHour==hour"
+                              >{{ hour }}</option>
+                          </select>:
+                        <select 
+                                ng-model="formData.start_minute"
+                                >
+                                    <option 
+                                    ng-repeat="minute in minutes"
+                                    value="{{ minute }}"
+                                    ng-selected="currStartMin==minute"
+                                    >{{ minute }}</option>
+                                </select>
+                  </div>
+                  <div class="col-md-2">
+                      <span class="endTime">END TIME</span><br>
+                      <select 
+                          ng-model="formData.end_hour"
+                          >
+                              <option 
+                              ng-repeat="hour in hours"
+                              value="{{ hour }}"
+                              ng-selected="currEndHour==hour"
+                              >{{ hour }}</option>
+                          </select>:
+                        <select 
+                                ng-model="formData.end_minute"
+                                >
+                                    <option 
+                                    ng-repeat="minute in minutes"
+                                    value="{{ minute }}"
+                                    ng-selected="currEndMin==minute"
+                                    >{{ minute }}</option>
+                                </select>
+                      
+                  </div>
+                  <div class="col-md-2">
+                      <div class="checkBox">
+                          <label>
+                              <input type="checkbox" id='check'
+                                ng-model="formData.recurring" ng-checked="task.daily == true || task.day_of_week !== ''"> Make recurring?
+                              <div class="webui-popover-content recurrentBox">
+                                  <input type="checkbox" 
+                                  ng-model="formData.recurring_weekly"
+                                  ng-checked="task.day_of_week !== ''"> Every Week <br />
+                                  <input type="checkbox" 
+                                  ng-model="formData.recurring_daily"
+                                  ng-checked="task.daily == true"> Every Day
+                              </div>
+                          </label>
+                      </div>
+                  </div>
+                  <div class="col-md-3">
+
+                  </div><br>
+                  <h1 style="margin-left:44px; margin-top:50px">Select Students</h1>
                   <div class="row">
+                      <div class="col-md-1">
+
+                      </div>
+                      <div class="col-md-2 checkBoxes" ng-repeat="user in users">
+                          <p style="margin:0!important; text-align:center; margin-left:-85px!important">{{ user.first_name }}</p>
+                          <p style="margin:0!important; text-align:center; margin-left:-85px!important">{{ user.last_name }}</p>
+                          <label>
+                              <input type="checkbox" value="{{ user.pk }}"
+                                ng-model="formData.users[$index]">
+                          </label>
+                      </div>
                       <button type="submit" class="saveBasicInfoBtn"
                                   ng-click="createTask()">SAVE</button>
                   </div>
