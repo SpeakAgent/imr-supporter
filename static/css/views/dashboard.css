@@ -16,7 +16,7 @@
 
 .scheduleBox {
     height: 350px;
-    background-color: #40b640;
+    background-image: url('../../img/bg/bg-green-tile.png');
     cursor: pointer;
 }
 
