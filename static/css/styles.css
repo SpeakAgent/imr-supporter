@@ -77,6 +77,10 @@ footer{
     padding: 3rem;
 }
 
+.left {
+  float: left;
+}
+
 .foot img {
     width: 200px;
     float: right;
