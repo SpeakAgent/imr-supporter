@@ -1,6 +1,9 @@
 mainApp.controller('createTaskController', function($scope, $location, $http, $filter) {
     console.log("create task Controller");
 
+    $('.selectpicker').selectpicker({
+    });
+
     $scope.formData = {
         users: [],
         steps: [""]
@@ -11,7 +14,7 @@ mainApp.controller('createTaskController', function($scope, $location, $http, $f
 
     $scope.days = [];
     for(var i=1;i<32;i++){
-        $scope.days.push(i); 
+        $scope.days.push(i);
     }
 
     $scope.years = ["2016" ,"2017" ,"2018" ,"2019"];
