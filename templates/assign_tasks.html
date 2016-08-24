@@ -1,7 +1,8 @@
 <ng-include src="'templates/includes/nav.html'"></ng-include>
 
 <div class="container" ng-controller="assignTasksController">
-  <div class="border row">
+  <div class="border row"
+  	ng-show="stepOne">
     <div class="border col-md-12">
     	<div class="wrapperBox">
     		<div class="currentBox">
@@ -19,15 +20,54 @@
     					<td>{{ task.title }}</td>
     					<td ng-repeat="user in users">
     						<input type="checkbox" 
-    							ng-click="assignTask(user.pk, task.pk)" />
+    							ng-click="assignTask(user.pk, task)" />
     					</td>
     				</tr>
     			</table>
+    			<button ng-click="stepOne=false;stepTwo=true">Next</button>
     			</div>
     		</div>
     	</div>
+
     </div>  
 		
 	</div>
+
+	<div class="border row"
+  	ng-show="stepTwo">
+    <div class="border col-md-12">
+    	<div class="wrapperBox">
+    		<div class="currentBox">
+    			<h1>Review assignments</h1>
+    			<div ng-repeat="student in toAssign">
+    				<h2>{{ student.first_name }} {{ student.last_name }}</h2>
+    				<div ng-repeat="task in student.tasks"
+    					style="margin-left:30px">
+	    				<h3>{{ task.title }}</h3>
+	    				<em>Schedule task</em>
+	    				<div class="row">
+	    					<div class="col-md-2">Start date<br>
+	    						<input type="date" ng-model="toAssign[student.pk].tasks[$index].startDate">
+	    					</div>
+	    					<div class="col-md-2">Start time<br>
+	    						<input type="time" ng-model="toAssign[student.pk].tasks[$index].startTime">
+	    					</div>
+	    					<div class="col-md-2">End time<br>
+	    						<input type="time" ng-model="toAssign[student.pk].tasks[$index].endTime">
+	    					</div>
+	    					<div class="col-md-2">
+	    						<input type="checkbox" ng-model="toAssign[student.pk].tasks[$index].weekly" name="weekly">
+	    						<label for="weekly">Repeat weekly</label><br>
+	    						<input type="checkbox" ng-model="toAssign[student.pk].tasks[$index].daily" name="daily">
+	    						<label for="daily">Repeat daily</label>
+	    					</div>
+	    				</div>
+    				</div>
+    			</div>
+    			<button ng-click="assignTasks()">Assign tasks</button>
+    		</div>
+    	</div>
+    </div>
+
 	<ng-include src="'templates/includes/footer.html'"></ng-include>
 </div>
