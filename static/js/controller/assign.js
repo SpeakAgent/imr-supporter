@@ -1,5 +1,18 @@
-mainApp.controller('assignController', function($scope, $location, $http, $filter) {
-    console.log("Assign Controller");
+mainApp.controller('assignTasksController', function($scope, $location, $http, $filter) {
+
+    $scope.students = [
+        {
+            first_name: "Jill",
+            last_name: "Joanstone",
+            pk: 1,
+            events: [
+                {title: "Event one",
+                pk: 1},
+                {title: "Event two",
+                pk: 2}
+            ]
+        }
+    ]
 
     $scope.formData = {};
 
@@ -100,11 +113,11 @@ mainApp.controller('assignController', function($scope, $location, $http, $filte
 
 mainApp.directive('selectPicker', ['$timeout', function($timeout){
     return {
-      restrict: 'A',
-      link:function(scope, elem){
-        $timeout(function() {
-          elem.selectpicker({});
-        }, 0);
-      }
+        restrict: 'A',
+        link:function(scope, elem){
+            $timeout(function() {
+                elem.selectpicker({});
+            }, 0);
+        }
     };
-  }])
+}])
