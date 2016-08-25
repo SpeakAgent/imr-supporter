@@ -1,0 +1,123 @@
+body {
+    background-image: url(../../img/bg/bg-gray-tile.png);
+}
+
+p {
+    font-family: "San Francisco";
+    color: #163850;
+    font-size: 11px;
+}
+
+table {
+    width: 95%;
+    margin: 0 auto;
+}
+
+.infoRow {
+    height: 40px;
+}
+
+tr.infoRow:nth-child(odd) {
+    background-color: #e6fffd;
+}
+
+.taskHeader {
+    color: #20a7e1;
+}
+
+.userHeader {
+    color: #163850;
+    text-align: center;
+    font-size: 16px;
+    line-height: 15px;
+}
+
+.titleData {
+    color: #163850;
+}
+
+.checkData {
+    text-align: center;
+}
+
+a.pull-right {
+    color: #20a7e1;
+    font-size: 20px;
+    margin: 50px 3% 40px 0;
+}
+
+a.pull-right:hover {
+    color: #163850;
+}
+
+h2.studentName {
+    color: #20a7e1;
+}
+
+h3.assignTitle {
+    margin-left: 60px;
+    color: #163850;
+    font-size: 20px;
+}
+
+p.assignSubTitle {
+    margin-left: 60px;
+    color: #163850;
+    font-size: 15px;
+}
+
+.date label, .startTime label, .endTime label {
+    margin-left: 60px;
+    text-transform: uppercase;
+    font-size: 11px;
+}
+
+.date input, .startTime input, .endTime input {
+    margin-left: 60px;
+    background: #e5e1df;
+    border: 1px solid #e5e1df;
+    height: 35px;
+}
+
+.repeat {
+    margin: 15px 0px 0 60px;
+    display: inline-flex;
+}
+
+.repeat label {
+    margin: 0 20px 20px 5px;
+}
+
+.supporterSelect {
+    margin: 0 0 20px 60px;
+}
+
+.supporterSelect button {
+    color: white !important;
+    background: #163850;
+    border-color: #163850;
+}
+
+.supporterSelect button:hover {
+    color: white !important;
+    background: #163850;
+    border-color: #163850;
+}
+
+.supporterSelect .dropdown-toggle {
+    background-color: #163850 !important;
+    border-color: #163850 !important;
+}
+
+.assignButton{
+    background: #20a7e1;
+    color: white;
+    padding: 9px 22px;
+    font-size: 15px;
+    border: 1px solid transparent;
+    margin: 0 0 40px 60px;
+}
+
+.assignButton:hover {
+    background: #163850;
+}
