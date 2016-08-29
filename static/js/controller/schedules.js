@@ -186,5 +186,41 @@ mainApp.controller('weeklyScheduleController', function($scope, $http) {
         $scope.schedule=data;
     })
 
+    $scope.nextWeek = function() {
+        $scope.schedule = {};
+        $scope.target.setDate($scope.target.getDate() + 7);
+        $scope.date = $scope.target.getFullYear() + "-" + ($scope.target.getMonth() + 1) + "-" + $scope.target.getDate();
+        var req = {
+            url: "http://iamready.herokuapp.com/events/all/week/",
+            data: {
+                user_pk: 1,
+                date: $scope.date
+            },
+            method: "POST"
+        }
+
+        $http(req).success(function(data){
+            $scope.schedule=data;
+        })
+    }
+
+    $scope.prevWeek = function() {
+        $scope.schedule = {};
+        $scope.target.setDate($scope.target.getDate() - 7);
+        $scope.date = $scope.target.getFullYear() + "-" + ($scope.target.getMonth() + 1) + "-" + $scope.target.getDate();
+        var req = {
+            url: "http://iamready.herokuapp.com/events/all/week/",
+            data: {
+                user_pk: 1,
+                date: $scope.date
+            },
+            method: "POST"
+        }
+
+        $http(req).success(function(data){
+            $scope.schedule=data;
+        })
+    }
+
 
 })

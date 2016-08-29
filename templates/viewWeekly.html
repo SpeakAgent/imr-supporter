@@ -21,7 +21,7 @@
                     </div>
                     <div class="scheduleTitle">
                         <h1 class="text-center" style="margin-top:-60px">Weekly Schedule for {{ schedule.user.first_name}} {{ schedule.user.last_name }}</h1>
-                        <h4 class="text-center weekInfo" style="color:#00355D;"><a href=""><i class="fa fa-angle-left fa-2x" aria-hidden="true"></i></a>{{schedule.first_day}} - {{schedule.last_day}}<a href=""><i class="fa fa-angle-right fa-2x" aria-hidden="true"></i></a></h4>
+                        <h4 class="text-center weekInfo" style="color:#00355D;"><a href="" ng-click="prevWeek()"><i class="fa fa-angle-left fa-2x" aria-hidden="true"></i></a>{{schedule.first_day}} - {{schedule.last_day}}<a href="" ng-click="nextWeek()"><i class="fa fa-angle-right fa-2x" aria-hidden="true"></i></a></h4>
                     </div>
                     <div ng-repeat="dow in days_of_week">
                     <div class="row" style="margin-left:20px;margin-top:50px;">
