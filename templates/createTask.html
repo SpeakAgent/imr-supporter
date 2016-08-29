@@ -14,7 +14,8 @@
 
         <div class="taskCategory">
           <p>Task Category</p>
-          <select ng-model="formData.cagetory" class="selectpicker form-active-basic" title="CHOOSE CATEGORY" data-width="fit">
+          <select ng-model="formData.cagetory" class="form-active-basic" data-width="fit">
+            <option value="" disabled selected>CHOOSE CATEGORY</option>
             <option value="Education">Education</option>
             <option value="Life">Life</option>
             <option value="On the Go">On the Go</option>
@@ -65,12 +66,10 @@
 
     </div>
   </div>
-</div>
 
-<!-- Footer -->
-<ng-include src="'templates/includes/footer.html'"></ng-include>
-</div>
-<!-- /.container -->
+  <!-- Footer -->
+  <ng-include src="'templates/includes/footer.html'"></ng-include>
+</div> <!-- /.container -->
 
 
 <!-- Modal -->

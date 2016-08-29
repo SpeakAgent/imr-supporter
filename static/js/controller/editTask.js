@@ -29,7 +29,7 @@ mainApp.controller('editTaskController', function($scope, $location, $http, $sta
             }
         }
     }
-    
+
     var treq = {
         url: "http://iamready.herokuapp.com/events/mastertask/one/",
         data: {
@@ -163,7 +163,7 @@ mainApp.controller('editTaskController', function($scope, $location, $http, $sta
     $scope.updateTask = function () {
 
         var data = {pk: $scope.task.pk}
-        
+
         // The basic stuff
         var fields = ['title', 'video', 'help_text', 'task_type'];
 
@@ -177,7 +177,7 @@ mainApp.controller('editTaskController', function($scope, $location, $http, $sta
 
         //// Delete these steps
         if ($scope.toDeletePKs.length != 0) {
-            data.delete_steps = $scope.toDeletePKs.join(',');    
+            data.delete_steps = $scope.toDeletePKs.join(',');
         }
 
         ////  Add  / update these steps
@@ -186,12 +186,12 @@ mainApp.controller('editTaskController', function($scope, $location, $http, $sta
         for (var i in $scope.formData.steps) {
             var s = $scope.formData.steps[i];
             if (s.pk == -1) {
-                // wait wait! We need to make sure it's really supposed 
+                // wait wait! We need to make sure it's really supposed
                 // to be added!
                 if ($scope.toDeleteIndexes.indexOf(parseInt(i, 10)) == -1) {
-                    toAddVals.push(s.title)    
+                    toAddVals.push(s.title)
                 }
-                
+
             } else {
                 toUpdateVals.push(s.pk + "::" + s.title)
             }
@@ -218,5 +218,5 @@ mainApp.controller('editTaskController', function($scope, $location, $http, $sta
 
     }
 
-    
+
 });

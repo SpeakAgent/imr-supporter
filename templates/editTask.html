@@ -1,115 +1,98 @@
 <ng-include src="'templates/includes/nav.html'"></ng-include>
 
 <div class="container" ng-controller="editTaskController">
-  <div class="border row">
-      <div class="border col-md-12">
-          <div class="wrapperBox">
-              <div class="currentBox">
-                  <h1>Edit Task {{ task.title }}</h1>
-                  <br>
-                  <div id="basic">
-                      <h2>Basic Information</h2>
-                      <form class="form-horizontal">
-                          <div class="container">
-                              <div class="row" style="margin-left:0px">
-                                  <div class="col-md-8">
-                                      <p style="margin-bottom:5px!important">Task Category</p>
-                                      <select 
-                                      ng-model="formData.task_type"
-                                      >
-                                          <option value="Education"
-                                          ng-selected="task.task_type.title=='Education'"
-                                          >Education</option>
-                                          <option value="Life"
-                                          ng-selected="task.task_type.title=='Life'">Life</option>
-                                          <option value="On the Go"
-                                          ng-selected="task.task_type.title=='On the Go'">On the Go</option>
-                                          <option value="Work"
-                                          ng-selected="task.task_type.title=='Work'">Work</option>
-                                      </select>
-                                      
-                                  </div>
-                                    <div class="col-md-8" style="margin-top:30px">
-                                      <p style="margin-bottom:5px!important">Task Title</p>
-                                      <input type="text" class="form-active-basic" placeholder='{{ task.title }}' style="width:260px; padding:5px"
-                                      ng-model="formData.title">
-                                      
-                                    </div>
-                                    <div class="col-md-8">
-                                  <p style="margin-bottom:5px!important; margin-top:30px">Link to a Youtube video (optional)</p>
-                                  <input type="text" class="form-active-basic" placeholder='{{ task.video }}' style="width:260px; padding:5px" ng-model="formData.video">
-                              </div>
-                                  </div>
-                              </div>
-                          </div>
-                      </div>
-                  </form>
-              </div>
-              <div id="special" style="margin-left:30px">
-                  <h1>Edit Special Instruction</h1>
-                  <p>Maximum 40 characters</p>
-                  <div class="textArea">
-                      <textarea class="form-control form-active-special" rows="1" style="width:260px" placeholder="{{ task.help_text }}" ng-model="formData.help_text"></textarea>
-                  </div>
-              </div>
-              <div id="adding" style="margin-left:30px ">
-                  <h1>Edit Steps</h1>
-                  <div class="row" ng-repeat="step in formData.steps track by $index">
-                      <div class="col-md-3">
-                          <p style="margin-bottom:5px!important"
-                            ng-style="toDelete($index)">
-                            <i class="fa fa-trash-o" 
-                              style="color:red;margin-right:5px"
-                              ng-click="updateDelete($index, step.pk)"></i>
-                            Step {{ $index + 1 }}</p>
-                          <input class="form-active-adding" type="text" style="width:260px; padding:5px; margin-left:-3px;"
-                          ng-model="formData.steps[$index].title"
-                          ng-style="toDelete($index)">
-                          <br><br>
-                          
-                      </div>
-                  </div>
-                  <div>
-                  <a href="" ng-click="addStep()">+ Add another step...</a>
-                  </div>
-              </div>
-              
-          </div>
-          <div>
-            <button type="submit" class="saveBasicInfoBtn"
-              ng-click="updateTask()"
-              style="margin-left:45px;margin-top:20px;margin-bottom:20px">SAVE</button>
-          </div>
+  <div class="wrapperBox">
+    <div class="currentBox">
+      <h1>Edit Task: {{ task.title }}</h1>
+
+      <div id="basic">
+        <h2>Edit Basic Information</h2>
+        <div class="taskImage">
+          <p>Task Image</p>
+          <button type="button" class="btn btn-default form-active-basic" data-toggle="modal" data-target="#upload"><i class="fa fa-picture-o" aria-hidden="true"></i><span>CHOOSE IMAGE...</span></button>
+        </div>
+
+        <div class="taskCategory">
+          <p>Task Category</p>
+          <select ng-model="formData.task_type" class="form-active-basic" data-width="fit">
+            <option value="Education" ng-selected="task.task_type.title=='Education'">Education</option>
+            <option value="Life" ng-selected="task.task_type.title=='Life'">Life</option>
+            <option value="On the Go" ng-selected="task.task_type.title=='On the Go'">On the Go</option>
+            <option value="Work" ng-selected="task.task_type.title=='Work'">Work</option>
+          </select>
+        </div>
+
+        <div class="taskTitle">
+          <p>Task Title</p>
+          <input type="text" class="form-active-basic" placeholder='{{ task.title }}' ng-model="formData.title">
+        </div>
+
+        <div class="taskLink">
+          <p>Link to YouTube video (optional)</p>
+          <input type="text" class="form-active-basic" placeholder='{{ task.video }}' ng-model="formData.video">
+        </div>
+
+        <div class="clearfix">
+          <button type="submit" class="saveBasicInfoBtn upperSave form-active-basic" ng-click="updateTask()">UPDATE</button>
+        </div>
+      </div> <!-- /.end of basic -->
+
+      <div id="special">
+        <h2>Edit Special Instruction</h2>
+        <p><strong>Maximum 40 characters.</strong></p>
+        <div class="textArea">
+          <textarea class="form-control form-active-special" rows="5" maxlength="40" placeholder="{{ task.help_text }}" ng-model="formData.help_text"></textarea>
+        </div>
+      </div> <!-- /.end of special -->
+
+      <div id="adding">
+        <h2>Edit Steps</h2>
+        <div ng-repeat="step in formData.steps track by $index">
+          <p ng-style="toDelete($index)">
+            <i class="fa fa-trash-o" style="color:red;margin-right:5px" ng-click="updateDelete($index, step.pk)"></i> Step {{ $index + 1 }}
+          </p>
+          <input class="form-active-adding" type="text" ng-model="formData.steps[$index].title" ng-style="toDelete($index)">
+          <br />
+          <button type="button" class="form-active-adding btn btn-default" data-toggle="modal" data-target="#upload"><i class="fa fa-picture-o" aria-hidden="true"></i><span>CHOOSE IMAGE...</span></button>
+        </div>
+
+        <div class="clearfix">
+          <a href="" ng-click="addStep()" class="form-active-adding">+ Add another step...</a>
+        </div>
+      </div> <!-- /.end of adding -->
+
+      <div class="clearfix">
+        <button type="submit" class="saveBasicInfoBtn bottomSave" ng-click="updateTask()">UPDATE</button>
       </div>
+
+    </div>
   </div>
 
-</div>
-<!-- Footer -->
-<ng-include src="'templates/includes/footer.html'"></ng-include>
-</div>
-<!-- /.container -->
+  <!-- Footer -->
+  <ng-include src="'templates/includes/footer.html'"></ng-include>
+</div> <!-- /.container -->
 
 
 <!-- Modal -->
 <div class="modal fade" id="upload" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
   <div class="modal-dialog modal-md" role="document">
-      <div class="modal-content">
-          <div class="modal-body">
-              <div class="alert drop" flow-drop flow-drag-enter="style={border:'2px dashed green'}" flow-drag-leave="style={}" ng-style="style" ng-class="dropClass">
-                  <span class="btn btn-default" flow-btn style="border-color:transparent!important; background:#20a7e1 !important; color:#fff;">Browse...<input type="file" multiple="multiple" style="visibility: hidden; position: absolute;"></span>
-                  <b>OR</b> Drag And Drop your file here
-              </div>
-              <p>
-                  Acceptable photo file types: jpg, jpeg, png. <br />
-                  Maximum size is 2MB. <br />
-                  <em>For best results, images should be at least 300px on either dimension.</em>
-              </p>
-          </div>
-          <div class="modal-footer">
-              <a href="" type="button"><i class="fa fa-upload" aria-hidden="true"></i> Upload</a>
-              <a href="" type="button" class="cancel" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i> Cancel</a>
-          </div>
+    <div class="modal-content">
+      <div class="modal-body">
+        <div class="alert drop" flow-drop flow-drag-enter="style={border:'2px dashed green'}" flow-drag-leave="style={}" ng-style="style" ng-class="dropClass">
+          <span class="btn btn-default" flow-btn style="border-color:transparent!important; background:#20a7e1 !important; color:#fff;">Browse...<input type="file" multiple="multiple" style="visibility: hidden; position: absolute;"></span>
+          <b>OR</b> Drag And Drop your file here
+        </div>
+        <p>
+          Acceptable photo file types: jpg, jpeg, png. <br />
+          Maximum size is 2MB. <br />
+          <em>For best results, images should be at least 300px on either dimension.</em>
+        </p>
       </div>
+      <div class="modal-footer">
+        <a href="" type="button"><i class="fa fa-upload" aria-hidden="true"></i> Upload</a>
+        <a href="" type="button" class="cancel" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i> Cancel</a>
+      </div>
+    </div>
   </div>
 </div>
 <!-- /Modal -->
