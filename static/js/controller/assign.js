@@ -100,11 +100,11 @@ mainApp.controller('assignController', function($scope, $location, $http, $filte
 
 mainApp.directive('selectPicker', ['$timeout', function($timeout){
     return {
-      restrict: 'A',
-      link:function(scope, elem){
-        $timeout(function() {
-          elem.selectpicker({});
-        }, 0);
-      }
+        restrict: 'A',
+        link:function(scope, elem){
+            $timeout(function() {
+                elem.selectpicker({});
+            }, 0);
+        }
     };
-  }])
+}])
