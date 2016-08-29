@@ -24,12 +24,14 @@
                         <h3 class="text-center" style="color:#38ACF5"><a href=""><i class="fa fa-angle-left fa-2x" aria-hidden="true" style="margin-top: 15px;position: absolute;margin-left: -20px;"
                         ng-click="prevDay()"></i></a>{{ target | date:'MM/dd/yyyy'}}<a href=""><i class="fa fa-angle-right fa-2x" aria-hidden="true" style="    margin-top: 15px;position: absolute;margin-left: 20px;" ng-click="nextDay()"></i></a></h3>
                     </div>
-                    <div class="row" style="margin-left:20px;margin-top:50px;"
+                    <div style="margin-left:20px;margin-top:50px;"
                     ng-repeat="tod in ['morning', 'afternoon', 'evening']">
+                      <div class="row">
                         <div class="col-md-2">
                             <p style="font-size:15px;color:#00355D;font-weight:bold;margin-top:-10px;">{{ tod | uppercase }}</p>
                         </div>
-                        <div ng-repeat="task in schedule[tod]">
+                        <div ng-repeat="task in schedule[tod]" class="row"
+                            style="margin-left:190px;margin-bottom:40px">
                         <div class="col-md-2">
                             <img src="static/img/icons/placeholder.png" alt="">
                         </div>
@@ -53,6 +55,7 @@
                                     </div>
                                 </a>
                             </div>
+                        </div>
                         </div>
                         </div>
                     </div>
