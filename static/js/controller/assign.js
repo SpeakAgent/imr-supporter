@@ -1,18 +1,5 @@
-mainApp.controller('assignTasksController', function($scope, $location, $http, $filter) {
-
-    $scope.students = [
-        {
-            first_name: "Jill",
-            last_name: "Joanstone",
-            pk: 1,
-            events: [
-                {title: "Event one",
-                 pk: 1},
-                {title: "Event two",
-                 pk: 2}
-            ]
-        }
-    ]
+mainApp.controller('assignController', function($scope, $location, $http, $filter) {
+    console.log("Assign Controller");
 
     $scope.formData = {};
 
@@ -55,7 +42,7 @@ mainApp.controller('assignTasksController', function($scope, $location, $http, $
         $scope.tasks = data;
         $scope.taskInfo = {};
         for (var i in $scope.tasks) {
-          $scope.taskInfo[$scope.tasks[i].pk] = $scope.tasks[i].title
+            $scope.taskInfo[$scope.tasks[i].pk] = $scope.tasks[i].title
         }
     })
 
@@ -108,7 +95,16 @@ mainApp.controller('assignTasksController', function($scope, $location, $http, $
         }).error(function(data){
             console.log(data);
         })
-
-
     }
 })
+
+mainApp.directive('selectPicker', ['$timeout', function($timeout){
+    return {
+        restrict: 'A',
+        link:function(scope, elem){
+            $timeout(function() {
+                elem.selectpicker({});
+            }, 0);
+        }
+    };
+}])
