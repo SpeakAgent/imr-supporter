@@ -34,8 +34,11 @@
                             <h5 style="color:red" ng-show="schedule[dow][tod].length > 1">{{ schedule[dow][tod].length }} tasks</h5>
                             <h5 style="color:red" ng-show="schedule[dow][tod].length == 1">{{ schedule[dow][tod].length }} task</h5>
                             <h5 style="color:red" ng-show="schedule[dow][tod].length == 0">0 tasks</h5>
-                            <h4 style="color:#00355D;"
-                                ng-repeat="item in schedule[dow][tod]">{{ item.title }}</h4>
+                            <h4 style="color:#00355D;" ng-repeat="item in schedule[dow][tod]">
+                                <i ng-if="item.task.status != 'done'" class="fa fa-circle notDone" aria-hidden="true"></i>
+                                <i ng-if="item.task.status === 'done'" class="fa fa-check-circle done" aria-hidden="true"></i>
+                                {{ item.title }}
+                            </h4>
                             <h4 style="color:#00355D;"
                                 ng-show="schedule[dow][tod].length == 0">No tasks</h4>
                         </div>
