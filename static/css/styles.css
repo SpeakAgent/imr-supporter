@@ -82,6 +82,10 @@ footer{
   float: left;
 }
 
+.left {
+  float: left;
+}
+
 .foot img {
   width: 200px;
   float: right;
