@@ -1,11 +1,11 @@
-var mainApp = angular.module('mainApp', ['ui.router', 'uiRouterStyles', 'ui.bootstrap', 'ngAnimate', 'flow']);
+var mainApp = angular.module('mainApp', ['ui.router', 'uiRouterStyles', 'ui.bootstrap', 'ngAnimate', 'flow', 'angular-jwt']);
 
 mainApp.config(function (datepickerConfig, datepickerPopupConfig) {
       datepickerConfig.showWeeks = false;
       datepickerPopupConfig.toggleWeeksText = false;
     });
 
-mainApp.config(function($stateProvider, $urlRouterProvider) {
+mainApp.config(function($stateProvider, $urlRouterProvider, jwtInterceptorProvider) {
 
   // For any unmatched url, redirect to
   $urlRouterProvider.otherwise("/login");
