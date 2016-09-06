@@ -36,7 +36,7 @@ mainApp.controller('loginController', function($scope, $http,
 
   $scope.getUserData = function(username) {
     user_req = {
-      url: 'https://lexemes-dev.herokuapp.com/user/username/',
+      url: 'https://iamready.herokuapp.com/user/username/',
       method: 'POST',
       headers: {
         Authorization: 'JWT ' + localStorage.getItem('authToken')
@@ -70,11 +70,10 @@ mainApp.controller('loginController', function($scope, $http,
   // Perform the login action when the user submits the login form
   $scope.doLogin = function() {
     $scope.loading = true;
-    $scope.loginData.username = $scope.loginData.username.toLowerCase();
     $scope.loginError = '';
 
     // Handle login
-    var tokenAuthURL = 'https://lexemes-dev.herokuapp.com/api-token-auth/';
+    var tokenAuthURL = 'https://iamready.herokuapp.com/api-token-auth/';
     console.log(tokenAuthURL);
     var responsePromise = $http.post(tokenAuthURL,
       {
