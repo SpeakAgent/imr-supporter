@@ -5,8 +5,8 @@
   
   <fieldset>
     <div class="input">
-      <input type="email" placeholder="Email Address" required 
-        ng-mode="loginData.username" />
+      <input placeholder="Email Address" required 
+        ng-model="loginData.username" />
       <span><i class="fa fa-envelope-o"></i></span>
     </div>
 
@@ -20,8 +20,7 @@
       <p>Forget Password?</p>
     </div>
 
-    <button type="submit" class="submit" ui-sref="dashboard"
-      ng-click="doLogin()">Login</button>
+    <button type="submit" class="submit" ng-click="doLogin()">Login</button>
 
   </fieldset>
 

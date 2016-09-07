@@ -23,6 +23,6 @@ mainApp.controller('taskController', function($scope, $http) {
         $scope.tasks = data;
     })
     .error(function(data){
-        // console.log(data)
+        console.log(data)
     })
 });
