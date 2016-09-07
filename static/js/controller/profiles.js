@@ -41,7 +41,7 @@ mainApp.controller('profileController', function($scope, $http, $stateParams, $w
     $scope.updateProfile = function () {
         var profile_data = {'pk': $stateParams.pk};
 
-        var profile_fields = ['street', 'city', 'zip', 'school', 'work', 
+        var profile_fields = ['street', 'city', 'zipcode', 'school', 'work', 
             'stuff_i_like'];
 
         for (var i in profile_fields) {
@@ -72,7 +72,7 @@ mainApp.controller('profileController', function($scope, $http, $stateParams, $w
 
     $scope.updateEmergency = function () {
         console.log($scope.formData);
-        var emer_fields = ['medical', 'at_school', 'at_work', 
+        var emer_fields = ['medical', 'at_school', 'at_work',
             'should_know'];
         var emer_data = {pk: $scope.student.pk};
 
@@ -97,11 +97,11 @@ mainApp.controller('profileController', function($scope, $http, $stateParams, $w
                         c1arr.push("#")
                     }
                 }
-    
+
                 emer_data.em1 = c1arr.join("::");
-    
+
             }
-    
+
             if ($scope.formData.em[1] != undefined) {
                 c2arr = [$scope.student.emergency_contacts[1].pk]
                 for (var i in emer_con_fields) {
@@ -111,9 +111,9 @@ mainApp.controller('profileController', function($scope, $http, $stateParams, $w
                         c2arr.push("#")
                     }
                 }
-    
+
                 emer_data.em2 = c2arr.join("::");
-    
+
             }}
 
         var ereq = {

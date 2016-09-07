@@ -5,7 +5,7 @@
         <div class="border col-md-12">
             <div class="wrapperBox">
                 <div class="currentBox">
-                    <h1>Tasks Dashboard</h1>
+                    <h1>Task Dashboard</h1>
                     <button ui-sref="createTask" class="newTaskBtn">CREATE A NEW TASK</button>
                     <h2>Choose an existing task...</h2>
 
@@ -44,17 +44,17 @@
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel"><i class="fa fa-eye"></i><em> {{ task.title }}</em></h4>
+                <!-- <h4 class="modal-title" id="myModalLabel"><i class="fa fa-eye"></i><em> {{ task.title }}</em></h4> -->
             </div>
             <div class="modal-body">
                 <div class="task-title">
-                    <img src="static/img/icons/mt.png">
+                    <img src="{{ task.image }}">
                     <h3>{{ task.title }}</h3>
                 </div>
 
                 <div class="task-item" ng-repeat="step in task.steps track by $index">
                     <p>Step {{ $index + 1 }}</p>
-                    <img src="static/img/icons/mt.png">
+                    <img src="{{ step.image }}">
                     <p class="task-text"><em>{{ step.title }}</em></p>
                     <p class="task-text">{{ step.text }}</p>
                 </div>
@@ -67,5 +67,3 @@
 <!-- End Select Supporter Modal -->
 </div>
 <!-- /.container -->
-
-

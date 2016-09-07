@@ -143,6 +143,7 @@ mainApp.controller('createTaskController', function($scope, $location, $http, $f
 
         $http(req).success(function(data){
             console.log("Created!")
+            $location.path('/tasks');
         })
         .error(function(data){
         })

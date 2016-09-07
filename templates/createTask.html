@@ -32,17 +32,13 @@
           <p>Link to YouTube video (optional)</p>
           <input type="text" class="form-active-basic" placeholder='Paste url here' ng-model="formData.video">
         </div>
-
-        <div class="clearfix">
-          <button type="submit" class="saveBasicInfoBtn upperSave form-active-basic" ng-click="createTask()">SAVE</button>
-        </div>
       </div> <!-- /.end of basic -->
 
       <div id="special">
         <h2>Add Special Instruction</h2>
         <p><strong>Maximum 40 characters.</strong></p>
         <div class="textArea">
-          <textarea class="form-control form-active-special" rows="5" maxlength="40" placeholder="Insert any special instruction for this task. For example, ..." ng-model="formData.help_text"></textarea>
+          <textarea class="form-control form-active-special" rows="5" maxlength="40" placeholder="Insert any special instruction for this task." ng-model="formData.help_text"></textarea>
         </div>
       </div> <!-- /.end of special -->
 
