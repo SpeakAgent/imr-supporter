@@ -24,12 +24,14 @@
 
         <div class="taskTitle">
           <p>Task Title</p>
-          <input type="text" class="form-active-basic" placeholder='{{ task.title }}' ng-model="formData.title">
+          <input type="text" class="form-active-basic" ng-model="task.title" ng-change="formData.title=task.title;" />
+          <input type="hidden" ng-model="formData.title" />
         </div>
 
         <div class="taskLink">
           <p>Link to YouTube video (optional)</p>
-          <input type="text" class="form-active-basic" placeholder='{{ task.video }}' ng-model="formData.video">
+          <input type="text" class="form-active-basic" ng-model="task.video" ng-change="formData.video=task.video;">
+          <input type="hidden" ng-model="formData.video" />
         </div>
       </div> <!-- /.end of basic -->
 
@@ -37,7 +39,8 @@
         <h2>Edit Special Instruction</h2>
         <p><strong>Maximum 40 characters.</strong></p>
         <div class="textArea">
-          <textarea class="form-control form-active-special" rows="5" maxlength="40" placeholder="{{ task.help_text }}" ng-model="formData.help_text"></textarea>
+          <textarea class="form-control form-active-special" rows="5" maxlength="40" ng-model="task.help_text" ng-change="formData.help_text=task.help_text"></textarea>
+          <input type="hidden" ng-model="formData.help_text" />
         </div>
       </div> <!-- /.end of special -->
 
@@ -47,9 +50,9 @@
           <p ng-style="toDelete($index)">
             <i class="fa fa-trash-o" style="color:red;margin-right:5px" ng-click="updateDelete($index, step.pk)"></i> Step {{ $index + 1 }}
           </p>
-          <input class="form-active-adding" type="text" ng-model="formData.steps[$index].title" ng-style="toDelete($index)">
+          <input class="form-control form-active-adding" type="text" ng-model="formData.steps[$index].title" ng-style="toDelete($index)">
           <br />
-          <button type="button" class="form-active-adding btn btn-default" data-toggle="modal" data-target="#upload"><i class="fa fa-picture-o" aria-hidden="true"></i><span>CHOOSE IMAGE...</span></button>
+          <button type="button" class="btn btn-default" data-toggle="modal" data-target="#upload"><i class="fa fa-picture-o" aria-hidden="true"></i><span>CHOOSE IMAGE...</span></button>
         </div>
 
         <div class="clearfix">

@@ -150,4 +150,16 @@ mainApp.controller('createTaskController', function($scope, $location, $http, $f
     }
 
 
-});
+})
+
+mainApp.directive('input.form-active-adding', function(){
+    return{
+       restrict: 'C',
+       link: function(scope, element, attrs){
+          element.on('focus', function(e){
+              e.stopPropagation();
+              element.children().toggleClass('form-active-blue');
+          })
+       }
+    }
+})

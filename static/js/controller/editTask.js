@@ -139,18 +139,18 @@ mainApp.controller('editTaskController', function($scope, $location, $http, $sta
         $scope.mytime = null;
     };
 
-    $(function () {
-        $('#check').webuiPopover({trigger:'manual', placement:'bottom', type:'html', arrow:false});
-        $('#check').on("click", function (event) {
-            var self = $('#check');
-            if (self.is(':checked')) {
-                self.webuiPopover('show');
-            }
-            else {
-                self.webuiPopover('hide');
-            }
-        });
-    })
+    // $(function () {
+    //     $('#check').webuiPopover({trigger:'manual', placement:'bottom', type:'html', arrow:false});
+    //     $('#check').on("click", function (event) {
+    //         var self = $('#check');
+    //         if (self.is(':checked')) {
+    //             self.webuiPopover('show');
+    //         }
+    //         else {
+    //             self.webuiPopover('hide');
+    //         }
+    //     });
+    // })
 
     $('.form-active-basic').on('focus blur', function() {
         $('#basic').toggleClass("form-active-blue");
