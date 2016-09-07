@@ -91,6 +91,7 @@ mainApp.controller('assignController', function($scope, $location, $http, $filte
         console.log(req)
 
         $http(req).success(function(data){
+            $location.path('/schedules');
             console.log(data);
         }).error(function(data){
             console.log(data);

@@ -48,13 +48,13 @@
             </div>
             <div class="modal-body">
                 <div class="task-title">
-                    <img src="static/img/icons/mt.png">
+                    <img src="{{ task.image }}">
                     <h3>{{ task.title }}</h3>
                 </div>
 
                 <div class="task-item" ng-repeat="step in task.steps track by $index">
                     <p>Step {{ $index + 1 }}</p>
-                    <img src="static/img/icons/mt.png">
+                    <img src="{{ step.image }}">
                     <p class="task-text"><em>{{ step.title }}</em></p>
                     <p class="task-text">{{ step.text }}</p>
                 </div>
@@ -67,5 +67,3 @@
 <!-- End Select Supporter Modal -->
 </div>
 <!-- /.container -->
-
-
