@@ -35,7 +35,10 @@ mainApp.controller('editTaskController', function($scope, $location, $http, $sta
         data: {
             pk: $stateParams.pk
         },
-        method: "POST"
+        method: "POST",
+        headers: {
+            Authorization: 'JWT ' + localStorage.getItem('authToken')
+        },
     }
 
     $http(treq).success(function(data){
@@ -51,7 +54,10 @@ mainApp.controller('editTaskController', function($scope, $location, $http, $sta
         data: {
             pk: 1
         },
-        method: "POST"
+        method: "POST",
+        headers: {
+            Authorization: 'JWT ' + localStorage.getItem('authToken')
+        },
     }
 
     $http(ureq).success(function(data){
@@ -207,7 +213,10 @@ mainApp.controller('editTaskController', function($scope, $location, $http, $sta
         var req = {
             url: "http://iamready.herokuapp.com/events/mastertask/update/",
             data: data,
-            method: "POST"
+            method: "POST",
+            headers: {
+                Authorization: 'JWT ' + localStorage.getItem('authToken')
+            },
         }
 
         console.log(req);

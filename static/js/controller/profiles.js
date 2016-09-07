@@ -7,7 +7,10 @@ mainApp.controller('profilesController', function($scope, $http) {
         method: "POST",
         data: {
             mode: "simple"
-        }
+        },
+        headers: {
+            Authorization: 'JWT ' + localStorage.getItem('authToken')
+        },
     }
 
     $http(req).success(function(data) {
@@ -25,7 +28,10 @@ mainApp.controller('profileController', function($scope, $http, $stateParams, $w
         method: "POST",
         data: {
             pk: $stateParams.pk
-        }
+        },
+        headers: {
+            Authorization: 'JWT ' + localStorage.getItem('authToken')
+        },
     }
 
     $http(req).success(function(data) {
@@ -49,7 +55,10 @@ mainApp.controller('profileController', function($scope, $http, $stateParams, $w
         var preq = {
             url: "http://iamready.herokuapp.com/users/user/update/",
             data: profile_data,
-            method: "POST"
+            method: "POST",
+            headers: {
+                Authorization: 'JWT ' + localStorage.getItem('authToken')
+            },
         }
 
         $http(preq).success(function(data){
@@ -110,7 +119,10 @@ mainApp.controller('profileController', function($scope, $http, $stateParams, $w
         var ereq = {
             url: "http://iamready.herokuapp.com/users/user/update/",
             data: emer_data,
-            method: "POST"
+            method: "POST",
+            headers: {
+                Authorization: 'JWT ' + localStorage.getItem('authToken')
+            },
         }
 
         console.log(ereq);

@@ -7,7 +7,10 @@ mainApp.controller('schedulesController', function($scope, $http) {
             pk: 1,
             mode: "simple"
         },
-        method: "POST"
+        method: "POST",
+        headers: {
+            Authorization: 'JWT ' + localStorage.getItem('authToken')
+        },
     }
 
     $http(ureq).success(function(data){
@@ -95,7 +98,10 @@ mainApp.controller('schedulesController', function($scope, $http) {
         data: {
             pk: 1
         },
-        method: "POST"
+        method: "POST",
+        headers: {
+            Authorization: 'JWT ' + localStorage.getItem('authToken')
+        },
     }
     $http(req).success(function(data) {
         $scope.users = data;
@@ -120,7 +126,10 @@ mainApp.controller('dailyScheduleController', function($scope, $http) {
                 user_pk: 1,
                 date: $scope.date
             },
-            method: "POST"
+            method: "POST",
+            headers: {
+                Authorization: 'JWT ' + localStorage.getItem('authToken')
+            },
         }
 
         $http(req).success(function(data) {
@@ -141,7 +150,10 @@ mainApp.controller('dailyScheduleController', function($scope, $http) {
                 user_pk: 1,
                 date: $scope.date
             },
-            method: "POST"
+            method: "POST",
+            headers: {
+                Authorization: 'JWT ' + localStorage.getItem('authToken')
+            },
         }
 
         $http(req).success(function(data) {
@@ -155,7 +167,10 @@ mainApp.controller('dailyScheduleController', function($scope, $http) {
             user_pk: 1,
             date: $scope.date
         },
-        method: "POST"
+        method: "POST",
+        headers: {
+            Authorization: 'JWT ' + localStorage.getItem('authToken')
+        },
     }
 
     $http(req).success(function(data) {
@@ -179,7 +194,10 @@ mainApp.controller('weeklyScheduleController', function($scope, $http) {
             user_pk: 1,
             date: $scope.date
         },
-        method: "POST"
+        method: "POST",
+        headers: {
+            Authorization: 'JWT ' + localStorage.getItem('authToken')
+        },
     }
 
     $http(req).success(function(data){
@@ -196,7 +214,10 @@ mainApp.controller('weeklyScheduleController', function($scope, $http) {
                 user_pk: 1,
                 date: $scope.date
             },
-            method: "POST"
+            method: "POST",
+            headers: {
+                Authorization: 'JWT ' + localStorage.getItem('authToken')
+            },
         }
 
         $http(req).success(function(data){
@@ -214,7 +235,10 @@ mainApp.controller('weeklyScheduleController', function($scope, $http) {
                 user_pk: 1,
                 date: $scope.date
             },
-            method: "POST"
+            method: "POST",
+            headers: {
+                Authorization: 'JWT ' + localStorage.getItem('authToken')
+            },
         }
 
         $http(req).success(function(data){

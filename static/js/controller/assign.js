@@ -12,7 +12,10 @@ mainApp.controller('assignController', function($scope, $location, $http, $filte
             pk: 1,
             mode: "simple"
         },
-        method: "POST"
+        method: "POST",
+        headers: {
+            Authorization: 'JWT ' + localStorage.getItem('authToken')
+        },
     }
 
     $http(ureq).success(function(data) {
@@ -35,7 +38,10 @@ mainApp.controller('assignController', function($scope, $location, $http, $filte
             pk: 1,
             mode: "simple"
         },
-        method: "POST"
+        method: "POST",
+        headers: {
+            Authorization: 'JWT ' + localStorage.getItem('authToken')
+        },
     }
 
     $http(treq).success(function(data) {
@@ -85,7 +91,10 @@ mainApp.controller('assignController', function($scope, $location, $http, $filte
         var req = {
             url: "http://iamready.herokuapp.com/events/task/assign/many",
             data: {tasks: JSON.stringify(data)},
-            method: "POST"
+            method: "POST",
+            headers: {
+                Authorization: 'JWT ' + localStorage.getItem('authToken')
+            },
         }
 
         console.log(req)

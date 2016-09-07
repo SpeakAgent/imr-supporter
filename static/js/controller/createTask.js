@@ -39,7 +39,10 @@ mainApp.controller('createTaskController', function($scope, $location, $http, $f
             pk: 1,
             mode: "simple"
         },
-        method: "POST"
+        method: "POST",
+        headers: {
+            Authorization: 'JWT ' + localStorage.getItem('authToken')
+        },
     }
 
     $http(ureq).success(function(data){
@@ -132,7 +135,10 @@ mainApp.controller('createTaskController', function($scope, $location, $http, $f
         var req = {
             url: "http://iamready.herokuapp.com/events/mastertask/create/",
             data: data,
-            method: "POST"
+            method: "POST",
+            headers: {
+                Authorization: 'JWT ' + localStorage.getItem('authToken')
+            },
         }
 
         $http(req).success(function(data){

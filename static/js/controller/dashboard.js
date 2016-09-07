@@ -6,7 +6,10 @@ mainApp.controller('dashboardController', function($scope, $http) {
         data: {
             pk: 1,
         },
-        method: "POST"
+        method: "POST",
+        headers: {
+            Authorization: 'JWT ' + localStorage.getItem('authToken')
+        },
     }
 
     $http(req).success(function(data) {

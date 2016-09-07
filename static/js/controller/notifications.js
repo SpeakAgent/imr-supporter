@@ -7,7 +7,10 @@ mainApp.controller('notificationsController', function($scope, $http) {
             pk: 1,
             mode: "simple"
         },
-        method: "POST"
+        method: "POST",
+        headers: {
+            Authorization: 'JWT ' + localStorage.getItem('authToken')
+        },
     }
 
     $http(ureq).success(function(data){

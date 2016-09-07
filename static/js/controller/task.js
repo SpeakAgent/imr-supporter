@@ -11,7 +11,10 @@ mainApp.controller('taskController', function($scope, $http) {
         data: {
             pk: 1,
         },
-        method: 'POST'
+        method: 'POST',
+        headers: {
+            Authorization: 'JWT ' + localStorage.getItem('authToken')
+        },
     }
 
     console.log(req)
