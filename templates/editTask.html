@@ -50,7 +50,7 @@
           <p ng-style="toDelete($index)">
             <i class="fa fa-trash-o" style="color:red;margin-right:5px" ng-click="updateDelete($index, step.pk)"></i> Step {{ $index + 1 }}
           </p>
-          <input class="form-control form-active-adding" type="text" ng-model="formData.steps[$index].title" ng-style="toDelete($index)">
+          <input class="form-control form-active-adding" type="text" ng-model="formData.steps[$index].title" ng-style="toDelete($index)" ng-blur="activeForm()" ng-focus="activeForm()">
           <br />
           <button type="button" class="btn btn-default" data-toggle="modal" data-target="#upload"><i class="fa fa-picture-o" aria-hidden="true"></i><span>CHOOSE IMAGE...</span></button>
         </div>

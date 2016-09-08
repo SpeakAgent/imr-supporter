@@ -56,35 +56,36 @@ mainApp.controller('createTaskController', function($scope, $location, $http, $f
             }
         });
     }
-
-    $scope.open = function($event) {
-        $event.preventDefault();
-        $event.stopPropagation();
-        $scope.opened = true;
-    };
-
-    $scope.startPopover = {
-        templateUrl: 'templates/includes/startTime.html'
-    };
-
-    $scope.endPopover = {
-        templateUrl: 'templates/includes/endTime.html'
-    };
-
+    // 
+    // $scope.open = function($event) {
+    //     $event.preventDefault();
+    //     $event.stopPropagation();
+    //     $scope.opened = true;
+    // };
+    //
+    // $scope.startPopover = {
+    //     templateUrl: 'templates/includes/startTime.html'
+    // };
+    //
+    // $scope.endPopover = {
+    //     templateUrl: 'templates/includes/endTime.html'
+    // };
 
     $('.form-active-basic').on('focus blur', function() {
+        $('#adding').removeClass("form-active-blue");
         $('#basic').toggleClass("form-active-blue");
     });
 
     $('.form-active-special').on('focus blur', function() {
+        $('#adding').removeClass("form-active-blue");
         $('#special').toggleClass("form-active-blue");
     });
 
-    $('.form-active-adding').on('focus blur', function() {
-        $('#adding').toggleClass("form-active-blue");
-    });
+    $scope.activeForm = function() {
+        $('#adding').addClass("form-active-blue");
+    }
 
-    $('.fa-calendar-o').datepicker('show');
+    // $('.fa-calendar-o').datepicker('show');
 
     $scope.createTask = function () {
 
@@ -150,16 +151,4 @@ mainApp.controller('createTaskController', function($scope, $location, $http, $f
     }
 
 
-})
-
-mainApp.directive('input.form-active-adding', function(){
-    return{
-       restrict: 'C',
-       link: function(scope, element, attrs){
-          element.on('focus', function(e){
-              e.stopPropagation();
-              element.children().toggleClass('form-active-blue');
-          })
-       }
-    }
-})
+});

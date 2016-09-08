@@ -95,11 +95,4 @@ mainApp.config(function($stateProvider, $urlRouterProvider, jwtInterceptorProvid
       css: 'static/css/views/notifications.css'
     }
   })
-  .state('help', {
-    url: "/help",
-    templateUrl: 'templates/help.html',
-    data: {
-      css: 'static/css/views/help.css'
-    }
-  })
 });

@@ -153,18 +153,20 @@ mainApp.controller('editTaskController', function($scope, $location, $http, $sta
     // })
 
     $('.form-active-basic').on('focus blur', function() {
+        $('#adding').removeClass("form-active-blue");
         $('#basic').toggleClass("form-active-blue");
     });
 
     $('.form-active-special').on('focus blur', function() {
+        $('#adding').removeClass("form-active-blue");
         $('#special').toggleClass("form-active-blue");
     });
 
-    $('.form-active-adding').on('focus blur', function() {
-        $('#adding').toggleClass("form-active-blue");
-    });
+    $scope.activeForm = function() {
+        $('#adding').addClass("form-active-blue");
+    }
 
-    $('.fa-calendar-o').datepicker('show');
+    // $('.fa-calendar-o').datepicker('show');
 
     $scope.updateTask = function () {
 
@@ -226,6 +228,4 @@ mainApp.controller('editTaskController', function($scope, $location, $http, $sta
         })
 
     }
-
-
 });
