@@ -93,34 +93,15 @@ mainApp.controller('createTaskController', function($scope, $location, $http, $f
         var data = {}
         data.owner_pk = 1;
 
-        fields = ['title', 'video', 'cagetory', 'help_text', 'recurring',
-        'recurring_weekly', 'recurring_daily', 'date', 'start_time', 'end_time']
+        fields = ['title', 'video', 'category', 'help_text']
 
         for (i in fields) {
             if (fields[i] in $scope.formData) {
                 data[fields[i]] = $scope.formData[fields[i]]
             }
-            if (fields[i] == 'date') {
-                $scope.formData.date = $filter('date')($scope.formData.date, 'yyyy-MM-dd');
-            }
-            if (fields[i] == 'start_time') {
-                $scope.formData.start_time = $filter('date')($scope.formData.start_time, 'HH:mm');
-            }
-            if (fields[i] == 'end_time') {
-                $scope.formData.end_time = $filter('date')($scope.formData.end_time, 'HH:mm');
-            }
         }
 
         // Now the harder stuff
-
-        // Users to assign the task to
-        if ($scope.formData.users.length > 0) {
-            var u = [];
-            for (user in $scope.formData.users) {
-                u.push(user)
-            }
-            data.users = u.join(',')
-        }
 
         // Add the steps
         if ($scope.formData.steps.length > 0) {
@@ -140,6 +121,8 @@ mainApp.controller('createTaskController', function($scope, $location, $http, $f
                 Authorization: 'JWT ' + localStorage.getItem('authToken')
             },
         }
+
+        console.log(req)
 
         $http(req).success(function(data){
             console.log("Created!")
