@@ -171,7 +171,7 @@ mainApp.controller('editTaskController', function($scope, $location, $http, $sta
         var data = {pk: $scope.task.pk}
 
         // The basic stuff
-        var fields = ['title', 'video', 'help_text', 'task_type'];
+        var fields = ['title', 'video', 'help_text', 'category'];
 
         for (var i in fields) {
             if (fields[i] in $scope.formData) {
