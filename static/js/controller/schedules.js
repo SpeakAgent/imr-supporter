@@ -161,6 +161,25 @@ mainApp.controller('dailyScheduleController', function($scope, $http) {
         })
     }
 
+    $scope.deleteEvent = function (pk) {
+        console.log("Deleting")
+
+        var req = {
+            url: "http://iamready.herokuapp.com/events/event/delete",
+            data: {
+                pk: pk
+            },
+            method: "POST",
+            headers: {
+                Authorization: 'JWT ' + localStorage.getItem('authToken')
+            },
+        }
+
+        $http(req).success(function(data){
+            console.log("Deleted!")
+        })
+    }
+
     var req = {
         url: "http://iamready.herokuapp.com/events/all/day/",
         data: {
