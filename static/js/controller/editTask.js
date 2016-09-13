@@ -139,32 +139,34 @@ mainApp.controller('editTaskController', function($scope, $location, $http, $sta
         $scope.mytime = null;
     };
 
-    $(function () {
-        $('#check').webuiPopover({trigger:'manual', placement:'bottom', type:'html', arrow:false});
-        $('#check').on("click", function (event) {
-            var self = $('#check');
-            if (self.is(':checked')) {
-                self.webuiPopover('show');
-            }
-            else {
-                self.webuiPopover('hide');
-            }
-        });
-    })
+    // $(function () {
+    //     $('#check').webuiPopover({trigger:'manual', placement:'bottom', type:'html', arrow:false});
+    //     $('#check').on("click", function (event) {
+    //         var self = $('#check');
+    //         if (self.is(':checked')) {
+    //             self.webuiPopover('show');
+    //         }
+    //         else {
+    //             self.webuiPopover('hide');
+    //         }
+    //     });
+    // })
 
     $('.form-active-basic').on('focus blur', function() {
+        $('#adding').removeClass("form-active-blue");
         $('#basic').toggleClass("form-active-blue");
     });
 
     $('.form-active-special').on('focus blur', function() {
+        $('#adding').removeClass("form-active-blue");
         $('#special').toggleClass("form-active-blue");
     });
 
-    $('.form-active-adding').on('focus blur', function() {
-        $('#adding').toggleClass("form-active-blue");
-    });
+    $scope.activeForm = function() {
+        $('#adding').addClass("form-active-blue");
+    }
 
-    $('.fa-calendar-o').datepicker('show');
+    // $('.fa-calendar-o').datepicker('show');
 
     $scope.updateTask = function () {
 
@@ -226,6 +228,4 @@ mainApp.controller('editTaskController', function($scope, $location, $http, $sta
         })
 
     }
-
-
 });
