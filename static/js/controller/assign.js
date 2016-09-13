@@ -9,7 +9,7 @@ mainApp.controller('assignController', function($scope, $location, $http, $filte
     var ureq = {
         url: "http://iamready.herokuapp.com/users/user/all/",
         data: {
-            pk: 1,
+            pk: localStorage.getItem('pk'),
             mode: "simple"
         },
         method: "POST",
