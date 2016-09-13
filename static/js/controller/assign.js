@@ -63,6 +63,7 @@ mainApp.controller('assignController', function($scope, $location, $http, $filte
                     startTime: null,
                     endTime: null,
                     startDate: null,
+                    title: task.title
                 }
             )
         } else {
