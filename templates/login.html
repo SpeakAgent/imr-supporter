@@ -5,7 +5,7 @@
 
   <fieldset>
     <div class="input">
-      <input placeholder="Username" required 
+      <input placeholder="Username" required
         ng-model="loginData.username" />
       <span><i class="fa fa-envelope-o"></i></span>
     </div>
@@ -17,7 +17,7 @@
     </div>
 
     <div class="input f-psw">
-      <p>Forget Password?</p>
+      <a style="padding-left:15px;" href="mailto:someone@example.com?Subject=Contact%20us%20to%20retrieve%20your%20password.">Forgot password?</a>
     </div>
 
     <button type="submit" class="submit" ng-click="doLogin()">Login</button>
