@@ -26,7 +26,8 @@ mainApp.controller('assignController', function($scope, $location, $http, $filte
                 first_name: $scope.users[i].first_name,
                 last_name: $scope.users[i].last_name,
                 pk: $scope.users[i].pk,
-                tasks: []
+                tasks: [],
+                contacts: $scope.users[i].contacts
             }
         }
         $scope.stepOne = true;
@@ -61,7 +62,7 @@ mainApp.controller('assignController', function($scope, $location, $http, $filte
                     pk:task.pk,
                     startTime: null,
                     endTime: null,
-                    startDate: null
+                    startDate: null,
                 }
             )
         } else {
@@ -88,6 +89,9 @@ mainApp.controller('assignController', function($scope, $location, $http, $filte
                 }
                 if (task.daily == true) {
                     task_data['repeats'].push("daily")
+                }
+                if ("contact" in task) {
+                    task_data['contact'] = task.contact;
                 }
 
                 data.tasks.push(task_data);
