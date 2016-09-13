@@ -2,22 +2,22 @@
   <div class="login-logo">
     <img src="static/img/logos/logoOMD.png" alt="Own My Day Logo" />
   </div>
-  
+
   <fieldset>
     <div class="input">
-      <input placeholder="Email Address" required 
+      <input placeholder="Username" required
         ng-model="loginData.username" />
       <span><i class="fa fa-envelope-o"></i></span>
     </div>
 
     <div class="input">
-      <input type="password" placeholder="Password" required 
+      <input type="password" placeholder="Password" required
         ng-model="loginData.password" />
       <span><i class="fa fa-lock"></i></span>
     </div>
 
     <div class="input f-psw">
-      <p>Forget Password?</p>
+      <a style="padding-left:15px;" href="mailto:someone@example.com?Subject=Contact%20us%20to%20retrieve%20your%20password.">Forgot password?</a>
     </div>
 
     <button type="submit" class="submit" ng-click="doLogin()">Login</button>
