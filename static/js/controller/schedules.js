@@ -1,10 +1,11 @@
-mainApp.controller('schedulesController', function($scope, $http) {
+mainApp.controller('schedulesController', function($scope, $http, $stateParams) {
     console.log("schedules Controller");
+    console.log($stateParams)
 
     var ureq = {
         url: "http://iamready.herokuapp.com/users/user/all/",
         data: {
-            pk: 1,
+            pk: $stateParams.pk,
             mode: "simple"
         },
         method: "POST",
@@ -109,7 +110,9 @@ mainApp.controller('schedulesController', function($scope, $http) {
 
 });
 
-mainApp.controller('dailyScheduleController', function($scope, $http) {
+mainApp.controller('dailyScheduleController', function($scope, $http, $stateParams) {
+    
+    $scope.pk = $stateParams.pk;
     $scope.target = new Date();
     $scope.date = $scope.target.getFullYear() + "-" + $scope.target.getMonth() + "-" + $scope.target.getDate();
 
@@ -123,7 +126,7 @@ mainApp.controller('dailyScheduleController', function($scope, $http) {
         var req = {
             url: "http://iamready.herokuapp.com/events/all/day/",
             data: {
-                user_pk: 1,
+                user_pk: $stateParams.pk,
                 date: $scope.date
             },
             method: "POST",
@@ -131,6 +134,8 @@ mainApp.controller('dailyScheduleController', function($scope, $http) {
                 Authorization: 'JWT ' + localStorage.getItem('authToken')
             },
         }
+
+        console.log(req)
 
         $http(req).success(function(data) {
             $scope.schedule = data
@@ -147,7 +152,7 @@ mainApp.controller('dailyScheduleController', function($scope, $http) {
         var req = {
             url: "http://iamready.herokuapp.com/events/all/day/",
             data: {
-                user_pk: 1,
+                user_pk: $stateParams.pk,
                 date: $scope.date
             },
             method: "POST",
@@ -161,10 +166,29 @@ mainApp.controller('dailyScheduleController', function($scope, $http) {
         })
     }
 
+    $scope.deleteEvent = function (pk) {
+        console.log("Deleting")
+
+        var req = {
+            url: "http://iamready.herokuapp.com/events/event/delete",
+            data: {
+                pk: pk
+            },
+            method: "POST",
+            headers: {
+                Authorization: 'JWT ' + localStorage.getItem('authToken')
+            },
+        }
+
+        $http(req).success(function(data){
+            console.log("Deleted!")
+        })
+    }
+
     var req = {
         url: "http://iamready.herokuapp.com/events/all/day/",
         data: {
-            user_pk: 1,
+            user_pk: $stateParams.pk,
             date: $scope.date
         },
         method: "POST",
@@ -181,7 +205,9 @@ mainApp.controller('dailyScheduleController', function($scope, $http) {
     })
 })
 
-mainApp.controller('weeklyScheduleController', function($scope, $http) {
+mainApp.controller('weeklyScheduleController', function($scope, $http, $stateParams) {
+    $scope.pk = $stateParams.pk;
+
     $scope.target = new Date();
     $scope.date = $scope.target.getFullYear() + "-" + ($scope.target.getMonth() + 1) + "-" + $scope.target.getDate();
     $scope.days_of_week = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday',
@@ -191,7 +217,7 @@ mainApp.controller('weeklyScheduleController', function($scope, $http) {
     var req = {
         url: "http://iamready.herokuapp.com/events/all/week/",
         data: {
-            user_pk: 1,
+            user_pk: $stateParams.pk,
             date: $scope.date
         },
         method: "POST",
@@ -211,7 +237,7 @@ mainApp.controller('weeklyScheduleController', function($scope, $http) {
         var req = {
             url: "http://iamready.herokuapp.com/events/all/week/",
             data: {
-                user_pk: 1,
+                user_pk: $stateParams.pk,
                 date: $scope.date
             },
             method: "POST",
@@ -232,7 +258,7 @@ mainApp.controller('weeklyScheduleController', function($scope, $http) {
         var req = {
             url: "http://iamready.herokuapp.com/events/all/week/",
             data: {
-                user_pk: 1,
+                user_pk: $stateParams.pk,
                 date: $scope.date
             },
             method: "POST",

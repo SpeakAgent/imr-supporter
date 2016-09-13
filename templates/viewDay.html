@@ -12,7 +12,7 @@
                         <div class="col-md-4">
                             <ul class="nav nav-pills" style="margin-top: 40px; line-height: 12px;">
                                 <li class="text-center listSchedule active"><a href="">Day</a></li>
-                                <li class="text-center listSchedule"><a href="/imr-supporter/#/schedules/week/1">Week</a></li>
+                                <li class="text-center listSchedule"><a href="/imr-supporter/#/schedules/week/{{ pk }}">Week</a></li>
                             </ul>
                         </div>
                         <div class="col-md-4">
@@ -31,21 +31,24 @@
                             <p style="font-size:15px;color:#00355D;font-weight:bold;margin-top:-10px;">{{ tod | uppercase }}</p>
                         </div>
                         <div ng-repeat="task in schedule[tod]" class="row"
-                            style="margin-left:190px;margin-bottom:40px">
+                            style="margin-left:190px;margin-bottom:40px"
+                            ng-hide="task.hide">
                         <div class="col-md-2">
                             <img src="static/img/icons/placeholder.png" alt="">
                         </div>
                         <div class="col-md-8" style="background:#F9F8F8; width:45%; padding:0; border: solid 1px grey;">
                             <div>
-                                <a class="button icon-right ion-chevron-right arrow2">
-                                    <div class="col-xs-1" style="background: #F9B71A; height: 112px;"></div>
+                                <a ui-sref="" class="button icon-right ion-chevron-right arrow2">
+                                    <div class="col-xs-1" style="background: {{ task.task.task_type.color }}; height: 112px;"></div>
+                                    
                                     <div class="col-xs-2" style="padding:19px;">
-                                        <img src="static/img/icons/edu.png" class="icon2" alt="" width="65px">
+                                        <img src="{{ task.task.task_type.image }}" class="icon2" alt="" width="65px">
                                     </div>
                                     <div class="col-xs-9"  ng-class="task.status='done' ? 'done' : 'clear'">
                                         <h6 class="time">{{ task.start_time }} -
                                         {{ task.end_time }}</h6>
-                                        <h5 class="task">{{ task.title }}</h5>
+                                        <h5 class="task">
+                                        {{ task.title }} <i class="fa fa-trash-o" style="color:red;margin-right:5px" ng-click="deleteEvent(task.pk);task.hide=true"></i></h5>
                                         <p class="text-right" style="color:red;margin-top:10px"
                                           ng-show="!task.task.daily && task.days_of_week != ''">Every {{ task.days_of_week }}</p>
                                         <p class="text-right" style="color:red;margin-top:10px"

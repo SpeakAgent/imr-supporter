@@ -56,7 +56,14 @@ mainApp.controller('assignController', function($scope, $location, $http, $filte
         i = $scope.toAssign[user].tasks.indexOf(task)
 
         if (i == -1) {
-            $scope.toAssign[user].tasks.push(task)
+            $scope.toAssign[user].tasks.push(
+                {
+                    pk:task.pk,
+                    startTime: null,
+                    endTime: null,
+                    startDate: null
+                }
+            )
         } else {
             $scope.toAssign[user].tasks.pop(i)
         }
