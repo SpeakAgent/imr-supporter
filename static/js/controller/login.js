@@ -18,6 +18,7 @@ mainApp.controller('loginController', function($scope, $http,
     localStorage.removeItem('username');
     localStorage.removeItem('first_name');
     localStorage.removeItem('last_name');
+    localStorage.removeItem('pk');
 
     $scope.$apply()
 
@@ -64,8 +65,23 @@ mainApp.controller('loginController', function($scope, $http,
         $scope.username = localStorage.getItem('username');
         $scope.authToken = localStorage.getItem('authToken');
         $rootScope.username = $scope.username;
-          $location.path('/dashboard');
 
+        var ureq = {
+          url: "http://iamready.herokuapp.com/users/supporters/one/",
+          data: {
+            username: $scope.username,
+          },
+          method: "POST",
+          headers: {
+              Authorization: 'JWT ' + localStorage.getItem('authToken')
+          }
+        }
+
+        $http(ureq).success(function(data) {
+          console.log(data)
+          localStorage.setItem('pk', data.pk);
+          $location.path('/dashboard');
+        })
 
     });
 
