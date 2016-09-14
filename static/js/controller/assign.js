@@ -54,7 +54,7 @@ mainApp.controller('assignController', function($scope, $location, $http, $filte
     })
 
     $scope.assignTask = function (user, task) {
-        i = $scope.toAssign[user].tasks.indexOf(task)
+        var i = $scope.toAssign[user].tasks.indexOf(task)
 
         if (i == -1) {
             $scope.toAssign[user].tasks.push(
@@ -75,12 +75,15 @@ mainApp.controller('assignController', function($scope, $location, $http, $filte
         data = {"tasks": []};
 
         for (var ui in $scope.toAssign) {
-            var task_data = {};
-            upk = $scope.toAssign[ui].pk;
+            console.log(ui, $scope.toAssign[ui]);
+            
+            var upk = $scope.toAssign[ui].pk;
             for (var ti in $scope.toAssign[upk].tasks) {
-                task = $scope.toAssign[upk].tasks[ti];
-                task_data['upk'] = upk;
-                task_data['tpk'] = task.pk;
+                var task_data = {};
+                console.log("task", $scope.toAssign[upk].tasks[ti])
+                var task = $scope.toAssign[upk].tasks[ti];
+                task_data['upk'] = $scope.toAssign[ui].pk;
+                task_data['tpk'] = $scope.toAssign[ui].tasks[ti].pk;
                 task_data['sdate'] = $filter('date')(task.startDate, "yyyy-MM-dd");
                 task_data['stime'] = $filter('date')(task.startTime, "HH:mm");
                 task_data['etime'] = $filter('date')(task.endTime, "HH:mm");
@@ -109,7 +112,7 @@ mainApp.controller('assignController', function($scope, $location, $http, $filte
             },
         }
 
-        console.log(req)
+        console.log("Assigning", req)
 
         $http(req).success(function(data){
             $location.path('/schedules');
