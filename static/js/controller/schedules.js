@@ -114,14 +114,17 @@ mainApp.controller('dailyScheduleController', function($scope, $http, $statePara
     
     $scope.pk = $stateParams.pk;
     $scope.target = new Date();
-    $scope.date = $scope.target.getFullYear() + "-" + $scope.target.getMonth() + "-" + $scope.target.getDate();
+    console.log("Starting target date",$scope.target)
+    var m = $scope.target.getMonth() + 1;
+    $scope.date = $scope.target.getFullYear() + "-" + m + "-" + $scope.target.getDate();
 
     $scope.nextDay = function() {
         $scope.schedule = {}
         var d = new Date();
         d.setDate($scope.target.getDate() + 1);
         $scope.target = d;
-        $scope.date = $scope.target.getFullYear() + "-" + $scope.target.getMonth() + "-" + $scope.target.getDate();
+        var m = $scope.target.getMonth() + 1;
+        $scope.date = $scope.target.getFullYear() + "-" + m + "-" + $scope.target.getDate();
 
         var req = {
             url: "http://iamready.herokuapp.com/events/all/day/",
@@ -147,7 +150,8 @@ mainApp.controller('dailyScheduleController', function($scope, $http, $statePara
         var d = new Date();
         d.setDate($scope.target.getDate() - 1);
         $scope.target = d;
-        $scope.date = $scope.target.getFullYear() + "-" + $scope.target.getMonth() + "-" + $scope.target.getDate();
+        var m = $scope.target.getMonth() + 1;
+        $scope.date = $scope.target.getFullYear() + "-" + m + "-" + $scope.target.getDate();
 
         var req = {
             url: "http://iamready.herokuapp.com/events/all/day/",
@@ -196,6 +200,8 @@ mainApp.controller('dailyScheduleController', function($scope, $http, $statePara
             Authorization: 'JWT ' + localStorage.getItem('authToken')
         },
     }
+
+    console.log(req)
 
     $http(req).success(function(data) {
         $scope.schedule = data;
