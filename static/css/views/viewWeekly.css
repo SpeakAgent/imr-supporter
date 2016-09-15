@@ -45,6 +45,14 @@ body {
     position: absolute;
 }
 
+i.fa.fa-circle.notDone {
+    color: #bfbfbf;
+}
+
+i.fa.fa-check-circle.done {
+    color: #4cc14d;
+}
+
 footer{
     background-color: #fff;
     height: auto;

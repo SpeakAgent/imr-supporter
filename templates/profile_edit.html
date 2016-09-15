@@ -1,0 +1,146 @@
+<ng-include src="'templates/includes/nav.html'"></ng-include>
+<div class="container" ng-controller="profileController">
+  <div class="border row">
+    <div class="border col-md-12">
+<div class="border row">
+    <div class="border col-md-12">
+      <div class="wrapperBox" style="padding:0 0 30px 0!important;">
+        <div class="currentBox">
+          <div class="profile-accordion">
+          <h1>Student information</h1>
+            <accordion>
+              <accordion-group is-open="profile.open">
+                <accordion-heading>
+                  <div class="profile-acc">
+                    <h1><img src="static/img/icons/profile.png" alt="Profile Icon">Profile Information <i class="fa fa-chevron-down" aria-hidden="true"></i></h1>
+                  </div>
+                </accordion-heading>
+                <form class="profile-form">
+                  <div class="form-heading">
+                    <h4>Home Address:</h4>
+                  </div>
+                  <div class="form-group">
+                    <label for="street">Street Address:</label><br>
+                    <input type="text" class="form-control" placeholder="{{ student.street }}" ng-model="formData.street">
+                  </div>
+                  <div class="form-group">
+                    <label for="city">City:</label><br>
+                    <input type="text" class="form-control" placeholder="{{ student.city }}" ng-model="formData.city">
+                  </div>
+                  <div class="form-group">
+                    <label for="state">State:</label><br>
+                    <input type="text" class="form-control" placeholder="{{ student.state }}" ng-model="formData.state">
+                  </div>
+                  <div class="form-group">
+                    <label for="zip">Zip Code:</label><br>
+                    <input type="text" class="form-control" placeholder="{{ student.zipcode }}" ng-model="formData.zipcode">
+                  </div>
+                  <!-- <div class="form-heading">
+                    <h4>Stuff I like:</h4>
+                  </div>
+                  <div class="form-group">
+                    <label for="likes">Stuff I like:</label><br>
+                    <input type="text" class="form-control" placeholder="{{ student.stuff_i_like }}" ng-model="formData.stuff_i_like">
+                  </div> -->
+                  <div class="form-heading">
+                    <h4>Where I go to school:</h4>
+                  </div>
+                  <div class="form-group">
+                    <label for="school">School:</label><br>
+                    <input type="text" class="form-control" placeholder="{{ student.school}}" ng-model="formData.school">
+                  </div>
+                  <div class="form-heading">
+                    <h4>Where I Work:</h4>
+                  </div>
+                  <div class="form-group">
+                    <label for="work">Work:</label><br>
+                    <input type="text" class="form-control" placeholder="{{ student.work}}" ng-model="formData.work">
+                  </div>
+
+                  <button type="submit" class="newTaskBtn" ng-click="updateProfile()"><i class="fa fa-pencil"></i> Save</button>
+                </form>
+              </accordion-group>
+
+              <accordion-group is-open="emergency.open">
+                <accordion-heading>
+                  <div class="emergency-acc">
+                    <h1><img src="static/img/icons/emergency.png" alt="Emergency Icon">Emergency Information <i class="fa fa-chevron-down" aria-hidden="true"></i></h1>
+                  </div>
+                </accordion-heading>
+                <form class="profile-form">
+                  <div class="form-heading">
+                    <h4>In an emergency, contact (1st contact out of 2):</h4>
+                  </div>
+                  <div class="form-group">
+                    <label for="name">Name:</label><br>
+                    <input type="text" class="form-control" placeholder="{{ student.emergency_contacts[0].first_name }} {{ student.emergency_contacts[0].last_name }}"
+                    ng-model="formData.em[0].name">
+                  </div>
+                  <div class="form-group">
+                    <label for="relationsip">Relationship:</label><br>
+                    <input type="text" class="form-control" placeholder="{{ student.emergency_contacts[0].relationship}}"
+                    ng-model="formData.em[0].relationship">
+                  </div>
+                  <div class="form-group">
+                    <label for="phone">Phone Number:</label><br>
+                    <input type="text" class="form-control" placeholder="{{ student.emergency_contacts[0].phone }}"
+                    ng-model="formData.em[0].phone">
+                  </div>
+                  <div class="form-heading">
+                    <h4>In an emergency, contact (2nd contact out of 2):</h4>
+                  </div>
+                  <div class="form-group">
+                    <label for="name">Name:</label><br>
+                    <input type="text" class="form-control" placeholder="{{ student.emergency_contacts[1].first_name }} {{ student.emergency_contacts[1].last_name }}"
+                    ng-model="formData.em[1].name">
+                  </div>
+                  <div class="form-group">
+                    <label for="relationsip">Relationsip:</label><br>
+                    <input type="text" class="form-control" placeholder="{{ student.emergency_contacts[1].relationship}}"
+                    ng-model="formData.em[1].relationship">
+                  </div>
+                  <div class="form-group">
+                    <label for="phone">Phone Number:</label><br>
+                    <input type="text" class="form-control" placeholder="{{ student.emergency_contacts[1].phone }}"
+                    ng-model="formData.em[1].phone">
+                  </div>
+                  <div class="form-heading">
+                    <h4>Medical:</h4>
+                  </div>
+                  <div class="form-group">
+                    <label for="medical">Medical:</label><br>
+                    <input type="text" class="form-control" placeholder="{{ student.medical }}" ng-model="formData.medical">
+                  </div>
+                  <div class="form-heading">
+                    <h4>You should know that:</h4>
+                  </div>
+                  <div class="form-group">
+                    <label for="know">You should know that:</label><br>
+                    <input type="text" class="form-control" placeholder="{{ student.should_know }}" ng-model="formData.should_know">
+                  </div>
+                  <div class="form-heading">
+                    <h4>At school:</h4>
+                  </div>
+                  <div class="form-group">
+                    <label for="school">At school:</label><br>
+                    <input type="text" class="form-control" placeholder="{{ student.at_school }}" ng-model="formData.at_school">
+                  </div>
+                  <div class="form-heading">
+                    <h4>At work:</h4>
+                  </div>
+                  <div class="form-group">
+                    <label for="work">At work:</label><br>
+                    <input type="text" class="form-control" placeholder="{{ student.at_work }}" ng-model="formData.at_work">
+                  </div>
+
+                  <button type="submit" class="newTaskBtn" ng-click="updateEmergency()"><i class="fa fa-pencil"></i> Save</button>
+                </form>
+              </accordion-group>
+            </accordion>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div></div></div>
+<ng-include src="'templates/includes/footer.html'"></ng-include>

@@ -1,0 +1,244 @@
+<ng-include src="'templates/includes/nav.html'"></ng-include>
+
+<div class="container" ng-controller="createTaskController">
+  <div class="border row">
+      <div class="border col-md-12">
+          <div class="wrapperBox">
+              <div class="currentBox">
+                  <h1>Create Task</h1>
+                  <br>
+                  <div id="basic">
+                      <h2>Basic Information</h2>
+                      <form class="form-horizontal">
+                          <div class="container" style="margin-left:30px">
+                              <div class="row">
+                                  <div class="col-md-1">
+                                      <img src="static/img/icons/placeholder.png" alt="">
+                                  </div>
+                                  <div class="col-md-3" style="margin-left:60px">
+                                      <p style="margin-bottom:5px!important">Task Title</p>
+                                      <input type="text" class="form-active-basic" placeholder='For example, "take bus to Giant"' style="width:260px; padding:5px"
+                                      ng-model="formData.title">
+                                      <!-- <button type="button" class="btn btn-default form-active-basic" data-toggle="modal" data-target="#upload" style="border-color:transparent!important; background:#20a7e1 !important; color:#fff; margin-top:20px; width:auto;"><i class="fa fa-picture-o" aria-hidden="true"></i> CHOOSE IMAGE...</button> -->
+                                  </div>
+                                  <div class="col-md-5">
+                                      <br>
+                                      <br>
+                                      <br>
+                                      <!-- <button type="button" class="btn btn-default form-active-basic" style="border-color:transparent!important; background:#FFFEFE!important; color:grey; margin-top:11px; margin-left:-30px; width:auto;">CHOOSE CATEGORY <i class="fa fa-angle-down fa-1x text-right" aria-hidden="true"></i></button>
+                                  -->
+                                  <div class="dropdown cat-dropdown">
+                                      <button type="button" class="btn btn-default form-active-basic" style="border-color:transparent!important; background:#FFFEFE!important; color:grey; margin-top:11px; margin-left:-30px; width:auto;" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">CHOOSE CATEGORY <i class="fa fa-angle-down fa-1x text-right" aria-hidden="true"></i></button>
+                                      <select
+                                      ng-model="formData.cagetory">
+                                          <option value="Education">Education</option>
+                                          <option value="Life">Life</option>
+                                          <option value="On the Go">On the Go</option>
+                                          <option value="Work">Work</option>
+                                      </select>
+                                  </div>
+                              </div>
+                              <div class="col-md-3">
+
+                              </div>
+                          </div>
+                          <div class="row">
+                              <div class="col-md-1">
+
+                              </div>
+                              <div class="col-md-3" style="margin-left:60px">
+                                  <p style="margin-bottom:5px!important; margin-top:30px">Add a link to a Youtube video (optional)</p>
+                                  <input type="text" class="form-active-basic" placeholder='Paste url here' style="width:260px; padding:5px" ng-model="formData.video">
+
+                                  
+                              </div>
+                              <div class="col-md-8">
+
+                              </div>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+              <div id="special">
+                  <h1>Add Special Instruction</h1>
+                  <div class="textArea">
+                      <textarea class="form-control form-active-special" rows="5" placeholder="Insert any special instruction for this task. For example, ..." ng-model="formData.help_text"></textarea>
+                  </div>
+              </div>
+              <div id="adding">
+                  <h1>Add Steps</h1>
+                  <div class="row" ng-repeat="step in formData.steps track by $index">
+                      <div class="col-md-2"></div>
+                      <div class="col-md-3" style="margin-left:10px">
+                          <p style="margin-bottom:5px!important">Step {{ $index + 1 }}</p>
+                          <input class="form-active-adding" type="text" placeholder='For example, "take bus to Giant"' style="width:260px; padding:5px; margin-left:-3px;"
+                          ng-model="formData.steps[$index]">
+                          <!-- <button type="button" class="btn btn-default form-active-basic" data-toggle="modal" data-target="#upload" style="border-color:transparent!important; background:#20a7e1 !important; color:#fff; margin-top:20px; width:auto;"><i class="fa fa-picture-o" aria-hidden="true"></i> CHOOSE IMAGE...</button> -->
+                          <br><br>
+
+                      </div>
+                      <div class="col-md-7"></div>
+                  </div>
+                  <div class="col-md-3"><a href="" ng-click="formData.steps.push('')">+ Add another step...</a></div>
+              </div>
+              <h1>Shedule Task</h1>
+              <div class="row">
+                  <div class="col-md-1">
+
+                  </div>
+                  <div class="col-md-2">
+                      <span class="date">DATE</span><br>
+                      <div class="row">
+                          <div class="col-md-6">
+                              <!-- <p class="input-group fake-input">
+                                  <input type="text" class="form-control" current-text="Today" clear-text="Clear" close-on-date-selection="false" datepicker-popup="{{format}}" ng-model="dt" is-open="opened" min-date="minDate" datepicker-options="dateOptions" date-disabled="disabled(date, mode)" ng-required="true" close-text="Close" style="width:0; padding:0" 
+                                  ng-model="formData.date" />
+                                  <span class="input-group-btn">
+                                      <button type="button" class="btn btn-default fake-button" ng-click="open($event)"><i class="fa fa-calendar-o fa-3x" aria-hidden="true"
+                                      ng-model="formData.date"></i></button>
+                                  </span>
+                              </p> -->
+                              <select 
+                                ng-model="formData.month"
+                                >
+                                    <option 
+                                    ng-repeat="month in months"
+                                    value="{{ month }}"
+                                    ng-selected="currMonth==month"
+                                    >{{ month }}</option>
+                                </select>
+                                <select 
+                                ng-model="formData.day"
+                                >
+                                    <option 
+                                    ng-repeat="day in days"
+                                    value="{{ day }}"
+                                    ng-selected="currDay==day"
+                                    >{{ day }}</option>
+                                </select>
+                                <select 
+                                ng-model="formData.year"
+                                >
+                                    <option 
+                                    ng-repeat="year in years"
+                                    value="{{ year }}"
+                                    ng-selected="currYear==year"
+                                    >{{ year }}</option>
+                                </select>
+                                
+                          </div>
+                      </div>
+                  </div>
+                  <div class="col-md-2">
+                      <span class="startTime">START TIME</span><br>
+                      <select 
+                          ng-model="formData.start_hour"
+                          >
+                              <option 
+                              ng-repeat="hour in hours"
+                              value="{{ hour }}"
+                              ng-selected="currStartHour==hour"
+                              >{{ hour }}</option>
+                          </select>:
+                        <select 
+                                ng-model="formData.start_minute"
+                                >
+                                    <option 
+                                    ng-repeat="minute in minutes"
+                                    value="{{ minute }}"
+                                    ng-selected="currStartMin==minute"
+                                    >{{ minute }}</option>
+                                </select>
+                  </div>
+                  <div class="col-md-2">
+                      <span class="endTime">END TIME</span><br>
+                      <select 
+                          ng-model="formData.end_hour"
+                          >
+                              <option 
+                              ng-repeat="hour in hours"
+                              value="{{ hour }}"
+                              ng-selected="currEndHour==hour"
+                              >{{ hour }}</option>
+                          </select>:
+                        <select 
+                                ng-model="formData.end_minute"
+                                >
+                                    <option 
+                                    ng-repeat="minute in minutes"
+                                    value="{{ minute }}"
+                                    ng-selected="currEndMin==minute"
+                                    >{{ minute }}</option>
+                                </select>
+                      
+                  </div>
+                  <div class="col-md-2">
+                      <div class="checkBox">
+                          <label>
+                              <input type="checkbox" id='check'
+                                ng-model="formData.recurring" ng-checked="task.daily == true || task.day_of_week !== ''"> Make recurring?
+                              <div class="webui-popover-content recurrentBox">
+                                  <input type="checkbox" 
+                                  ng-model="formData.recurring_weekly"
+                                  ng-checked="task.day_of_week !== ''"> Every Week <br />
+                                  <input type="checkbox" 
+                                  ng-model="formData.recurring_daily"
+                                  ng-checked="task.daily == true"> Every Day
+                              </div>
+                          </label>
+                      </div>
+                  </div>
+                  <div class="col-md-3">
+
+                  </div><br>
+                  <h1 style="margin-left:44px; margin-top:50px">Select Students</h1>
+                  <div class="row">
+                      <div class="col-md-1">
+
+                      </div>
+                      <div class="col-md-2 checkBoxes" ng-repeat="user in users">
+                          <p style="margin:0!important; text-align:center; margin-left:-85px!important">{{ user.first_name }}</p>
+                          <p style="margin:0!important; text-align:center; margin-left:-85px!important">{{ user.last_name }}</p>
+                          <label>
+                              <input type="checkbox" value="{{ user.pk }}"
+                                ng-model="formData.users[$index]">
+                          </label>
+                      </div>
+                      <button type="submit" class="saveBasicInfoBtn"
+                                  ng-click="createTask()">SAVE</button>
+                  </div>
+
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Footer -->
+<ng-include src="'templates/includes/footer.html'"></ng-include>
+</div>
+<!-- /.container -->
+
+
+<!-- Modal -->
+<div class="modal fade" id="upload" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+  <div class="modal-dialog modal-md" role="document">
+      <div class="modal-content">
+          <div class="modal-body">
+              <div class="alert drop" flow-drop flow-drag-enter="style={border:'2px dashed green'}" flow-drag-leave="style={}" ng-style="style" ng-class="dropClass">
+                  <span class="btn btn-default" flow-btn style="border-color:transparent!important; background:#20a7e1 !important; color:#fff;">Browse...<input type="file" multiple="multiple" style="visibility: hidden; position: absolute;"></span>
+                  <b>OR</b> Drag And Drop your file here
+              </div>
+              <p>
+                  Acceptable photo file types: jpg, jpeg, png. <br />
+                  Maximum size is 2MB. <br />
+                  <em>For best results, images should be at least 300px on either dimension.</em>
+              </p>
+          </div>
+          <div class="modal-footer">
+              <a href="" type="button"><i class="fa fa-upload" aria-hidden="true"></i> Upload</a>
+              <a href="" type="button" class="cancel" data-dismiss="modal"><i class="fa fa-times" aria-hidden="true"></i> Cancel</a>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- /Modal -->

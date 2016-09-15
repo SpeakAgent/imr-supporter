@@ -1,12 +1,13 @@
-var mainApp = angular.module('mainApp', ['ui.router', 'uiRouterStyles', 'ui.bootstrap', 'ngAnimate', 'flow']);
+var mainApp = angular.module('mainApp', ['ui.router', 'uiRouterStyles', 'ui.bootstrap', 'ngAnimate', 'flow', 'angular-jwt']);
 
 mainApp.config(function (datepickerConfig, datepickerPopupConfig) {
       datepickerConfig.showWeeks = false;
       datepickerPopupConfig.toggleWeeksText = false;
     });
 
-mainApp.config(function($stateProvider, $urlRouterProvider) {
-  // For any unmatched url, redirect to /
+mainApp.config(function($stateProvider, $urlRouterProvider, jwtInterceptorProvider) {
+
+  // For any unmatched url, redirect to
   $urlRouterProvider.otherwise("/login");
 
   $stateProvider
@@ -32,10 +33,24 @@ mainApp.config(function($stateProvider, $urlRouterProvider) {
     }
   })
   .state('createTask', {
-    url: "/createTask",
+    url: "/tasks/create",
     templateUrl: 'templates/createTask.html',
     data: {
       css: 'static/css/views/createTask.css'
+    }
+  })
+  .state('editTask', {
+    url: "/tasks/edit/:pk",
+    templateUrl: 'templates/editTask.html',
+    data: {
+      css: 'static/css/views/editTask.css'
+    }
+  })
+  .state('assign', {
+    url: "/assign",
+    templateUrl: 'templates/assign.html',
+    data: {
+      css: 'static/css/views/assign.css'
     }
   })
   .state('schedules', {
@@ -44,18 +59,26 @@ mainApp.config(function($stateProvider, $urlRouterProvider) {
     data: {
       css: 'static/css/views/schedules.css'
     }
-  }).state('viewDay', {
-    url: "/viewDay",
+  })
+  .state('viewDay', {
+    url: "/schedules/day/:pk",
     templateUrl: 'templates/viewDay.html',
     data: {
       css: 'static/css/views/viewDay.css'
     }
   })
-  .state('viewWeekly', {
-    url: "/viewWeekly",
+  .state('viewWeek', {
+    url: "/schedules/week/:pk",
     templateUrl: 'templates/viewWeekly.html',
     data: {
       css: 'static/css/views/viewWeekly.css'
+    }
+  })
+  .state('profile', {
+    url: "/profiles/:pk",
+    templateUrl: 'templates/profile_edit.html',
+    data: {
+      css: 'static/css/views/profiles.css'
     }
   })
   .state('profiles', {
@@ -70,13 +93,6 @@ mainApp.config(function($stateProvider, $urlRouterProvider) {
     templateUrl: 'templates/notifications.html',
     data: {
       css: 'static/css/views/notifications.css'
-    }
-  })
-  .state('help', {
-    url: "/help",
-    templateUrl: 'templates/help.html',
-    data: {
-      css: 'static/css/views/help.css'
     }
   })
 });

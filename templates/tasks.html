@@ -5,43 +5,23 @@
         <div class="border col-md-12">
             <div class="wrapperBox">
                 <div class="currentBox">
-                    <h1>Tasks Dashboard</h1>
+                    <h1>Task Dashboard</h1>
                     <button ui-sref="createTask" class="newTaskBtn">CREATE A NEW TASK</button>
                     <h2>Choose an existing task...</h2>
 
                     <div class="container-fluid">
                         <table class="table">
                             <tbody>
-                                <tr>
-                                    <td class="tdTitle">Can Crushing</td>
+                                <tr ng-repeat="task in tasks">
+                                    <td class="tdTitle">{{ task.title }}</td>
                                     <td></td>
-                                    <td class="text-right"><a data-toggle="modal" data-target=".preview-modal">PREVIEW</a> | <a href="">EDIT</a></td>
-                                </tr>
-                                <tr>
-                                    <td class="tdTitle">Leaving for the Workplace</td>
-                                    <td></td>
-                                    <td class="text-right"><a href="">PREVIEW</a> | <a href="">EDIT</a></td>
-                                </tr>
-                                <tr>
-                                    <td class="tdTitle">Recycling Collector</td>
-                                    <td></td>
-                                    <td class="text-right"><a href="">PREVIEW</a> | <a href="">EDIT</a></td>
-                                </tr>
-                                <tr>
-                                    <td class="tdTitle">Student Tray Collector</td>
-                                    <td></td>
-                                    <td class="text-right"><a href="">PREVIEW</a> | <a href="">EDIT</a></td>
-                                </tr>
-                                <tr>
-                                    <td class="tdTitle">Dog Biscuit Baking</td>
-                                    <td></td>
-                                    <td class="text-right"><a href="">PREVIEW</a> | <a href="">EDIT</a></td>
+                                    <td class="text-right"><a data-toggle="modal" data-target=".preview-modal" ng-click="showTask(task)">PREVIEW</a> | <a href="/imr-supporter/#/tasks/edit/{{ task.pk }}">EDIT</a></td>
                                 </tr>
                             </tbody>
                         </table>
                     </div>
 
-                    <div class="row">
+                    <!-- <div class="row">
                         <a ui-sref="createTask">
                             <div class="col-xs-1" style="margin-left:30px">
                                 <span class="fa fa-caret-down fa-3x"></span>
@@ -50,7 +30,7 @@
                                 <span>SHOW MORE TASKS</span>
                             </div>
                         </a>
-                    </div>
+                    </div> -->
 
                 </div>
             </div>
@@ -58,51 +38,25 @@
     </div>
     <!-- Footer -->
     <ng-include src="'templates/includes/footer.html'"></ng-include>
-</div>
-<!-- /.container -->
-
-<!-- Preview Supporter Modal -->
+    <!-- Preview Supporter Modal -->
 <div class="modal fade preview-modal" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel">
     <div class="modal-dialog modal-sm">
         <div class="modal-content">
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                <h4 class="modal-title" id="myModalLabel"><i class="fa fa-eye"></i><em> Can Crushing Preview</em></h4>
+                <!-- <h4 class="modal-title" id="myModalLabel"><i class="fa fa-eye"></i><em> {{ task.title }}</em></h4> -->
             </div>
             <div class="modal-body">
                 <div class="task-title">
-                    <img src="static/img/icons/mt.png">
-                    <h3>Can Crushing</h3>
+                    <img src="{{ task.image }}">
+                    <h3>{{ task.title }}</h3>
                 </div>
 
-                <div class="task-item">
-                    <p>Step 1</p>
-                    <img src="static/img/icons/mt.png">
-                    <p class="task-text">Go to laundry room.</p>
-                </div>
-
-                <div class="task-item">
-                    <p>Step 2</p>
-                    <img src="static/img/icons/mt.png">
-                    <p class="task-text">Rinse out the cans to be crushed in the sink.</p>
-                </div>
-
-                <div class="task-item">
-                    <p>Step 3</p>
-                    <img src="static/img/icons/mt.png">
-                    <p class="task-text">Place one can at a time into the mechanism and crush! Can will fall into the bin at the bottom.</p>
-                </div>
-
-                <div class="task-item">
-                    <p>Step 4</p>
-                    <img src="static/img/icons/mt.png">
-                    <p class="task-text">When the bin is full, collect the bag of cans and replace the liner.</p>
-                </div>
-
-                <div class="task-item">
-                    <p>Step 5</p>
-                    <img src="static/img/icons/mt.png">
-                    <p class="task-text">Take the bag of crushed cans.</p>
+                <div class="task-item" ng-repeat="step in task.steps track by $index">
+                    <p>Step {{ $index + 1 }}</p>
+                    <img src="{{ step.image }}">
+                    <p class="task-text"><em>{{ step.title }}</em></p>
+                    <p class="task-text">{{ step.text }}</p>
                 </div>
 
                 <div class="clear"></div>
@@ -111,3 +65,5 @@
     </div>
 </div>
 <!-- End Select Supporter Modal -->
+</div>
+<!-- /.container -->

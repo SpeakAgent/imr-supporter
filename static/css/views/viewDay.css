@@ -57,6 +57,12 @@ body {
   color: #0E0C42;
 }
 
+.done {
+	background-image: url('../../img/icons/doneMarker.png');
+    background-repeat: no-repeat;
+    background-position: 100.5% -1%;
+}
+
 footer{
     background-color: #fff;
     height: auto;

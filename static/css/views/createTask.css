@@ -5,8 +5,8 @@ body {
 p {
     font-family: "San Francisco";
     color: #163850;
-    font-size: 11px;
     line-height: 12px;
+    font-size: 15px;
 }
 
 label {
@@ -74,7 +74,6 @@ span.endTime {
     border: 1px solid transparent;
     border-radius: 2px;
     margin: 20px 0;
-
 }
 
 .checkBoxes input {
@@ -98,14 +97,6 @@ span.endTime {
 div#webuiPopover0 {
     left: 708.938px !important;
     top: 1245.42px !important;
-}
-
-.textArea {
-	width: 60%;
-	margin-left: 202px;
-	margin-right: auto;
-	background:#F7F7F7;
-	border-radius: 10px;
 }
 
 .form-active-blue {
@@ -159,4 +150,126 @@ footer{
     background-color: #fff;
     height: auto;
     padding: 3rem;
+}
+/* BASIC DETAILS */
+
+#basic .taskImage button {
+    background: #20a7e1;
+    border-color: transparent;
+    margin: -15px 0 20px 30px;
+    font-size: 10px;
+    color: #fff;
+    word-spacing: 5px;
+}
+
+#basic .taskImage button span {
+    display: inline-table;
+    vertical-align: bottom;
+    padding: 0 0 0 5px;
+}
+
+#basic p {
+    margin: 30px 0 30px 30px;
+}
+
+#basic .taskCategory select {
+    background: #fff;
+    margin-left: 30px;
+    font-size: 12px;
+    color: #163850;
+    word-spacing: 5px;
+    border: 1px solid;
+    border-radius: 5px;
+    width: 65%;
+    height: 32px;
+}
+
+.taskTitle input {
+    margin: 0 0 0 30px;
+    border: 1px solid;
+    border-radius: 5px;
+    width: 65%;
+    padding: 5px;
+}
+
+.taskLink input {
+    margin: 0 0 0 30px;
+    border: 1px solid;
+    border-radius: 5px;
+    width: 65%;
+    padding: 5px;
+}
+
+.upperSave {
+    margin: 20px 0 0 30px !important;
+}
+
+/* ADD SPECIAL INSTRUCTION */
+
+.textArea {
+    margin-left: 30px;
+    border-radius: 5px;
+    border: 1px solid;
+    width: 65%;
+}
+
+.textArea textarea {
+    background-color: #ebebeb;
+}
+
+#special p {
+    font-style: italic;
+    color: #848385;
+    margin-left: 30px;
+}
+
+/* ADDING STEPS  - Including Bottom Save Button */
+
+#adding p {
+    margin: 0px 0 5px 30px;
+}
+
+#adding input {
+    margin: 0px 0 30px 30px;
+    width: 65%;
+    border-radius: 5px;
+    padding: 5px;
+    background: #ebebeb;
+    border: 1px solid;
+}
+
+#adding button {
+    background: #20a7e1;
+    border-color: transparent;
+    margin: -15px 0 25px 30px;
+    font-size: 10px;
+    color: #fff;
+    word-spacing: 5px;
+}
+
+#adding button span {
+    display: inline-table;
+    vertical-align: bottom;
+    padding: 0 0 0 5px;
+}
+
+i.fa.fa-picture-o {
+    font-size: 15px;
+    display: inline-table;
+    vertical-align: middle;
+}
+
+#adding a {
+    color: #163850;
+    margin: 5px 0 0 30px;
+}
+
+#adding a:hover {
+    color: #54AAEC;
+    margin: 5px 0 0 30px;
+}
+
+.bottomSave {
+    margin-right: 30px !important;
+    float: right;
 }

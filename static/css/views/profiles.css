@@ -71,9 +71,13 @@ p {
 }
 
 
-.changeStudentShedule {
+.changeStudentSchedule {
     color: #00486E;
     margin-left: 36px;
+}
+
+.row .newTaskBtn {
+    margin: 5px 0 5px -22px !important;
 }
 
 footer{

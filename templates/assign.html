@@ -1,0 +1,85 @@
+<ng-include src="'templates/includes/nav.html'"></ng-include>
+<!-- Page Content -->
+<div class="container" ng-controller="assignController">
+    <div class="border row" ng-show="stepOne">
+        <div class="border col-md-12">
+            <div class="wrapperBox">
+                <div class="currentBox">
+                    <h1>Assign a Task</h1>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <table>
+                                <tr>
+                                    <th class="taskHeader"> Task </th>
+                                    <th class="userHeader" ng-repeat="user in users"> {{ user.first_name }} <br /> {{ user.last_name }} </th>
+                                </tr>
+                                <tr ng-repeat="task in tasks" class="infoRow">
+                                    <td class="titleData"> {{ task.title }} </td>
+                                    <td class="checkData" ng-repeat="user in users"> <input type="checkbox" ng-click="assignTask(user.pk, task)"> </td>
+                                </tr>
+                            </table>
+                            <a ng-click="stepOne=false;stepTwo=true" class="pull-right">Next <i class="fa fa-angle-double-right" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="border row" ng-show="stepTwo">
+        <div class="border col-md-12">
+            <div class="wrapperBox">
+                <div class="currentBox">
+                    <h1>Schedule a Task</h1>
+
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div ng-repeat="student in toAssign">
+                                <h2 class="studentName">{{ student.first_name }} {{ student.last_name }}</h2>
+                                <div ng-repeat="task in student.tasks">
+                                    <h3 class="assignTitle">{{ task.title }}</h3>
+                                    <p class="assignSubTitle">Schedule task</p>
+
+                                    <div class="row">
+                                        <div class="date col-sm-4">
+                                            <label>Start date</label> <br>
+                                            <input type="date" ng-model="toAssign[student.pk].tasks[$index].startDate">
+                                        </div>
+                                        <div class="startTime col-sm-4">
+                                            <label>Start time</label> <br>
+                                            <input type="time" ng-model="task.startTime">
+                                        </div>
+                                        <div class="endTime col-sm-4">
+                                            <label>End time</label> <br>
+                                            <input type="time" ng-model="toAssign[student.pk].tasks[$index].endTime">
+                                        </div>
+                                        <div class="repeat col-sm-12">
+                                            <input type="checkbox" ng-model="toAssign[student.pk].tasks[$index].weekly" name="weekly">
+                                            <label for="weekly"><em>Repeat weekly</em></label> <br />
+                                            <input type="checkbox" ng-model="toAssign[student.pk].tasks[$index].daily" name="daily">
+                                            <label for="daily"><em>Repeat daily</em></label>
+                                        </div>
+                                        <div class="supporterSelect col-sm-12">
+                                            <select select-picker class="selectpicker" title="CHOOSE SUPPORTER" data-width="fit"
+                                            ng-model="toAssign[student.pk].tasks[$index].contact">
+                                                <option ng-repeat="contact in student.contacts" value="{{ contact.pk }}" 
+                                                >{{ contact.first_name }} {{ contact.last_name }}</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <button class="assignButton" ng-click="assignTasks()">Save</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <ng-include src="'templates/includes/footer.html'"></ng-include>
+</div>
+<!-- /.container -->
