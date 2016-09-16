@@ -44,7 +44,9 @@
                                     <div class="col-xs-2" style="padding:19px;">
                                         <img src="{{ task.task.task_type.image }}" class="icon2" alt="" width="65px">
                                     </div>
-                                    <div class="col-xs-9"  ng-class="task.status='done' ? 'done' : 'clear'">
+                                    <!-- <div class="col-xs-9"  ng-class="task.status='done' ? 'done' : 'clear'"> -->
+                                    <div class="col-xs-9"  
+                                        ng-class="{ 'done': task.task.status=='done'}">
                                         <h6 class="time">{{ task.start_time }} -
                                         {{ task.end_time }}</h6>
                                         <h5 class="task">
