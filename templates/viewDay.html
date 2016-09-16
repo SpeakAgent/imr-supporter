@@ -51,12 +51,6 @@
                                         {{ task.end_time }}</h6>
                                         <h5 class="task">
                                         {{ task.title }} <i class="fa fa-trash-o" style="color:red;margin-right:5px" ng-click="deleteEvent(task.pk);task.hide=true"></i></h5>
-                                        <p class="text-right" style="color:red;margin-top:10px"
-                                          ng-show="!task.task.daily && task.days_of_week != ''">Every {{ task.days_of_week }}</p>
-                                        <p class="text-right" style="color:red;margin-top:10px"
-                                          ng-show="task.task.daily">Every {{ day }}</p>
-                                        <p class="text-right" style="color:red;margin-top:10px"
-                                          ng-show="!task.task.daily && task.days_of_month != ''">Every {{ task.days_of_month }}</p>
                                     </div>
                                 </a>
                             </div>
