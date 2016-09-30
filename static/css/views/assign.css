@@ -88,25 +88,16 @@ p.assignSubTitle {
     margin: 0 20px 20px 5px;
 }
 
-.supporterSelect {
-    margin: 0 0 20px 60px;
-}
-
-.supporterSelect button {
-    color: white !important;
+.supporterSelect select {
     background: #163850;
-    border-color: #163850;
-}
-
-.supporterSelect button:hover {
-    color: white !important;
-    background: #163850;
-    border-color: #163850;
-}
-
-.supporterSelect .dropdown-toggle {
-    background-color: #163850 !important;
-    border-color: #163850 !important;
+    margin-left: 60px;
+    font-size: 12px;
+    color: #fff;
+    word-spacing: 5px;
+    border: 1px solid;
+    border-radius: 5px;
+    width: 15%;
+    height: 32px;
 }
 
 .assignButton{
