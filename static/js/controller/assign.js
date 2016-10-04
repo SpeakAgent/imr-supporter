@@ -76,7 +76,7 @@ mainApp.controller('assignController', function($scope, $location, $http, $filte
 
         for (var ui in $scope.toAssign) {
             console.log(ui, $scope.toAssign[ui]);
-            
+
             var upk = $scope.toAssign[ui].pk;
             for (var ti in $scope.toAssign[upk].tasks) {
                 var task_data = {};
@@ -122,14 +122,3 @@ mainApp.controller('assignController', function($scope, $location, $http, $filte
         })
     }
 })
-
-mainApp.directive('selectPicker', ['$timeout', function($timeout){
-    return {
-        restrict: 'A',
-        link:function(scope, elem){
-            $timeout(function() {
-                elem.selectpicker({});
-            }, 0);
-        }
-    };
-}])

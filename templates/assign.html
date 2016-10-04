@@ -62,10 +62,17 @@
                                             <label for="daily"><em>Repeat daily</em></label>
                                         </div>
                                         <div class="supporterSelect col-sm-12">
-                                            <select select-picker class="selectpicker" title="CHOOSE SUPPORTER" data-width="fit"
+                                            <!-- <select select-picker class="selectpicker" title="CHOOSE SUPPORTER" data-width="fit"
                                             ng-model="toAssign[student.pk].tasks[$index].contact">
-                                                <option ng-repeat="contact in student.contacts" value="{{ contact.pk }}" 
+                                                <option ng-repeat="contact in student.contacts" value="{{ contact.pk }}"
                                                 >{{ contact.first_name }} {{ contact.last_name }}</option>
+                                            </select> -->
+
+                                            <select title="CHOOSE SUPPORTER" data-width="fit" ng-model="toAssign[student.pk].tasks[$index].contact">
+                                                <option value="">CHOOSE SUPPORTER</option>
+                                                <option ng-repeat="contact in student.contacts" value="{{ contact.pk }}">
+                                                    {{ contact.first_name }} {{ contact.last_name }}
+                                                </option>
                                             </select>
                                         </div>
                                     </div>
